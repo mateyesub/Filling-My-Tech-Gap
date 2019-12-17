@@ -1,0 +1,17 @@
+{
+  "name": "Filling-My-Tech-Gap_Docs",
+  "version": "1.0.0",
+  "description": "The web page of the repoitory 'Filling-My-Tech-Gap'",
+  "main": "scripts/main.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss styles/main.css -w"
+  },
+  "author": "Matteo Carotta",
+  "license": "MIT",
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.0"
+  }
+}

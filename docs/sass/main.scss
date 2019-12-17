@@ -1,0 +1,43 @@
+/*Plance @import and @charset @font-face rules here 
+* Any @import rules must precede all other rules and style rules in a 
+* style sheet besides @charset, which must be the first thing in the 
+* style sheet if it exists, otherwise the @import rule is invalid. 
+* Visit: http://www.w3.org/TR/css3-cascade/#at-import */
+
+/*--------------------------------
+Project Name: Filling-My-Tech-Gap_Docs
+-------------------------------- */
+
+/*For linting options see .jshintrc in the project root folder 
+stylesheet written accring to the NemeSpace-BEM (Block Element Modifier) principles
+in camelCase:
+namespace prefixes: o-: Object; c-: Component; u-: Utility; t-: Theme; s-: Scope;
+is-, has-:  Stete or Condition; _: Hack; js-: JavaScript Bind; qa-: QA or Test Bind
+Visit:
+https://css-tricks.com/bem-101/
+https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/
+https://css-tricks.com/abem-useful-adaptation-bem/ */
+
+/* --------------------------------
+BASIC SETUP
+-------------------------------- */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /* visit: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
+}
+
+html {
+  font-size: 62.5%; /*16px * 62.5% = 10px*/
+  /*rem are not supported in IE6 */
+}
+
+body {
+  font-size: 2rem;
+  box-sizing: border-box;
+}
+/* --- END OF: BASIC SETUP --- */
