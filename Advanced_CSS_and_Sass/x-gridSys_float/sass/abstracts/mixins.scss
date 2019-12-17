@@ -1,0 +1,9 @@
+@mixin u-clearfix {
+  //Mixins allow you to define styles that can be re-used throughout your stylesheet
+  //https://sass-lang.com/documentation/at-rules/mixin
+  &::after{
+    content: ""; /*The content is an empty string to create no visible presudo element :after*/
+    display: table; /*standard value for a clear utility*/
+    clear: both;
+  }
+}

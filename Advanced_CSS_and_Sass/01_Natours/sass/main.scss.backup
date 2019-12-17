@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900');
+@import "abstract/fucntions";
+@import "abstract/mixins";
+@import "abstract/variabels";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities"
+/* Plance @import and @charset @font-face rules here */
+/* Any @import rules must precede all other rules and style rules in a 
+* style sheet besides @charset, which must be the first thing in the 
+* style sheet if it exists, otherwise the @import rule is invalid. 
+* Visit: http://www.w3.org/TR/css3-cascade/#at-import */
+/* Project Name: Natours */
+/* For linting options see .jshintrc in the project root folder */
+/* stylesheet written accring to the NemeSpace-BEM (Block Element Modifier) principles
+* in camelCase:
+* namespace prefixes: o-: Object; c-: Component; u-: Utility; t-: Theme; s-: Scope;
+* is-, has-:  Stete or Condition; _: Hack; js-: JavaScript Bind; qa-: QA or Test Bind
+* Visit:
+* https://css-tricks.com/bem-101/
+* https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/
+* https://css-tricks.com/abem-useful-adaptation-bem/ */
+/* --------------------------------
+BASIC SETUP
+-------------------------------- */
+// COLORS:
+$color-primary-light: #7ed56f; //light-green
+$color-primary: #55c57a; //medium-green
+$color-primary-dark: #28b485; //dark-green
+$color-gray-dark: #777;
+$color-white: #fff;
+$color-black: #000;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: $color-black;
+  /* visit: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
+}
+
+html {
+  font-size: 125%; /*16px * 125% = 20px*/
+  /*rem are not supported in IE6 */
+}
+
+body {
+  font-family: Lato, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: $color-gray-dark;
+  padding: 30px;
+  box-sizing: border-box;
+}
+/* --- END OF: BASIC SETUP --- */
+/* --------------------------------
+REUSABLE RULES: OBJECTS
+-------------------------------- */
+.o-heading1 {
+  margin: 0;
+}
+
+.o-btn{
+  &,
+  &:link,
+  &:visited{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.8rem 1.8rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative;
+  }
+  
+  &::after {
+    content: "";
+    /*a content is mandatory even if an empty string, otherwise 
+      the ::after element will not be created*/
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    /*as dimentions of the ::after element it's possible to use
+      the relative % units since css will consider the ::after element as a child
+      element. It's similar to js expression width = this.width */
+    border-radius: 10rem;
+    position: absolute;
+    /*The absolute positioning allows to place the ::after element relative to 
+      the pseudo parent element*/
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /*the z-index defines the position in the z-axis. -1 positions the pseudo
+      child element behind the pseudo parent element*/
+    transition: all 0.4s;
+  }
+  
+  &-white::after {
+    background-color: $color-white;
+  }
+  &:hover::after {
+    transform: scaleX(1.5) scaleY(1.6);
+    opacity: 0;
+  }
+  &:hover {
+    transform: translateY(-.2rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  }
+  &:active {
+    transform: translateY(-.1rem);
+    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.2);
+  }
+  &-white {
+    background-color: $color-white;
+    color: #777;
+  }
+}
+/* --- END OF: OBJECTS --- */
+/* --------------------------------
+UNIQUE: COMPONENTS
+-------------------------------- */
+.c-introHeader_header {
+  height: 92vh;
+  background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url("../imgs/vendors/hero.jpg");
+  background-size: cover;
+  background-position: top 20% left 40%;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  /* To shape a container as a polygon https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path */
+  /* clip-path crop the content of the container accorging to the edges of
+  the poygon */
+}
+
+.c-heroLogo {
+  &_box {
+    position: absolute;
+    /* Absolute positioning has as reference the first 
+  container of the item of positioning: relative. This implies that if the 
+  direct container (parent) is not positioned relative it will take as reference 
+  the parent of the parent of the parent an element containing it further above 
+  in the dependency line ;)*/
+    top: 40px;
+    left: 40px;
+  }
+
+  &_img {
+    height: 35px;
+    /* By defining one of the two dimensions of an image 
+  (width or height) other will be scaled accordingly to maintain the proportions */
+  }
+}
+
+.c-mainHeading {
+  &_box {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    /* positioning of an element is relative to the upper left corner
+  of the element this means that by centring it we are actually centering the 
+  upper left corner and not relative to the geometrical center of the element */
+    transform: translate(-50%, -50%);
+    /* To position an element relative to it's
+  geometrical center the reference point must be moved to the geometrical center
+  of the elment through transtating it of -50% on both x any y axies */
+    text-align: center;
+    /* To align the botton */
+  }
+
+  &_heading1 {
+    color: white;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    /* somethimes animations renders sligtly out of
+    position if backface-visibility attribute of the animated element is not set
+    to hidden */
+  }
+
+  &_heading1 {
+    &-large {
+      display: block;
+      font-size: 4.5rem;
+      font-weight: 400;
+      letter-spacing: 0.9rem;
+      animation-name: u-moveInLeft;
+      /* Animation-name assigns an animation to a css rule
+  and though it to the selected element */
+      animation-duration: 1s;
+      /* the animation duration is then assigned through the attribute
+  animation-duration */
+      animation-timing-function: ease-out;
+    }
+
+    &-small {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.88rem;
+      animation-name: u-moveInRight;
+      animation-duration: 1s;
+      animation-timing-function: ease-out;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &_btn {
+    animation-name: u-moveInBottom;
+    animation-duration: 1s;
+  }
+}
+/* --------------------------------
+REUSABLE RULES: UTILITIES
+-------------------------------- */
+@keyframes u-moveInLeft {
+  /* each of the following is a keyframe of the animation, infinite keyframes 
+  can be defined. 0% indicates initia state and 100% indicated the final state */
+  0% {
+    opacity: 0;
+    transform: translateX(-5.5rem);
+  }
+
+  80% {
+    transform: translateX(1.2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes u-moveInRight {
+  /* each of the following is a keyframe of the animation, infinite keyframes 
+  can be defined. 0% indicates initia state and 100% indicated the final state */
+  0% {
+    opacity: 0;
+    transform: translateX(5.5rem);
+  }
+
+  80% {
+    transform: translateX(-1.2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes u-moveInBottom {
+  /* each of the following is a keyframe of the animation, infinite keyframes 
+  can be defined. 0% indicates initia state and 100% indicated the final state */
+  0% {
+    opacity: 0;
+    transform: translateY(16.5rem);
+  }
+
+  20% {
+    opacity: 0.1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.u-clearfix {
+  zoom: 1;
+  /* clearfix is a class to be assigned to a html element 
+  that uses the float property to clear it or reset to 
+  standard the float property of the elemnts after the it */
+}
+
+.u-clearfix::after {
+  content: '.';
+  clear: both;
+  /* visit: https://developer.mozilla.org/en-US/docs/Web/CSS/clear */
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+/* END OF: REUSABLE RULES */
+/* --------------------------------
+Media Queries
+-------------------------------- */
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  html {
+    font-size: 11px;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  .c-mainHeading_heading1-large {
+    letter-spacing: normal;
+  }
+
+  .c-mainHeading_heading1-small {
+    letter-spacing: 0.55rem;
+  }
+}

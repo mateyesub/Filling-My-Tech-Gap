@@ -1,0 +1,347 @@
+/*UNIQUE: COMPONENTS
+-------------------------------- */
+.c-introHeader_header {
+  height: $introHeader_header-height;
+  background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url("../imgs/vendors/hero.jpg");
+  background-size: cover;
+  background-position: top 20% left 40%;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% $introHeader_vertex-rightBottom*100%, 0 100%);
+  /* To shape a container as a polygon https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path */
+  /* clip-path crop the content of the container accorging to the edges of
+  the poygon */
+}
+
+.c-heroLogo {
+  &_box {
+    position: absolute;
+    /* Absolute positioning has as reference the first 
+  container of the item of positioning: relative. This implies that if the 
+  direct container (parent) is not positioned relative it will take as reference 
+  the parent of the parent of the parent an element containing it further above 
+  in the dependency line ;)*/
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &_img {
+    height: 7rem;
+    /* By defining one of the two dimensions of an image 
+  (width or height) other will be scaled accordingly to maintain the proportions */
+  }
+}
+
+.c-mainHeading {
+  &_box {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    /* positioning of an element is relative to the upper left corner
+  of the element this means that by centring it we are actually centering the 
+  upper left corner and not relative to the geometrical center of the element */
+    transform: translate(-50%, -50%);
+    /* To position an element relative to it's
+  geometrical center the reference point must be moved to the geometrical center
+  of the elment through transtating it of -50% on both x any y axies */
+    text-align: center;
+    /* To align the botton */
+  }
+
+  &_heading {
+    color: white;
+    backface-visibility: hidden;
+    /* somethimes animations renders sligtly out of
+    position if backface-visibility attribute of the animated element is not set
+    to hidden */
+  }
+
+  &_heading {
+    &-large {
+      display: block;
+      font-size: 9rem;
+      font-weight: 400;
+      letter-spacing: 1.8rem;
+      animation-name: u-moveInLeft;
+      /* Animation-name assigns an animation to a css rule
+  and though it to the selected element */
+      animation-duration: 1s;
+      /* the animation duration is then assigned through the attribute
+  animation-duration */
+      animation-timing-function: ease-out;
+    }
+
+    &-small {
+      display: block;
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: 1.7rem;
+      animation-name: u-moveInRight;
+      animation-duration: 1s;
+      animation-timing-function: ease-out;
+      margin-bottom: 6rem;
+    }
+  }
+
+  &_btn {
+    animation-name: u-moveInBottom;
+    animation-duration: 1s;
+  }
+}
+
+.c-aboutSection {
+  &_section {
+    background-color: $color-grey-light-1;
+    padding: 25rem 0;
+    margin-top: calc(-100vh + (#{$introHeader_vertex-rightBottom} * 100vh)); //    margin-top:  calc( -100vh + (#{$introHeader_vertex-rightBottom} * #{$introHeader_header-height}));
+  }
+
+  &_heading {
+    margin-bottom: 8rem;
+  }
+}
+
+.c-aboutSection_headingLeft {
+  margin-bottom: 1.4rem;
+}
+
+.c-compositionPhoto1 {
+  &_box {
+    position: relative;
+  }
+
+  &_img {
+    &-1 {
+      top: -2rem;
+      left: 0;
+      //border: 3px solid yellow;
+    }
+
+    &-2 {
+      top: 5rem;
+      right: 0;
+      //border: 3px solid blue;
+    }
+
+    &-3 {
+      top: 15rem;
+      left: 20%;
+      //border: 3px solid red;
+    }
+  }
+}
+
+.c-featuresSection {
+  &_section {
+    padding: 15rem 0;
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url("../imgs/vendors/nat-4.jpg");
+    background-size: cover;
+    background-position: top 10% left 70%;
+    transform: skewY(-7deg);
+    margin-top: -9rem;
+
+    & > * {
+      /*This selector selects all the direct children of the section*/
+      transform: skewY(7deg);
+    }
+
+    & > .o-row {
+      padding: 0 2%;
+    }
+  }
+}
+
+.c-featuresCard {
+  &_heading {
+    margin-bottom: 1.4rem;
+  }
+}
+
+.c-toursSection {
+  &_section {
+    background-color: $color-grey-light-1;
+    padding: 25rem 0;
+    margin-top: -7.6rem;
+
+    & .o-row {
+      padding: 0 5%;
+    }
+  }
+
+  &_heading {
+    margin-bottom: 8rem;
+  }
+
+  &_btn {
+    text-align: center;
+    margin-top: $margin-rem-huge;
+  }
+}
+
+.c-toursCard {
+  /*CARD 1*/
+  &_box {
+    &-card1,
+    &-card2,
+    &-card3 {
+      height: $toursCard_box-1--height;
+      width: $toursCard_box-1--width;
+    }
+  }
+
+  &_face {
+    &-card1,
+    &-card2,
+    &-card3 {
+      height: $toursCard_box-1--height;
+      width: $toursCard_box-1--width;
+    }
+  }
+
+  &_front {
+    &-card1,
+    &-card2,
+    &-card3 {
+      background-color: $color-white;
+      color: $color-black-almost;
+    }
+  }
+
+  &_back {
+    &-card1 {
+      background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+    }
+
+    &-card2 {
+      background-image: linear-gradient(to right bottom, $color-primary, $color-primary-dark);
+    }
+
+    &-card3 {
+      background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+    }
+  }
+
+  &_img {
+    &-card1 {
+      background-blend-mode: screen;
+      background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark) , url("../imgs/vendors/nat-5.jpg");
+      background-position: top 0 left 50%;
+    }
+
+    &-card2 {
+      background-blend-mode: screen;
+      background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark) , url("../imgs/vendors/nat-6.jpg");
+      background-position: top 0 left 50%;
+    }
+
+    &-card3 {
+      background-blend-mode: screen;
+      background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark) , url("../imgs/vendors/nat-7.jpg");
+      background-position: top 0 left 50%;
+    }
+  }
+
+  &_heading {
+    &-card1 {
+      width: 25rem;
+    }
+
+    &-card2 {
+      width: 25rem;
+    }
+
+    &-card3 {
+      width: 25rem;
+    }
+  }
+
+  &_headingSpan {
+    &-card1 {
+      background-image: linear-gradient(to right bottom, rgba($color-secondary-light, .8), rgba($color-secondary-dark, .8));
+    }
+
+    &-card2 {
+      background-image: linear-gradient(to right bottom, rgba($color-primary-light, .8), rgba($color-primary-dark, .8));
+    }
+
+    &-card3 {
+      background-image: linear-gradient(to right bottom, rgba($color-tertiary-light, .8), rgba($color-tertiary-dark, .8));
+    }
+  }
+}
+/*------------------------------------*\
+  #STORIES-SECTION
+\*------------------------------------*/
+.c-storiesSection {
+  &_section {
+    padding: 15rem 0;
+    //background-color: $color-grey-light-1;
+    position: relative;
+  }
+
+  &_heading {
+    text-align: center;
+    margin-bottom: $margin-rem-big;
+  }
+
+  &_img {
+    &-story1 {
+      transform: translateX(-3.5rem) scale(1.2);
+    }
+
+    &-story2 {
+      transform: translateX(-3.5rem) scale(1.2);
+    }
+  }
+
+  &_btn {
+    text-align: center;
+    margin-top: $margin-rem-huge;
+  }
+
+  &_videoBgBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.3;
+    overflow: hidden;
+  }
+
+  &_videoBg {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    /*object-fit will allow to adjust an image or a video size just like with a
+    background image*/
+  }
+}
+/*------------------------------------*\
+  #BOOKING-SECTION
+\*------------------------------------*/
+.c-bookingSection {
+  &_section {
+    padding: 15rem 0;
+    background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+  }
+
+  &_bookingFormBox{
+    &-form1{
+      background-image: linear-gradient(105deg, 
+      rgba($color-white, .9) 0%, 
+      rgba($color-white, .9) 50%, 
+      transparent 50%), url(../imgs/vendors/nat-10.jpg);
+      height: 50rem;      
+    }
+  }
+}
+
+.c-bookingForm{
+  &_heading{
+      margin-bottom: $margin-rem-medium;
+    }
+}
+/*------ end of: booking section -----*/
+/*/
+/*/

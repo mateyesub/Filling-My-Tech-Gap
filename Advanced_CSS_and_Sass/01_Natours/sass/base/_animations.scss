@@ -1,0 +1,50 @@
+@keyframes u-moveInLeft {
+  /* each of the following is a keyframe of the animation, infinite keyframes 
+  can be defined. 0% indicates initia state and 100% indicated the final state */
+  0% {
+    opacity: 0;
+    transform: translateX(-11rem);
+  }
+
+  80% {
+    transform: translateX(2.4rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes u-moveInRight {
+  /* each of the following is a keyframe of the animation, infinite keyframes 
+  can be defined. 0% indicates initia state and 100% indicated the final state */
+  0% {
+    opacity: 0;
+    transform: translateX(11rem);
+  }
+
+  80% {
+    transform: translateX(-2.4rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes u-moveInBottom {
+  /* each of the following is a keyframe of the animation, infinite keyframes 
+  can be defined. 0% indicates initia state and 100% indicated the final state */
+  0% {
+    opacity: 0;
+    transform: translateY(33rem);
+  }
+
+  20% {
+    opacity: 0.1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

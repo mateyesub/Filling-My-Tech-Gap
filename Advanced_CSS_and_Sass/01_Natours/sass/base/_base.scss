@@ -1,0 +1,29 @@
+/* --------------------------------
+BASIC SETUP
+-------------------------------- */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /* visit: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
+}
+
+html {
+  font-size: 62.5%; /*16px * 62.5% = 10px*/
+  /*rem are not supported in IE6 */
+}
+
+body {
+  font-size: 2rem;
+  font-family: Lato, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: $color-gray-dark;
+  padding: 30px;
+  box-sizing: border-box;
+}
+/* --- END OF: BASIC SETUP --- */
+/* --------------------------------*/

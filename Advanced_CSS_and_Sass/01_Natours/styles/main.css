@@ -1,0 +1,656 @@
+/* Plance @import and @charset @font-face rules here 
+Any @import rules must precede all other rules and style rules in a 
+style sheet besides @charset, which must be the first thing in the 
+style sheet if it exists, otherwise the @import rule is invalid. 
+Visit: http://www.w3.org/TR/css3-cascade/#at-import 
+Project Name: Natours 
+For linting options see .jshintrc in the project root folder 
+stylesheet written accring to the NemeSpace-BEM (Block Element Modifier) principles
+in camelCase:
+namespace prefixes: o-: Object; c-: Component; u-: Utility; t-: Theme; s-: Scope;
+is-, has-:  Stete or Condition; _: Hack; js-: JavaScript Bind; qa-: QA or Test Bind
+Visit:
+https://css-tricks.com/bem-101/
+https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/
+https://css-tricks.com/abem-useful-adaptation-bem/ */
+@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
+@import url(../styles/gridSysFloat.css);
+@import url(../fonts/icon-font.css);
+/* --------------------------------
+BASIC SETUP
+-------------------------------- */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /* visit: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */ }
+
+html {
+  font-size: 62.5%;
+  /*16px * 62.5% = 10px*/
+  /*rem are not supported in IE6 */ }
+
+body {
+  font-size: 2rem;
+  font-family: Lato, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  padding: 30px;
+  box-sizing: border-box; }
+
+/* --- END OF: BASIC SETUP --- */
+/* --------------------------------*/
+/*/
+/*/
+/*/
+/*------------------------------------*\
+ *---- ABSTRACT ELEMENTS: OBJECTS ----*
+ *---------- reusable rules ----------*
+\*------------------------------------*/
+/*/
+
+
+
+/* --------------------------------
+Headings
+-------------------------------- */
+.o-heading1 {
+  margin: 0;
+  text-transform: uppercase; }
+
+.o-heading2 {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700; }
+  .o-heading2-gradient {
+    display: inline-block;
+    background-image: linear-gradient(to right, #7ed56f, #28b485);
+    -webkit-background-clip: text;
+    /*The webkit-background-clip clips the bachground around the text*/
+    color: transparent;
+    /*By aking the text transparent the cliped background will be visible
+    resulting in a gradient text*/
+    letter-spacing: 0.2rem;
+    transition: all 0.2s; }
+    .o-heading2-gradient:hover {
+      transform: skewY(2deg) skewX(15deg) scale(1.1);
+      text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.o-heading3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.o-para1 {
+  font-size: 1.6rem; }
+  .o-para1:not(:last-child) {
+    margin-bottom: 3rem; }
+
+.o-btn_round, .o-btn_round:link, .o-btn_round:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.6rem 3.6rem;
+  display: inline-block;
+  border-radius: 20rem;
+  transition: all 0.2s;
+  position: relative; }
+
+.o-btn_round::after {
+  content: "";
+  /*a content is mandatory even if an empty string, otherwise 
+      the ::after element will not be created*/
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  /*as dimentions of the ::after element it's possible to use
+      the relative % units since css will consider the ::after element as a child
+      element. It's similar to js expression width = this.width */
+  border-radius: 20rem;
+  position: absolute;
+  /*The absolute positioning allows to place the ::after element relative to 
+      the pseudo parent element*/
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /*the z-index defines the position in the z-axis. -1 positions the pseudo
+      child element behind the pseudo parent element*/
+  transition: all 0.4s; }
+
+.o-btn_round:hover::after {
+  transform: scaleX(1.5) scaleY(1.6);
+  opacity: 0; }
+
+.o-btn_round:hover {
+  transform: translateY(-0.4rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.o-btn_round:active {
+  transform: translateY(-0.2rem);
+  box-shadow: 0 0.6rem 1rem rgba(0, 0, 0, 0.2); }
+
+.o-btn_round-white {
+  background-color: #fff;
+  color: #777; }
+  .o-btn_round-white::after {
+    background-color: #fff; }
+
+.o-btn_round-green {
+  background-color: #55c57a;
+  color: #fff; }
+  .o-btn_round-green::after {
+    background-color: #55c57a; }
+
+.o-btn_text, .o-btn_text:link, .o-btn_text:visited {
+  font-size: 1.6rem;
+  color: #55c57a;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #55c57a;
+  padding: 0.3rem;
+  transition: all 0.2s; }
+
+.o-btn_text:hover {
+  border: none;
+  background-color: #55c57a;
+  color: #fff;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-0.2rem); }
+
+.o-compositionPhoto:hover .o-compositionPhoto_img:not(:hover) {
+  transform: scale(0.95);
+  transition: all 0.2s;
+  /*!!!!To select the images that are not hover!!!!!*/ }
+
+.o-compositionPhoto_img {
+  position: absolute;
+  width: 55%;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4); }
+  .o-compositionPhoto_img:hover {
+    outline: 1.5rem solid #55c57a;
+    outline-offset: 1.5rem;
+    transform: scale(1.05);
+    box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    transition: all 0.2s; }
+
+.o-featuresCard_box {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+  .o-featuresCard_box:hover {
+    transform: scale(1.05);
+    transition: all 0.2s; }
+
+.o-featuresCard_icon {
+  font-size: 6rem;
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  color: transparent; }
+
+.o-featuresCard_para {
+  font-size: 1.4rem; }
+
+.o-toursCard_box {
+  perspective: 150rem;
+  position: relative; }
+
+.o-toursCard_face {
+  transition: all .8s ease;
+  position: absolute;
+  /*position absolute remove an element from the page flow, therfore the
+    container element dimensions will collapse. This is a similar behaviour as
+    with the use of float. Unfortunatly there is no clearfix for this one and
+    the only way to solve this is to assign hard coded dimensions to both the
+    element positionend as absolute and the container*/
+  backface-visibility: hidden;
+  /*essential property to hide the backface of the element and allow the 
+    other element front face to be visible*/
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+  .o-toursCard_face-front {
+    /*empty rule*/ }
+  .o-toursCard_face-back {
+    transform: rotateY(-180deg);
+    /*the parameter given to a transform function indicated the final
+      value assigned to the element !it's not a delta value!*/
+    text-align: center;
+    padding: 11rem 0; }
+
+.o-toursCard_box:hover .o-toursCard_face-front {
+  transform: rotateY(180deg);
+  transform: translateZ(2); }
+
+.o-toursCard_box:hover .o-toursCard_face-back {
+  transform: rotateY(0deg); }
+
+.o-toursCard_img {
+  background-size: cover;
+  height: 22rem;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+
+.o-toursCard_heading {
+  font-size: 2.8rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: right;
+  color: #fff;
+  position: absolute;
+  top: 12rem;
+  right: 2rem; }
+  .o-toursCard_heading-span {
+    padding: 1rem 1.5rem;
+    box-decoration-break: clone; }
+
+.o-toursCard_details ul {
+  list-style: none;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5rem; }
+  .o-toursCard_details ul li {
+    text-align: center;
+    font-size: 1.5rem; }
+    .o-toursCard_details ul li:not(:last-child) {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #eee; }
+    .o-toursCard_details ul li:not(:first-child) {
+      padding-top: 1rem; }
+
+.o-toursCard_priceContainer {
+  display: inline-block; }
+
+.o-toursCard_priceBox {
+  color: #fff;
+  margin-bottom: 8rem; }
+
+.o-toursCard_priceText {
+  font-size: 1.4rem;
+  text-transform: uppercase; }
+
+.o-toursCard_priceValue {
+  font-size: 6rem;
+  font-weight: 100; }
+
+/*------------------------------------*\
+  #STORY-SECTION
+\*------------------------------------*/
+.o-story_box {
+  width: 75%;
+  margin: 0 auto;
+  background-color: rgba(247, 247, 247, 0.7);
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  padding: 4rem 6rem;
+  transform: skewX(-5deg); }
+  .o-story_box > * {
+    transform: skewX(5deg); }
+  .o-story_box::after {
+    content: "";
+    clear: both;
+    display: table;
+    visibility: hidden; }
+  .o-story_box:hover .o-story_caption {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%);
+    transition: .8s; }
+  .o-story_box:hover .o-story_img {
+    transform: translateX(-3.5rem) scale(1);
+    filter: blur(3px) brightness(80%);
+    transition: .8s; }
+
+.o-story_shape {
+  width: 15rem;
+  height: 15rem;
+  float: left;
+  shape-outside: circle(50% at 50% 50%);
+  /*shape outside together with float allows the text or other objects to precisly follow
+    the shape of the element instead of the box around it*/
+  clip-path: circle(50% at 50% 50%);
+  margin-right: 2rem;
+  position: relative; }
+
+.o-story_img {
+  height: 100%; }
+
+.o-story_text {
+  font-size: 1.6rem; }
+
+.o-story_caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(20%);
+  backface-visibility: hidden;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  text-align: center;
+  color: #fff;
+  opacity: 0; }
+
+/*------- end of: story section ------*/
+/*/
+/*/
+/*------------------------------------*\
+  #BOOKING-FORM
+\*------------------------------------*/
+.o-bookingForm_box {
+  background-size: cover;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  padding: 4rem; }
+
+.o-bookingForm_group {
+  width: 40%; }
+
+.o-bookingForm_group:not(:last-child) {
+  margin-bottom: 2rem; }
+
+.o-bookingForm_input {
+  font-size: 1.5rem;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  color: inherit;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 95%;
+  display: block; }
+  .o-bookingForm_input:not(:first-child) {
+    margin-top: 1.5rem; }
+  .o-bookingForm_input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+    border-bottom: 3px solid #55c57a; }
+  .o-bookingForm_input:focus:invalid {
+    /*this selector allows to appy stiles to a input field that is negatively
+      assessed by the html validator defined with the html input type definition*/
+    border-bottom: 3px solid #ff7730; }
+  .o-bookingForm_input:invalid {
+    /*this selector allows to appy stiles to a input field that is negatively
+      assessed by the html validator defined with the html input type definition*/
+    box-shadow: none;
+    border-bottom: 3px solid #ff7730; }
+  .o-bookingForm_input:valid {
+    border-bottom: 3px solid #55c57a; }
+
+.o-bookingForm_label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: .7rem; }
+
+.o-bookingForm_input:placeholder-shown + .o-bookingForm_label {
+  /*This selector allows to select the label only when the placeholder in the
+    input is hidden by the text input*/
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+  transition: .3s; }
+
+/*------ end of: booking form -----*/
+/*/
+/*/
+/*------------------------------------*\
+ *--------- END OF: OBJECTS ----------*
+\*------------------------------------*/
+/*UNIQUE: COMPONENTS
+-------------------------------- */
+.c-introHeader_header {
+  height: 92vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../imgs/vendors/hero.jpg");
+  background-size: cover;
+  background-position: top 20% left 40%;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  /* To shape a container as a polygon https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path */
+  /* clip-path crop the content of the container accorging to the edges of
+  the poygon */ }
+
+.c-heroLogo_box {
+  position: absolute;
+  /* Absolute positioning has as reference the first 
+  container of the item of positioning: relative. This implies that if the 
+  direct container (parent) is not positioned relative it will take as reference 
+  the parent of the parent of the parent an element containing it further above 
+  in the dependency line ;)*/
+  top: 4rem;
+  left: 4rem; }
+
+.c-heroLogo_img {
+  height: 7rem;
+  /* By defining one of the two dimensions of an image 
+  (width or height) other will be scaled accordingly to maintain the proportions */ }
+
+.c-mainHeading_box {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  /* positioning of an element is relative to the upper left corner
+  of the element this means that by centring it we are actually centering the 
+  upper left corner and not relative to the geometrical center of the element */
+  transform: translate(-50%, -50%);
+  /* To position an element relative to it's
+  geometrical center the reference point must be moved to the geometrical center
+  of the elment through transtating it of -50% on both x any y axies */
+  text-align: center;
+  /* To align the botton */ }
+
+.c-mainHeading_heading {
+  color: white;
+  backface-visibility: hidden;
+  /* somethimes animations renders sligtly out of
+    position if backface-visibility attribute of the animated element is not set
+    to hidden */ }
+
+.c-mainHeading_heading-large {
+  display: block;
+  font-size: 9rem;
+  font-weight: 400;
+  letter-spacing: 1.8rem;
+  animation-name: u-moveInLeft;
+  /* Animation-name assigns an animation to a css rule
+  and though it to the selected element */
+  animation-duration: 1s;
+  /* the animation duration is then assigned through the attribute
+  animation-duration */
+  animation-timing-function: ease-out; }
+
+.c-mainHeading_heading-small {
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 1.7rem;
+  animation-name: u-moveInRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  margin-bottom: 6rem; }
+
+.c-mainHeading_btn {
+  animation-name: u-moveInBottom;
+  animation-duration: 1s; }
+
+.c-aboutSection_section {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: calc(-100vh + (0.8 * 100vh)); }
+
+.c-aboutSection_heading {
+  margin-bottom: 8rem; }
+
+.c-aboutSection_headingLeft {
+  margin-bottom: 1.4rem; }
+
+.c-compositionPhoto1_box {
+  position: relative; }
+
+.c-compositionPhoto1_img-1 {
+  top: -2rem;
+  left: 0; }
+
+.c-compositionPhoto1_img-2 {
+  top: 5rem;
+  right: 0; }
+
+.c-compositionPhoto1_img-3 {
+  top: 15rem;
+  left: 20%; }
+
+.c-featuresSection_section {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../imgs/vendors/nat-4.jpg");
+  background-size: cover;
+  background-position: top 10% left 70%;
+  transform: skewY(-7deg);
+  margin-top: -9rem; }
+  .c-featuresSection_section > * {
+    /*This selector selects all the direct children of the section*/
+    transform: skewY(7deg); }
+  .c-featuresSection_section > .o-row {
+    padding: 0 2%; }
+
+.c-featuresCard_heading {
+  margin-bottom: 1.4rem; }
+
+.c-toursSection_section {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -7.6rem; }
+  .c-toursSection_section .o-row {
+    padding: 0 5%; }
+
+.c-toursSection_heading {
+  margin-bottom: 8rem; }
+
+.c-toursSection_btn {
+  text-align: center;
+  margin-top: 10rem; }
+
+.c-toursCard {
+  /*CARD 1*/ }
+  .c-toursCard_box-card1, .c-toursCard_box-card2, .c-toursCard_box-card3 {
+    height: 50rem;
+    width: 100%; }
+  .c-toursCard_face-card1, .c-toursCard_face-card2, .c-toursCard_face-card3 {
+    height: 50rem;
+    width: 100%; }
+  .c-toursCard_front-card1, .c-toursCard_front-card2, .c-toursCard_front-card3 {
+    background-color: #fff;
+    color: #000; }
+  .c-toursCard_back-card1 {
+    background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+  .c-toursCard_back-card2 {
+    background-image: linear-gradient(to right bottom, #55c57a, #28b485); }
+  .c-toursCard_back-card3 {
+    background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+  .c-toursCard_img-card1 {
+    background-blend-mode: screen;
+    background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url("../imgs/vendors/nat-5.jpg");
+    background-position: top 0 left 50%; }
+  .c-toursCard_img-card2 {
+    background-blend-mode: screen;
+    background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url("../imgs/vendors/nat-6.jpg");
+    background-position: top 0 left 50%; }
+  .c-toursCard_img-card3 {
+    background-blend-mode: screen;
+    background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url("../imgs/vendors/nat-7.jpg");
+    background-position: top 0 left 50%; }
+  .c-toursCard_heading-card1 {
+    width: 25rem; }
+  .c-toursCard_heading-card2 {
+    width: 25rem; }
+  .c-toursCard_heading-card3 {
+    width: 25rem; }
+  .c-toursCard_headingSpan-card1 {
+    background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.8), rgba(255, 119, 48, 0.8)); }
+  .c-toursCard_headingSpan-card2 {
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)); }
+  .c-toursCard_headingSpan-card3 {
+    background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.8), rgba(86, 67, 250, 0.8)); }
+
+/*------------------------------------*\
+  #STORIES-SECTION
+\*------------------------------------*/
+.c-storiesSection_section {
+  padding: 15rem 0;
+  position: relative; }
+
+.c-storiesSection_heading {
+  text-align: center;
+  margin-bottom: 8rem; }
+
+.c-storiesSection_img-story1 {
+  transform: translateX(-3.5rem) scale(1.2); }
+
+.c-storiesSection_img-story2 {
+  transform: translateX(-3.5rem) scale(1.2); }
+
+.c-storiesSection_btn {
+  text-align: center;
+  margin-top: 10rem; }
+
+.c-storiesSection_videoBgBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.3;
+  overflow: hidden; }
+
+.c-storiesSection_videoBg {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  /*object-fit will allow to adjust an image or a video size just like with a
+    background image*/ }
+
+/*------------------------------------*\
+  #BOOKING-SECTION
+\*------------------------------------*/
+.c-bookingSection_section {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+
+.c-bookingSection_bookingFormBox-form1 {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../imgs/vendors/nat-10.jpg);
+  height: 50rem; }
+
+.c-bookingForm_heading {
+  margin-bottom: 4rem; }
+
+/*------ end of: booking section -----*/
+/*/
+/*/
+.u-clearfix {
+  zoom: 1;
+  /* clearfix is a class to be assigned to a html element 
+  that uses the float property to clear it or reset to 
+  standard the float property of the elemnts after the it */ }
+
+.u-clearfix::after {
+  content: '';
+  clear: both;
+  /* visit: https://developer.mozilla.org/en-US/docs/Web/CSS/clear */
+  display: table;
+  height: 0;
+  visibility: hidden; }
+
+.u-centerText {
+  text-align: center; }
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 14px; } }
+
+@media only screen and (max-width: 420px) {
+  html {
+    font-size: 11px; }
+  body {
+    padding: 0; } }

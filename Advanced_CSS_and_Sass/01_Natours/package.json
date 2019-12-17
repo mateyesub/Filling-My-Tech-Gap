@@ -1,0 +1,17 @@
+{
+  "name": "01_natours",
+  "version": "1.0.0",
+  "description": "A beautiful web site",
+  "main": "scripts/main.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss styles/main.css -w"
+  },
+  "author": "Matteo Carotta",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.4.1"
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.0"
+  }
+}

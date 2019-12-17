@@ -1,0 +1,37 @@
+// COLORS:
+$color-primary-light: #7ed56f; //light-green
+$color-primary: #55c57a; //medium-green
+$color-primary-dark: #28b485; //dark-green
+
+$color-secondary-light: #ffb900;
+$color-secondary-dark: #ff7730;
+
+$color-tertiary-light: #2998ff;
+$color-tertiary-dark: #5643fa;
+
+$color-grey-light-1: #f7f7f7;
+$color-gray-light-2: #eee;
+$color-gray-dark: #777;
+$color-gray-dark-2: #999;
+$color-white: #fff;
+$color-black-almost: #000;
+
+$color-shadow-primary: rgba($color-black-almost, .15);
+
+//typography
+$default-font-size: 1.6rem;
+
+// COMPONENTS
+$introHeader_header-height: 92vh;
+$introHeader_vertex-rightBottom: 0.8;
+
+$toursCard_box-1--height: 50rem;
+$toursCard_box-1--width: 100%;
+
+//parameters
+$margin-rem-small: 1.5rem;
+$margin-rem-medium: 4rem;
+$margin-rem-big: 8rem;
+$margin-rem-huge: 10rem;
+
+$borderRadius-px-default: 3px; 
