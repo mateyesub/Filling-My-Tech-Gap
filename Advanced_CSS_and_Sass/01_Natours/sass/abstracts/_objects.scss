@@ -6,9 +6,6 @@
  *---------- reusable rules ----------*
 \*------------------------------------*/
 /*/
-
-
-
 /* --------------------------------
 Headings
 -------------------------------- */
@@ -54,68 +51,88 @@ Headings
   }
 }
 
-.o-btn_round {
-  &,
-  &:link,
-  &:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: $default-font-size 3.6rem;
-    display: inline-block;
-    border-radius: 20rem;
-    transition: all 0.2s;
-    position: relative;
+.o-btn {
+  &-reset {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
   }
 
-  &::after {
-    content: "";
-    /*a content is mandatory even if an empty string, otherwise 
+  &-md {
+    padding: calc(#{$default-font-size} - 0.8rem) 2.6rem;
+  }
+
+  &-lg {
+    padding: $default-font-size 3.6rem;
+  }
+
+  &-round {
+    &,
+    &:link,
+    &:visited {
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 20rem;
+      transition: all 0.2s;
+      position: relative;
+    }
+
+    &::after {
+      content: "";
+      /*a content is mandatory even if an empty string, otherwise 
       the ::after element will not be created*/
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    /*as dimentions of the ::after element it's possible to use
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      /*as dimentions of the ::after element it's possible to use
       the relative % units since css will consider the ::after element as a child
       element. It's similar to js expression width = this.width */
-    border-radius: 20rem;
-    position: absolute;
-    /*The absolute positioning allows to place the ::after element relative to 
+      border-radius: 20rem;
+      position: absolute;
+      /*The absolute positioning allows to place the ::after element relative to 
       the pseudo parent element*/
-    top: 0;
-    left: 0;
-    z-index: -1;
-    /*the z-index defines the position in the z-axis. -1 positions the pseudo
+      top: 0;
+      left: 0;
+      z-index: -1;
+      /*the z-index defines the position in the z-axis. -1 positions the pseudo
       child element behind the pseudo parent element*/
-    transition: all 0.4s;
-  }
+      transition: all 0.4s;
+    }
 
+    &:hover::after {
+      transform: scaleX(1.5) scaleY(1.6);
+      opacity: 0;
+    }
 
-  &:hover::after {
-    transform: scaleX(1.5) scaleY(1.6);
-    opacity: 0;
-  }
+    &:hover {
+      transform: translateY(-.4rem);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    }
 
-  &:hover {
-    transform: translateY(-.4rem);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-  }
-
-  &:active {
-    transform: translateY(-.2rem);
-    box-shadow: 0 0.6rem 1rem rgba(0, 0, 0, 0.2);
+    &:active {
+      transform: translateY(-.2rem);
+      box-shadow: 0 0.6rem 1rem rgba(0, 0, 0, 0.2);
+    }
   }
 
   &-white {
     background-color: $color-white;
     color: #777;
+
     &::after {
       background-color: $color-white;
     }
   }
-  
+
   &-green {
     background-color: $color-primary;
     color: $color-white;
+
     &::after {
       background-color: $color-primary;
     }
@@ -189,7 +206,6 @@ Headings
     background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
     -webkit-background-clip: text;
     color: transparent;
-    
   }
 
   &_para {
@@ -202,8 +218,9 @@ Headings
     perspective: 150rem;
     position: relative;
   }
-  &_face{
-    transition: all .8s ease;
+
+  &_face {
+    transition: all 0.8s ease;
     position: absolute;
     /*position absolute remove an element from the page flow, therfore the
     container element dimensions will collapse. This is a similar behaviour as
@@ -216,37 +233,36 @@ Headings
     border-radius: $borderRadius-px-default;
     overflow: hidden;
     box-shadow: 0 1.5rem 4rem $color-shadow-primary;
-    
-    &-front{
+
+    &-front {
       /*empty rule*/
-    } 
-    
-    &-back{
+    }
+
+    &-back {
       transform: rotateY(-180deg);
       /*the parameter given to a transform function indicated the final
       value assigned to the element !it's not a delta value!*/
       text-align: center;
       padding: 11rem 0;
-    }   
+    }
   }
-  
-  
-  &_box:hover  &_face-front{
+
+  &_box:hover &_face-front {
     transform: rotateY(180deg);
     transform: translateZ(2);
   }
-  
-  &_box:hover  &_face-back{
+
+  &_box:hover &_face-back {
     transform: rotateY(0deg);
   }
-   
-  &_img{
+
+  &_img {
     background-size: cover;
     height: 22rem;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   }
-  
-  &_heading{
+
+  &_heading {
     font-size: 2.8rem;
     font-weight: 300;
     text-transform: uppercase;
@@ -255,59 +271,59 @@ Headings
     position: absolute;
     top: 12rem;
     right: 2rem;
-    
-    &-span{
-      padding: 1rem 1.5rem;  
-      box-decoration-break: clone;   
+
+    &-span {
+      padding: 1rem 1.5rem;
+      box-decoration-break: clone;
     }
   }
-  
-  &_details{
-    
-    ul{
+
+  &_details {
+    ul {
       list-style: none;
       width: 80%;
-      margin: 0 auto;
-      margin-top: 5rem;
-      
-      li{
+      margin: 5rem auto 0;
+
+      li {
         text-align: center;
         font-size: 1.5rem;
-        
-        &:not(:last-child){
+
+        &:not(:last-child) {
           padding-bottom: 1rem;
-          border-bottom: 1px solid  $color-gray-light-2;
+          border-bottom: 1px solid $color-gray-light-2;
         }
-        &:not(:first-child){
+
+        &:not(:first-child) {
           padding-top: 1rem;
         }
       }
     }
   }
-  &_priceContainer{
+
+  &_priceContainer {
     display: inline-block;
   }
-  &_priceBox{
+
+  &_priceBox {
     color: $color-white;
     margin-bottom: 8rem;
   }
-  &_priceText{
+
+  &_priceText {
     font-size: 1.4rem;
     text-transform: uppercase;
   }
-  &_priceValue{
+
+  &_priceValue {
     font-size: 6rem;
     font-weight: 100;
   }
 }
-
 /*------------------------------------*\
   #STORY-SECTION
 \*------------------------------------*/
-
-
-.o-story{
-  &_box{
+.o-story {
+  &_box {
     width: 75%;
     margin: 0 auto;
     background-color: rgba($color-grey-light-1, .7);
@@ -315,31 +331,32 @@ Headings
     border-radius: $borderRadius-px-default;
     padding: 4rem 6rem;
     transform: skewX(-5deg);
-    
-    & > *{
+
+    & > * {
       transform: skewX(5deg);
     }
-    
-    &::after{
-      content:"";
+
+    &::after {
+      content: "";
       clear: both;
       display: table;
       visibility: hidden;
     }
-    
-    &:hover .o-story_caption{
+
+    &:hover .o-story_caption {
       opacity: 1;
       transform: translateX(-50%) translateY(-50%);
-      transition: .8s;
+      transition: 0.8s;
     }
-    
-    &:hover .o-story_img{
+
+    &:hover .o-story_img {
       transform: translateX(-3.5rem) scale(1);
       filter: blur(3px) brightness(80%);
-      transition: .8s;
+      transition: 0.8s;
     }
   }
-  &_shape{
+
+  &_shape {
     width: 15rem;
     height: 15rem;
     float: left;
@@ -350,18 +367,17 @@ Headings
     margin-right: 2rem;
     position: relative;
   }
-  
-  
-  &_img{
+
+  &_img {
     height: 100%;
   }
-  
-  &_text{
+
+  &_text {
     font-size: $default-font-size;
     //min-height: 15rem;
   }
-  
-  &_caption{
+
+  &_caption {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -380,72 +396,115 @@ Headings
 /*------------------------------------*\
   #BOOKING-FORM
 \*------------------------------------*/
+.o-form {
+  &_btn {
+    &-radio {
+      height: 3rem;
+      width: 3rem;
+      border: 5px solid;
+      border-radius: 50%;
+      display: inline-block;
 
-.o-bookingForm{
-  &_box{
+      &::after {
+        content: "";
+        display: block;
+        height: 1.6rem;
+        width: 1.6rem;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $color-primary;
+        opacity: 0;
+      }
+    }
+
+    &-green {
+      border-color: $color-primary;
+    }
+  }
+
+  &_label {
+    position: relative;
+    padding-left: 1rem;
+  }
+
+  &_input {
+    visibility: hidden;
+    margin-left: 0.5rem;
+  }
+
+  &_input:checked ~ &_label &_btn-radio::after {
+    opacity: 1;
+  }
+}
+
+.o-bookingForm {
+  &_box {
     background-size: cover;
     border-radius: $borderRadius-px-default;
     box-shadow: 0 1.5rem 4rem rgba($color-black-almost, .15);
-    padding: $margin-rem-medium;   
+    padding: $margin-rem-medium;
   }
-  &_group{
-    width: 40%;
-  }
-  
-  &_group:not(:last-child){
-    margin-bottom: 2rem;
-  }
-  &_input{
+
+  &_input {
     font-size: 1.5rem;
     padding: 1.5rem 2rem;
     border-radius: 2px;
-    color:inherit;
+    color: inherit;
     background-color: rgba($color-white, .8);
     border: none;
     border-bottom: 3px solid transparent;
     width: 95%;
     display: block;
-    &:not(:first-child){
+
+    &:not(:first-child) {
       margin-top: $margin-rem-small;
     }
-    &:focus{
+
+    &:focus {
       outline: none;
       box-shadow: 0 1rem 2rem rgba($color-black-almost, .5);
       border-bottom: 3px solid $color-primary;
     }
-    &:focus:invalid{
+
+    &:focus:invalid {
       /*this selector allows to appy stiles to a input field that is negatively
       assessed by the html validator defined with the html input type definition*/
       border-bottom: 3px solid $color-secondary-dark;
+      transition: 0.3s;
     }
-    &:invalid{
+
+    &:invalid {
       /*this selector allows to appy stiles to a input field that is negatively
       assessed by the html validator defined with the html input type definition*/
       box-shadow: none;
       border-bottom: 3px solid $color-secondary-dark;
     }
-    &:valid{
+
+    &:valid {
       border-bottom: 3px solid $color-primary;
+      transition: 0.3s;
     }
   }
-  
-  &_label{
+
+  &_label {
     font-size: 1.2rem;
     font-weight: 700;
     margin-left: 2rem;
-    margin-top: .7rem;
+    margin-top: 0.7rem;
   }
-  
-  &_input:placeholder-shown + &_label{
+
+  &_input:placeholder-shown + &_label {
     /*This selector allows to select the label only when the placeholder in the
     input is hidden by the text input*/
     opacity: 0;
     visibility: hidden;
     transform: translateY(-4rem);
-    transition: .3s;
+    transition: 0.3s;
   }
 }
-
 /*------ end of: booking form -----*/
 /*/
 /*/

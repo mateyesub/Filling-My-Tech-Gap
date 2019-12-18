@@ -51,9 +51,6 @@ body {
  *---------- reusable rules ----------*
 \*------------------------------------*/
 /*/
-
-
-
 /* --------------------------------
 Headings
 -------------------------------- */
@@ -89,16 +86,30 @@ Headings
   .o-para1:not(:last-child) {
     margin-bottom: 3rem; }
 
-.o-btn_round, .o-btn_round:link, .o-btn_round:visited {
+.o-btn-reset {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit; }
+
+.o-btn-md {
+  padding: calc(1.6rem - 0.8rem) 2.6rem; }
+
+.o-btn-lg {
+  padding: 1.6rem 3.6rem; }
+
+.o-btn-round, .o-btn-round:link, .o-btn-round:visited {
   text-transform: uppercase;
   text-decoration: none;
-  padding: 1.6rem 3.6rem;
   display: inline-block;
   border-radius: 20rem;
   transition: all 0.2s;
   position: relative; }
 
-.o-btn_round::after {
+.o-btn-round::after {
   content: "";
   /*a content is mandatory even if an empty string, otherwise 
       the ::after element will not be created*/
@@ -119,28 +130,28 @@ Headings
       child element behind the pseudo parent element*/
   transition: all 0.4s; }
 
-.o-btn_round:hover::after {
+.o-btn-round:hover::after {
   transform: scaleX(1.5) scaleY(1.6);
   opacity: 0; }
 
-.o-btn_round:hover {
+.o-btn-round:hover {
   transform: translateY(-0.4rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
 
-.o-btn_round:active {
+.o-btn-round:active {
   transform: translateY(-0.2rem);
   box-shadow: 0 0.6rem 1rem rgba(0, 0, 0, 0.2); }
 
-.o-btn_round-white {
+.o-btn-white {
   background-color: #fff;
   color: #777; }
-  .o-btn_round-white::after {
+  .o-btn-white::after {
     background-color: #fff; }
 
-.o-btn_round-green {
+.o-btn-green {
   background-color: #55c57a;
   color: #fff; }
-  .o-btn_round-green::after {
+  .o-btn-green::after {
     background-color: #55c57a; }
 
 .o-btn_text, .o-btn_text:link, .o-btn_text:visited {
@@ -201,7 +212,7 @@ Headings
   position: relative; }
 
 .o-toursCard_face {
-  transition: all .8s ease;
+  transition: all 0.8s ease;
   position: absolute;
   /*position absolute remove an element from the page flow, therfore the
     container element dimensions will collapse. This is a similar behaviour as
@@ -251,8 +262,7 @@ Headings
 .o-toursCard_details ul {
   list-style: none;
   width: 80%;
-  margin: 0 auto;
-  margin-top: 5rem; }
+  margin: 5rem auto 0; }
   .o-toursCard_details ul li {
     text-align: center;
     font-size: 1.5rem; }
@@ -298,11 +308,11 @@ Headings
   .o-story_box:hover .o-story_caption {
     opacity: 1;
     transform: translateX(-50%) translateY(-50%);
-    transition: .8s; }
+    transition: 0.8s; }
   .o-story_box:hover .o-story_img {
     transform: translateX(-3.5rem) scale(1);
     filter: blur(3px) brightness(80%);
-    transition: .8s; }
+    transition: 0.8s; }
 
 .o-story_shape {
   width: 15rem;
@@ -339,17 +349,44 @@ Headings
 /*------------------------------------*\
   #BOOKING-FORM
 \*------------------------------------*/
+.o-form_btn-radio {
+  height: 3rem;
+  width: 3rem;
+  border: 5px solid;
+  border-radius: 50%;
+  display: inline-block; }
+  .o-form_btn-radio::after {
+    content: "";
+    display: block;
+    height: 1.6rem;
+    width: 1.6rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #55c57a;
+    opacity: 0; }
+
+.o-form_btn-green {
+  border-color: #55c57a; }
+
+.o-form_label {
+  position: relative;
+  padding-left: 1rem; }
+
+.o-form_input {
+  visibility: hidden;
+  margin-left: 0.5rem; }
+
+.o-form_input:checked ~ .o-form_label .o-form_btn-radio::after {
+  opacity: 1; }
+
 .o-bookingForm_box {
   background-size: cover;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   padding: 4rem; }
-
-.o-bookingForm_group {
-  width: 40%; }
-
-.o-bookingForm_group:not(:last-child) {
-  margin-bottom: 2rem; }
 
 .o-bookingForm_input {
   font-size: 1.5rem;
@@ -370,20 +407,22 @@ Headings
   .o-bookingForm_input:focus:invalid {
     /*this selector allows to appy stiles to a input field that is negatively
       assessed by the html validator defined with the html input type definition*/
-    border-bottom: 3px solid #ff7730; }
+    border-bottom: 3px solid #ff7730;
+    transition: 0.3s; }
   .o-bookingForm_input:invalid {
     /*this selector allows to appy stiles to a input field that is negatively
       assessed by the html validator defined with the html input type definition*/
     box-shadow: none;
     border-bottom: 3px solid #ff7730; }
   .o-bookingForm_input:valid {
-    border-bottom: 3px solid #55c57a; }
+    border-bottom: 3px solid #55c57a;
+    transition: 0.3s; }
 
 .o-bookingForm_label {
   font-size: 1.2rem;
   font-weight: 700;
   margin-left: 2rem;
-  margin-top: .7rem; }
+  margin-top: 0.7rem; }
 
 .o-bookingForm_input:placeholder-shown + .o-bookingForm_label {
   /*This selector allows to select the label only when the placeholder in the
@@ -391,7 +430,7 @@ Headings
   opacity: 0;
   visibility: hidden;
   transform: translateY(-4rem);
-  transition: .3s; }
+  transition: 0.3s; }
 
 /*------ end of: booking form -----*/
 /*/
@@ -619,15 +658,45 @@ Headings
   background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
 
 .c-bookingSection_bookingFormBox-form1 {
-  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../imgs/vendors/nat-10.jpg);
-  height: 50rem; }
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url("../imgs/vendors/nat-10.jpg"); }
 
 .c-bookingForm_heading {
   margin-bottom: 4rem; }
 
+.c-bookingForm_group {
+  width: 40%; }
+
+.c-bookingForm_group:not(:last-child) {
+  margin-bottom: 2rem; }
+
+.c-bookingForm_groupRadio {
+  width: 49%;
+  display: inline-block; }
+
+.c-bookingForm_label-radio {
+  font-size: 1.6rem;
+  cursor: pointer; }
+
+.c-bookingForm_btnRadio {
+  position: absolute;
+  top: -1rem;
+  left: -2.8rem; }
+
+.c-bookingForm_submitButton {
+  margin-top: 1.5rem; }
+
 /*------ end of: booking section -----*/
 /*/
 /*/
+.u-btn-reset {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit; }
+
 .u-clearfix {
   zoom: 1;
   /* clearfix is a class to be assigned to a html element 
