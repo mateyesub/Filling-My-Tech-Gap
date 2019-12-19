@@ -436,6 +436,55 @@ Headings
 /*/
 /*/
 /*------------------------------------*\
+  #FOOTER
+\*------------------------------------*/
+.o-footer {
+  background-color: #333;
+  color: #fff;
+  padding: 8rem 10rem;
+  font-size: 1.4rem; }
+
+.o-footer_logoBox {
+  margin-bottom: 4rem; }
+
+.o-footer_logoImg {
+  display: block;
+  margin: 0 auto;
+  width: 15rem; }
+
+.o-footer_nav {
+  border-top: 1px solid #777;
+  padding-top: 1.5rem;
+  display: inline-block; }
+
+.o-footer_list {
+  list-style: none; }
+
+.o-footer_item {
+  display: inline-block; }
+  .o-footer_item:not(:last-child) {
+    margin-right: 1.5rem; }
+
+.o-footer_link, .o-footer_link:link, .o-footer_link:visited {
+  color: #f7f7f7;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block; }
+
+.o-footer_link:hover, .o-footer_link:active {
+  color: #55c57a;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+  transform: rotate(5deg) scale(1.05);
+  transition: .2s; }
+
+.o-footer_copyright {
+  border-top: 1px solid #777;
+  padding-top: 1.5rem; }
+
+/*---------- end of: footer ----------*/
+/*/
+/*/
+/*------------------------------------*\
  *--------- END OF: OBJECTS ----------*
 \*------------------------------------*/
 /*UNIQUE: COMPONENTS
