@@ -6,51 +6,10 @@
  *---------- reusable rules ----------*
 \*------------------------------------*/
 /*/
-/* --------------------------------
-Headings
--------------------------------- */
-.o-heading1 {
-  margin: 0;
-  text-transform: uppercase;
-}
-
-.o-heading2 {
-  font-size: 3.5rem;
-  text-transform: uppercase;
-  font-weight: 700;
-
-  &-gradient {
-    display: inline-block;
-    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
-    -webkit-background-clip: text;
-    /*The webkit-background-clip clips the bachground around the text*/
-    color: transparent;
-    /*By aking the text transparent the cliped background will be visible
-    resulting in a gradient text*/
-    letter-spacing: 0.2rem;
-    transition: all 0.2s;
-
-    &:hover {
-      transform: skewY(2deg) skewX(15deg) scale(1.1);
-      text-shadow: 0.5rem 1rem 2rem rgba($color-black-almost, .2);
-    }
-  }
-}
-
-.o-heading3 {
-  font-size: $default-font-size;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.o-para1 {
-  font-size: $default-font-size;
-
-  &:not(:last-child) {
-    margin-bottom: 3rem;
-  }
-}
-
+/*/
+/*------------------------------------*\
+  #BTN
+\*------------------------------------*/
 .o-btn {
   &-reset {
     background: none;
@@ -162,7 +121,169 @@ Headings
 
   &:active {}
 }
+/*------------ end of: btn -----------*/
+/*/
+/*/
+/*------------------------------------*\
+  #NAVIGATION
+\*------------------------------------*/
+.o-navigation {
+  & {}
 
+  &_toggle {
+    display: none;
+    
+    &:checked ~ .o-navigation_background{
+      transform: scale(60);
+      
+    }
+    
+    &:checked ~ .o-navigation_nav{
+      visibility: visible;
+      opacity: 1;
+    }
+    
+    &:checked + .o-navigation_btn .o-navigation_icon{
+      &{
+        background-color: transparent;
+      }
+      &:before{
+        transform: rotate(45deg);
+        top: 0;
+      }
+      &:after{
+        transform: rotate(-45deg);
+        top: 0;
+        
+      }
+    }
+  }
+  
+  &_btn {
+    height: 6.2rem;
+    width: 6.2rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6.4rem;
+    right: 6.4rem;
+    background-color: $color-white;
+    z-index: calc(#{$o-navigation_nav-zIndex} + 1);
+    box-shadow: 0 1rem 3rem rgba(black, .1);
+    text-align: center;
+    cursor: pointer;
+    
+    &:hover .o-navigation_icon{
+      &:before{
+        transform: translateY(-.2rem);
+        
+      }
+      &:after{
+        transform: translateY(.2rem);
+      }
+    }
+  }
+  
+  &_background {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    background-image: radial-gradient($color-primary-light, $color-primary-dark);
+    z-index: calc(#{$o-navigation_nav-zIndex} - 1);
+    transform: scale(1);
+    transition: transform .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  &_nav {
+    
+    height: 100vh;
+    width: 100vw;
+    position:fixed;
+    top: 0;
+    right:0;
+    z-index: $o-navigation_nav-zIndex;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s;
+    transition: opacity .5s;
+
+  }
+  
+  &_icon{
+    &{
+      position: relative;
+      margin-top: 3rem;
+      
+    }
+    &,
+    &::before,
+    &::after{
+      display: inline-block;
+      width: 2.5rem;
+      height: 2px;
+      background-color: $color-gray-dark-3;
+      z-index: calc(#{$o-navigation_nav-zIndex} + 2);
+      transition: transform .2s ease-out;
+    }
+    
+    &::before,
+    &::after{
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+    
+    &::before{
+      top: -.8rem;
+      
+    }
+    &::after{
+      top: .8rem;
+    }
+  }
+
+  &_list {
+    list-style: none;
+    @include absoluteCenter-VH;
+    text-align: center;
+  }
+
+  &_item {
+  }
+
+  &_link {
+    &,
+    &:link,
+    &:visited {
+      display: inline-block;
+      font-size: 3rem;
+      font-weight: 300;
+      padding: 1rem 2rem;
+      color: $color-white;
+      text-transform: uppercase;
+      text-decoration: none;
+      background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+      background-size: 280%;
+      transition: .3s ease-out;
+    }
+
+    &:active,
+    &:hover {
+      background-position: 100%;
+      color: $color-primary;
+    }
+  }
+  
+  
+}
+/*-------- end of: navigation --------*/
+/*/
+/*/
+/*------------------------------------*\
+  #?
+\*------------------------------------*/
 .o-compositionPhoto {
   &:hover &_img:not(:hover) {
     transform: scale(0.95);
@@ -318,6 +439,7 @@ Headings
     font-size: 6rem;
     font-weight: 100;
   }
+  
 }
 /*------------------------------------*\
   #STORY-SECTION
@@ -511,38 +633,43 @@ Headings
 /*------------------------------------*\
   #FOOTER
 \*------------------------------------*/
-.o-footer{
-  &{
+.o-footer {
+  & {
     background-color: $color-gray-dark-3;
     color: $color-white;
     padding: $margin-rem-big $margin-rem-huge;
     font-size: 1.4rem;
   }
-  &_logoBox{
+
+  &_logoBox {
     margin-bottom: $margin-rem-medium;
   }
-  &_logoImg{
+
+  &_logoImg {
     display: block;
     margin: 0 auto;
     width: 15rem;
   }
-  &_nav{
+
+  &_nav {
     border-top: 1px solid $color-gray-dark;
     padding-top: $margin-rem-small;
     display: inline-block;
   }
-  
-  &_list{
-    list-style: none;  
+
+  &_list {
+    list-style: none;
   }
-  &_item{
+
+  &_item {
     display: inline-block;
-    
-    &:not(:last-child){
+
+    &:not(:last-child) {
       margin-right: 1.5rem;
     }
   }
-  &_link{
+
+  &_link {
     &,
     &:link,
     &:visited {
@@ -551,22 +678,123 @@ Headings
       text-transform: uppercase;
       display: inline-block;
     }
-    
-    &:hover,
-    &:active{
+
+    &:active,
+    &:hover {
       color: $color-primary;
       box-shadow: 0 1rem 2rem rgba($color-black-almost, .4);
       transform: rotate(5deg) scale(1.05);
-      transition: .2s;
+      transition: 0.2s;
     }
   }
-  
-  &_copyright{
+
+  &_copyright {
     border-top: 1px solid $color-gray-dark;
     padding-top: $margin-rem-small;
   }
 }
 /*---------- end of: footer ----------*/
+/*/
+/*/
+/*------------------------------------*\
+  #POPUP
+\*------------------------------------*/
+  .o-popup{
+    & {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba($color-gray-dark-3, 0.9);
+      z-index: $o-popup-zIndex;
+      opacity: 0;
+      visibility: hidden;
+      &:target{
+        /*
+        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        This selector allows to transform an element to a target. An anchor e.g.
+        can be used to interact with it.
+        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        */
+        opacity: 1;
+        visibility: visible;
+        
+      }
+      &:target &_content{
+        opacity: 1;
+        transform: translate(-50% , -50%) scale(1);
+      }
+    }
+    &_close{
+      &:link,
+      &:visited{
+        color: $color-gray-dark;
+        position: absolute;
+        top: 2.5rem;
+        right: 2.5rem;
+        text-decoration: none;
+        display: inline-block;
+        transition: all .2s;
+      }
+      
+      &:hover{
+        color: $color-primary;
+      }
+    }
+    
+    &_content{
+      z-index: calc(#{$o-popup-zIndex} + 1);
+      background-color: white;
+      width: 80%;
+      @include absoluteCenter-VH;
+      border-radius: $borderRadius-px-default;
+      overflow: hidden;
+      opacity: 0;
+      transform: translate(-50% , -50%) scale(.5);
+      transition: all .5s;
+    }
+    
+    &_heading2{
+        margin-bottom: $margin-rem-small;
+    }
+    &_heading3{
+      margin-bottom: $margin-rem-small;
+    }
+    
+    &_leftCol{
+      width: calc(100% / 3);
+      display: table-cell;
+      /*By using table cell we can create two columns with the same height 
+      regardless of the individual content*/
+    }
+    
+    &_rightCol{
+      width: calc(100% / 2);
+      display: table-cell;
+      vertical-align: middle;
+      /*By using table cell we can create two columns with the same height
+      regardless of the individual content*/
+      padding: 3rem 5rem;
+    }
+    
+    &_img{
+      display: block;
+      width: 100%;
+    }
+    
+    &_text{
+      font-size: 1.4rem;
+      margin-bottom: 4rem;
+      
+      column-count: 2;
+      column-gap: 3rem;
+      column-rule: 1px solid $color-gray-light-2;
+      hyphens: auto;
+    }
+    
+  }
+/*---------- end of: popup -----------*/
 /*/
 /*/
 /*------------------------------------*\

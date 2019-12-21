@@ -47,13 +47,13 @@ body {
 /*/
 /*/
 /*------------------------------------*\
- *---- ABSTRACT ELEMENTS: OBJECTS ----*
+ *-- ABSTRACT ELEMENTS: TYPOGRAPHY ---*
  *---------- reusable rules ----------*
 \*------------------------------------*/
 /*/
-/* --------------------------------
-Headings
--------------------------------- */
+/*------------------------------------*\
+    #HEADINGS
+\*------------------------------------*/
 .o-heading1 {
   margin: 0;
   text-transform: uppercase; }
@@ -81,11 +81,35 @@ Headings
   font-weight: 700;
   text-transform: uppercase; }
 
+/*-------- end of: headings --------*/
+/*/
+/*/
+/*------------------------------------*\
+    #PARAGRAPHS
+\*------------------------------------*/
 .o-para1 {
   font-size: 1.6rem; }
   .o-para1:not(:last-child) {
     margin-bottom: 3rem; }
 
+/*-------- end of: paragraphs --------*/
+/*/
+/*/
+/*------------------------------------*\
+ *------- END OF: TYPOGRAPHY ---------*
+\*------------------------------------*/
+/*/
+/*/
+/*/
+/*------------------------------------*\
+ *---- ABSTRACT ELEMENTS: OBJECTS ----*
+ *---------- reusable rules ----------*
+\*------------------------------------*/
+/*/
+/*/
+/*------------------------------------*\
+  #BTN
+\*------------------------------------*/
 .o-btn-reset {
   background: none;
   color: inherit;
@@ -170,6 +194,122 @@ Headings
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
   transform: translateY(-0.2rem); }
 
+/*------------ end of: btn -----------*/
+/*/
+/*/
+/*------------------------------------*\
+  #NAVIGATION
+\*------------------------------------*/
+.o-navigation_toggle {
+  display: none; }
+  .o-navigation_toggle:checked ~ .o-navigation_background {
+    transform: scale(60); }
+  .o-navigation_toggle:checked ~ .o-navigation_nav {
+    visibility: visible;
+    opacity: 1; }
+  .o-navigation_toggle:checked + .o-navigation_btn .o-navigation_icon {
+    background-color: transparent; }
+  .o-navigation_toggle:checked + .o-navigation_btn .o-navigation_icon:before {
+    transform: rotate(45deg);
+    top: 0; }
+  .o-navigation_toggle:checked + .o-navigation_btn .o-navigation_icon:after {
+    transform: rotate(-45deg);
+    top: 0; }
+
+.o-navigation_btn {
+  height: 6.2rem;
+  width: 6.2rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 6.4rem;
+  right: 6.4rem;
+  background-color: #fff;
+  z-index: calc(100 + 1);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer; }
+  .o-navigation_btn:hover .o-navigation_icon:before {
+    transform: translateY(-0.2rem); }
+  .o-navigation_btn:hover .o-navigation_icon:after {
+    transform: translateY(0.2rem); }
+
+.o-navigation_background {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 6.5rem;
+  right: 6.5rem;
+  background-image: radial-gradient(#7ed56f, #28b485);
+  z-index: calc(100 - 1);
+  transform: scale(1);
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); }
+
+.o-navigation_nav {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s;
+  transition: opacity .5s; }
+
+.o-navigation_icon {
+  position: relative;
+  margin-top: 3rem; }
+
+.o-navigation_icon, .o-navigation_icon::before, .o-navigation_icon::after {
+  display: inline-block;
+  width: 2.5rem;
+  height: 2px;
+  background-color: #333;
+  z-index: calc(100 + 2);
+  transition: transform .2s ease-out; }
+
+.o-navigation_icon::before, .o-navigation_icon::after {
+  content: "";
+  position: absolute;
+  left: 0; }
+
+.o-navigation_icon::before {
+  top: -.8rem; }
+
+.o-navigation_icon::after {
+  top: .8rem; }
+
+.o-navigation_list {
+  list-style: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; }
+
+.o-navigation_link, .o-navigation_link:link, .o-navigation_link:visited {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+  background-size: 280%;
+  transition: .3s ease-out; }
+
+.o-navigation_link:active, .o-navigation_link:hover {
+  background-position: 100%;
+  color: #55c57a; }
+
+/*-------- end of: navigation --------*/
+/*/
+/*/
+/*------------------------------------*\
+  #?
+\*------------------------------------*/
 .o-compositionPhoto:hover .o-compositionPhoto_img:not(:hover) {
   transform: scale(0.95);
   transition: all 0.2s;
@@ -471,17 +611,104 @@ Headings
   text-transform: uppercase;
   display: inline-block; }
 
-.o-footer_link:hover, .o-footer_link:active {
+.o-footer_link:active, .o-footer_link:hover {
   color: #55c57a;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
   transform: rotate(5deg) scale(1.05);
-  transition: .2s; }
+  transition: 0.2s; }
 
 .o-footer_copyright {
   border-top: 1px solid #777;
   padding-top: 1.5rem; }
 
 /*---------- end of: footer ----------*/
+/*/
+/*/
+/*------------------------------------*\
+  #POPUP
+\*------------------------------------*/
+.o-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(51, 51, 51, 0.9);
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden; }
+  .o-popup:target {
+    /*
+        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        This selector allows to transform an element to a target. An anchor e.g.
+        can be used to interact with it.
+        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        */
+    opacity: 1;
+    visibility: visible; }
+  .o-popup:target .o-popup_content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); }
+
+.o-popup_close:link, .o-popup_close:visited {
+  color: #777;
+  position: absolute;
+  top: 2.5rem;
+  right: 2.5rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: all .2s; }
+
+.o-popup_close:hover {
+  color: #55c57a; }
+
+.o-popup_content {
+  z-index: calc(200 + 1);
+  background-color: white;
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 3px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5);
+  transition: all .5s; }
+
+.o-popup_heading2 {
+  margin-bottom: 1.5rem; }
+
+.o-popup_heading3 {
+  margin-bottom: 1.5rem; }
+
+.o-popup_leftCol {
+  width: calc(100% / 3);
+  display: table-cell;
+  /*By using table cell we can create two columns with the same height 
+      regardless of the individual content*/ }
+
+.o-popup_rightCol {
+  width: calc(100% / 2);
+  display: table-cell;
+  vertical-align: middle;
+  /*By using table cell we can create two columns with the same height
+      regardless of the individual content*/
+  padding: 3rem 5rem; }
+
+.o-popup_img {
+  display: block;
+  width: 100%; }
+
+.o-popup_text {
+  font-size: 1.4rem;
+  margin-bottom: 4rem;
+  column-count: 2;
+  column-gap: 3rem;
+  column-rule: 1px solid #eee;
+  hyphens: auto; }
+
+/*---------- end of: popup -----------*/
 /*/
 /*/
 /*------------------------------------*\

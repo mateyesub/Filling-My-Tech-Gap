@@ -13,21 +13,42 @@
 </head>
 
 <body>
+
+  <div class="o-navigation">
+    <input type="checkbox" class="o-navigation_toggle" id="navigationToggle1">
+    <label for="navigationToggle1" class="o-navigation_btn">
+      <span class="o-navigation_icon"></span>
+    </label>
+    <div class="o-navigation_background">
+      &nbsp;
+    </div>
+    <nav class="o-navigation_nav">
+      <ul class="o-navigation_list">
+        <li class="o-navigation_item"><a href="#" class="o-navigation_link">01 About Natous</a></li>
+        <li class="o-navigation_item"><a href="#" class="o-navigation_link">02 Your benefits</a></li>
+        <li class="o-navigation_item"><a href="#" class="o-navigation_link">03 Popular tours</a></li>
+        <li class="o-navigation_item"><a href="#" class="o-navigation_link">04 Stories</a></li>
+        <li class="o-navigation_item"><a href="#" class="o-navigation_link">05 Book now</a></li>
+      </ul>
+    </nav>
+  </div>
+
   <header class="c-introHeader_header">
     <div class="c-heroLogo_box">
       <img class="c-heroLogo_img" src="imgs/vendors/logo-white.png" alt="A panorama on a valley">
     </div>
     <!-- The h1 element is an important semantic element used by search engines to understand the content of the page.
-  Therfore it's important to include all the title of the page in an h1 tag even thoug it's is compodes by mutiple styles.
-  In such cases multiple css rules are aplied to the different parts of the h1 element to style them separatly-->
+   Therfore it's important to include all the title of the page in an h1 tag even thoug it's is compodes by mutiple styles.
+   In such cases multiple css rules are aplied to the different parts of the h1 element to style them separatly-->
     <div class="c-mainHeading_box">
       <h1 class="c-mainHeading_heading o-heading1">
         <span class="c-mainHeading_heading-large">outdoors</span>
         <span class="c-mainHeading_heading-small">is where life heppens</span>
       </h1>
-      <a class="o-btn-round o-btn-lg o-btn-white c-mainHeading_btn" href="#">discover our tours</a>
+      <a class="o-btn-round o-btn-lg o-btn-white c-mainHeading_btn" href="#toursSection">discover our tours</a>
     </div>
   </header>
+
   <main>
     <section class="c-aboutSection_section">
       <div class="u-centerText">
@@ -96,7 +117,7 @@
         </div>
       </div>
     </section>
-    <section class="c-toursSection_section">
+    <section class="c-toursSection_section" id="toursSection">
       <div class="u-centerText">
         <h2 class="c-toursSection_heading o-heading2 o-heading2-gradient">
           Most popular tours
@@ -130,7 +151,7 @@
                   <p class="o-toursCard_priceText">Only</p>
                   <p class="o-toursCard_priceValue">$297</p>
                 </div>
-                <a href="#" class="o-btn-round o-btn-lg o-btn-white">Book Now</a>
+                <a href="#popup" class="o-toursCard_btn o-btn-round o-btn-lg o-btn-white">Book Now</a>
               </div>
             </div>
           </div>
@@ -161,7 +182,7 @@
                   <p class="o-toursCard_priceText">Only</p>
                   <p class="o-toursCard_priceValue">$497</p>
                 </div>
-                <a href="#" class="o-btn-round o-btn-lg o-btn-white">Book Now</a>
+                <a href="#popup" class="o-toursCard_btn o-btn-round o-btn-lg o-btn-white">Book Now</a>
               </div>
             </div>
           </div>
@@ -192,7 +213,7 @@
                   <p class="o-toursCard_priceText">Only</p>
                   <p class="o-toursCard_priceValue">$897</p>
                 </div>
-                <a href="#" class="o-btn-round o-btn-lg o-btn-white">Book Now</a>
+                <a href="#popup" class="o-toursCard_btn o-btn-round o-btn-lg o-btn-white">Book Now</a>
               </div>
             </div>
           </div>
@@ -280,7 +301,7 @@
                   Small tour group
                 </label>
               </div>
-            
+
               <div class="c-bookingForm_groupRadio">
                 <input id="form1-radio2" class="o-form_input" type="radio" name="form1_radioGroup1" value="">
                 <label for="form1-radio2" class="o-form_label c-bookingForm_label-radio">
@@ -290,13 +311,14 @@
               </div>
             </div>
             <div class="">
-              <button class="c-bookingForm_submitButton o-btn-reset o-btn-round o-btn-md o-btn-green"type="button" name="button">Next Step</button>
+              <button class="c-bookingForm_submitButton o-btn-reset o-btn-round o-btn-md o-btn-green" type="button" name="button">Next Step</button>
             </div>
           </form>
         </div>
       </div>
     </section>
   </main>
+
   <footer class="o-footer">
     <div class="o-footer_logoBox">
       <img src="imgs/vendors/logo-green-2x.png" alt="" class="o-footer_logoImg">
@@ -323,14 +345,38 @@
       </div>
       <div class="o-col-1-of-2">
         <p class="o-footer_copyright">
-          Built my product page for my online course <a href="https://www.udemy.com/course/advanced-css-and-sass/" class="o-footer_link">Advanced CSS and Sass</a>. 
-          Copyight &copy by Matteo Carotta. You are 100% allowed to use this 
-          webpage for both personal and commercial use, but NOT to claim it as 
+          Built my product page for my online course <a href="https://www.udemy.com/course/advanced-css-and-sass/" class="o-footer_link">Advanced CSS and Sass</a>.
+          Copyight &copy by Matteo Carotta. You are 100% allowed to use this
+          webpage for both personal and commercial use, but NOT to claim it as
           your own design. A credit to the original author is needed.
         </p>
       </div>
     </div>
   </footer>
+  
+  <div class="o-popup" id="popup">
+    <div class="o-popup_content">
+      <div class="o-popup_leftCol">
+        <img class="o-popup_img" src="imgs/vendors/nat-8.jpg" alt="Tour photo">
+        <img class="o-popup_img" src="imgs/vendors/nat-9.jpg" alt="Tour photo">
+      </div>
+      <div class="o-popup_rightCol">
+        <a href="#section-tours" class="o-popup_close">&times;</a>
+        <h2 class="o-heading2 o-heading2-gradient o-popup_heading2">Start booking now</h2>
+        <h3 class="o-heading3 o-popup_heading3">Important &ndash; Please read the terms of service before booking</h3>
+        <p class="o-popup_text">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
+        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip 
+        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur 
+        sint occaecat cupidatat non proident, sunt in culpa qui officia 
+        deserunt mollit anim id est laborum.</p>
+        <a class="o-btn-round o-btn-md o-btn-green" href="">Book now</a>
+      </div>
+    </div>
+  </div>
+
   <script src="scripts/main.js"></script>
 </body>
 
