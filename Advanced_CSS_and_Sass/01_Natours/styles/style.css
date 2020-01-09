@@ -15,7 +15,30 @@ https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/
 https://css-tricks.com/abem-useful-adaptation-bem/ */
 @import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
 @import url(../styles/gridSysFloat.css);
-@import url(../fonts/icon-font.css);
+@import url(../styles/icon-font.css);
+/*/
+/*/
+/*/
+/*------------------------------------*\
+ *------- MEDIA QUERY MANAGER --------*
+ *---------- desktop first -----------*
+\*------------------------------------*/
+/*/
+/*In Desktop First media quesries are to be used from biggest screen to smallest one*/
+/*/
+/*
+0px    < Phone            <= 600px 
+600px  < Tablet Portrait  <= 900px
+900px  < Tablet Landscape <= 1200px
+1200px < First Dev Range  <= 1800px
+1800px < Big Desktops
+
+FirstDevRes: 1280px:800px Laptop with MDPI screen
+*/
+/*interactor arguments choices:
+pointer: mouse pointer
+touch: touch screen
+*/
 /* --------------------------------
 BASIC SETUP
 -------------------------------- */
@@ -30,7 +53,20 @@ BASIC SETUP
 html {
   font-size: 62.5%;
   /*16px * 62.5% = 10px*/
-  /*rem are not supported in IE6 */ }
+  /*rem are not supported in IE6 */
+  /*In Desktop First media quesries are written from biggest screen to smallest one*/ }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%;
+      /*16px * 75% = 12px*/ } }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%;
+      /*16px *  56.25% = 9rem*/ } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%;
+      /*16px * 50% = 8px*/ } }
 
 body {
   font-size: 2rem;
@@ -40,6 +76,13 @@ body {
   color: #777;
   padding: 30px;
   box-sizing: border-box; }
+  @media only screen and (max-width: 56.25em) {
+    body {
+      padding: 0; } }
+
+::selection {
+  background-color: #55c57a;
+  color: #fff; }
 
 /* --- END OF: BASIC SETUP --- */
 /* --------------------------------*/
@@ -62,19 +105,26 @@ body {
   font-size: 3.5rem;
   text-transform: uppercase;
   font-weight: 700; }
-  .o-heading2-gradient {
-    display: inline-block;
-    background-image: linear-gradient(to right, #7ed56f, #28b485);
-    -webkit-background-clip: text;
-    /*The webkit-background-clip clips the bachground around the text*/
-    color: transparent;
-    /*By aking the text transparent the cliped background will be visible
+  @media only screen and (max-width: 56.25em) {
+    .o-heading2 {
+      font-size: 3rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .o-heading2 {
+      font-size: 2.5rem; } }
+
+.o-heading2-gradient {
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  /*The webkit-background-clip clips the bachground around the text*/
+  color: transparent;
+  /*By aking the text transparent the cliped background will be visible
     resulting in a gradient text*/
-    letter-spacing: 0.2rem;
-    transition: all 0.2s; }
-    .o-heading2-gradient:hover {
-      transform: skewY(2deg) skewX(15deg) scale(1.1);
-      text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+  letter-spacing: 0.2rem;
+  transition: all 0.2s; }
+  .o-heading2-gradient:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
 
 .o-heading3 {
   font-size: 1.6rem;
@@ -228,22 +278,38 @@ body {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
   text-align: center;
   cursor: pointer; }
+  @media only screen and (max-width: 56.25em) {
+    .o-navigation_btn {
+      top: calc(6.4rem - 2rem);
+      right: calc(6.4rem - 2rem); } }
+  @media only screen and (max-width: 37.5em) {
+    .o-navigation_btn {
+      top: calc(6.4rem - 3.5rem);
+      right: calc(6.4rem - 3.5rem); } }
   .o-navigation_btn:hover .o-navigation_icon:before {
     transform: translateY(-0.2rem); }
   .o-navigation_btn:hover .o-navigation_icon:after {
     transform: translateY(0.2rem); }
 
 .o-navigation_background {
-  height: 6rem;
-  width: 6rem;
+  height: calc(6.2rem - 0.2rem);
+  width: calc(6.2rem - 0.2rem);
   border-radius: 50%;
   position: fixed;
-  top: 6.5rem;
-  right: 6.5rem;
+  top: calc(6.4rem + ((6.2rem - calc(6.2rem - 0.2rem))/2));
+  right: calc(6.4rem + ((6.2rem - calc(6.2rem - 0.2rem))/2));
   background-image: radial-gradient(#7ed56f, #28b485);
   z-index: calc(100 - 1);
   transform: scale(1);
   transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); }
+  @media only screen and (max-width: 56.25em) {
+    .o-navigation_background {
+      top: calc(calc(6.4rem - 2rem) + ((6.2rem - calc(6.2rem - 0.2rem))/2));
+      right: calc(calc(6.4rem - 2rem) + ((6.2rem - calc(6.2rem - 0.2rem))/2)); } }
+  @media only screen and (max-width: 37.5em) {
+    .o-navigation_background {
+      top: calc(calc(6.4rem - 3.5rem) + ((6.2rem - calc(6.2rem - 0.2rem))/2));
+      right: calc(calc(6.4rem - 3.5rem) + ((6.2rem - calc(6.2rem - 0.2rem))/2)); } }
 
 .o-navigation_nav {
   height: 100vh;
@@ -255,21 +321,21 @@ body {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s;
-  transition: opacity .5s; }
+  transition: opacity 0.5s; }
 
 .o-navigation_icon {
   position: relative;
-  margin-top: 3rem; }
+  margin-top: calc((6.2rem/2) - 1px); }
 
-.o-navigation_icon, .o-navigation_icon::before, .o-navigation_icon::after {
+.o-navigation_icon, .o-navigation_icon::after, .o-navigation_icon::before {
   display: inline-block;
-  width: 2.5rem;
+  width: calc((6.2rem/2) - 0.5rem);
   height: 2px;
   background-color: #333;
   z-index: calc(100 + 2);
-  transition: transform .2s ease-out; }
+  transition: transform 0.2s ease-out; }
 
-.o-navigation_icon::before, .o-navigation_icon::after {
+.o-navigation_icon::after, .o-navigation_icon::before {
   content: "";
   position: absolute;
   left: 0; }
@@ -278,7 +344,7 @@ body {
   top: -.8rem; }
 
 .o-navigation_icon::after {
-  top: .8rem; }
+  top: 0.8rem; }
 
 .o-navigation_list {
   list-style: none;
@@ -298,7 +364,7 @@ body {
   text-decoration: none;
   background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
   background-size: 280%;
-  transition: .3s ease-out; }
+  transition: 0.3s ease-out; }
 
 .o-navigation_link:active, .o-navigation_link:hover {
   background-position: 100%;
@@ -318,7 +384,13 @@ body {
 .o-compositionPhoto_img {
   position: absolute;
   width: 55%;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4); }
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2); }
+  @media only screen and (max-width: 56.25em) {
+    .o-compositionPhoto_img {
+      float: left;
+      position: relative;
+      width: 33.33333333%;
+      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4); } }
   .o-compositionPhoto_img:hover {
     outline: 1.5rem solid #55c57a;
     outline-offset: 1.5rem;
@@ -427,6 +499,48 @@ body {
   font-size: 6rem;
   font-weight: 100; }
 
+@media only screen and (max-width: 56.25em) {
+  .o-toursCard_face {
+    transition: unset; }
+    .o-toursCard_face-front {
+      border-radius: 3px 3px 0 0;
+      clip-path: polygon(0 0, 100% 0, 100% 89%, 0 100%); }
+    .o-toursCard_face-back {
+      position: absolute;
+      transform: rotateY(0);
+      border-radius: 0 0 3px 3px;
+      padding: 7rem 0; }
+  .o-toursCard_box:hover .o-toursCard_face-front {
+    transform: rotateY(0);
+    transform: translateZ(0); }
+  .o-toursCard_box:hover .o-toursCard_face-back {
+    transform: rotateY(0deg); }
+  .o-toursCard_img {
+    margin-bottom: -2.5rem; }
+  .o-toursCard_priceBox {
+    margin-bottom: 1rem; } }
+
+@media only screen and (hover: none) {
+  .o-toursCard_face {
+    transition: unset; }
+    .o-toursCard_face-front {
+      border-radius: 3px 3px 0 0;
+      clip-path: polygon(0 0, 100% 0, 100% 89%, 0 100%); }
+    .o-toursCard_face-back {
+      position: absolute;
+      transform: rotateY(0);
+      border-radius: 0 0 3px 3px;
+      padding: 7rem 0; }
+  .o-toursCard_box:hover .o-toursCard_face-front {
+    transform: rotateY(0);
+    transform: translateZ(0); }
+  .o-toursCard_box:hover .o-toursCard_face-back {
+    transform: rotateY(0deg); }
+  .o-toursCard_img {
+    margin-bottom: -2.5rem; }
+  .o-toursCard_priceBox {
+    margin-bottom: 1rem; } }
+
 /*------------------------------------*\
   #STORY-SECTION
 \*------------------------------------*/
@@ -438,8 +552,18 @@ body {
   border-radius: 3px;
   padding: 4rem 6rem;
   transform: skewX(-5deg); }
+  @media only screen and (max-width: 56.25em) {
+    .o-story_box {
+      width: 100%;
+      padding: 3rem 5rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .o-story_box {
+      transform: skewX(0); } }
   .o-story_box > * {
     transform: skewX(5deg); }
+    @media only screen and (max-width: 37.5em) {
+      .o-story_box > * {
+        transform: skewX(0); } }
   .o-story_box::after {
     content: "";
     clear: both;
@@ -458,12 +582,16 @@ body {
   width: 15rem;
   height: 15rem;
   float: left;
-  shape-outside: circle(50% at 50% 50%);
-  /*shape outside together with float allows the text or other objects to precisly follow
-    the shape of the element instead of the box around it*/
-  clip-path: circle(50% at 50% 50%);
   margin-right: 2rem;
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
+  @supports (-webkit-clip-path: circle(50% at 50% 50%)) or (clip-path: circle(50% at 50% 50%)) or (-webkit-clip-path: circle(50% at 50% 50%)) {
+    .o-story_shape {
+      shape-outside: circle(50% at 50% 50%);
+      /*shape outside together with float allows the text or other objects to precisly follow
+      the shape of the element instead of the box around it*/
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%); } }
 
 .o-story_img {
   height: 100%; }
@@ -583,9 +711,15 @@ body {
   color: #fff;
   padding: 8rem 10rem;
   font-size: 1.4rem; }
+  @media only screen and (max-width: 56.25em) {
+    .o-footer {
+      padding: 4rem 0; } }
 
 .o-footer_logoBox {
   margin-bottom: 4rem; }
+  @media only screen and (max-width: 56.25em) {
+    .o-footer_logoBox {
+      margin-bottom: 1.5rem; } }
 
 .o-footer_logoImg {
   display: block;
@@ -637,6 +771,13 @@ body {
   z-index: 200;
   opacity: 0;
   visibility: hidden; }
+  @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    .o-popup {
+      /*supports verifies if the selected property is supported by the browser and 
+      applies the given rules only if the condition is true*/
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba(0, 0, 0, 0.3); } }
   .o-popup:target {
     /*
         !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -657,7 +798,7 @@ body {
   right: 2.5rem;
   text-decoration: none;
   display: inline-block;
-  transition: all .2s; }
+  transition: all 0.2s; }
 
 .o-popup_close:hover {
   color: #55c57a; }
@@ -665,7 +806,7 @@ body {
 .o-popup_content {
   z-index: calc(200 + 1);
   background-color: white;
-  width: 80%;
+  width: 90%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -674,7 +815,13 @@ body {
   overflow: hidden;
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.5);
-  transition: all .5s; }
+  transition: all 0.5s; }
+  @media only screen and (max-width: 56.25em) {
+    .o-popup_content {
+      width: 80%; } }
+  @media only screen and (max-width: 37.5em) {
+    .o-popup_content {
+      width: 100%; } }
 
 .o-popup_heading2 {
   margin-bottom: 1.5rem; }
@@ -687,6 +834,11 @@ body {
   display: table-cell;
   /*By using table cell we can create two columns with the same height 
       regardless of the individual content*/ }
+  @media only screen and (max-width: 56.25em) {
+    .o-popup_leftCol {
+      display: table;
+      width: 100%;
+      padding: 6rem 5rem 0 5rem; } }
 
 .o-popup_rightCol {
   width: calc(100% / 2);
@@ -699,6 +851,12 @@ body {
 .o-popup_img {
   display: block;
   width: 100%; }
+  @media only screen and (max-width: 56.25em) {
+    .o-popup_img {
+      display: table-cell;
+      width: 50%;
+      height: 10vh;
+      object-fit: cover; } }
 
 .o-popup_text {
   font-size: 1.4rem;
@@ -714,18 +872,39 @@ body {
 /*------------------------------------*\
  *--------- END OF: OBJECTS ----------*
 \*------------------------------------*/
-/*UNIQUE: COMPONENTS
--------------------------------- */
+/*/
+/*/
+/*/
+/*------------------------------------*\
+ *---- UNIQUE ELEMENTS: COMPONENTS ---*
+ *--------- dedicated rules ----------*
+\*------------------------------------*/
+/*/
+/*/
 .c-introHeader_header {
-  height: 92vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../imgs/vendors/hero.jpg");
+  height: 85vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../imgs/vendors/hero-small.jpg");
   background-size: cover;
   background-position: top 20% left 40%;
-  position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
-  /* To shape a container as a polygon https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path */
-  /* clip-path crop the content of the container accorging to the edges of
-  the poygon */ }
+  position: relative; }
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    .c-introHeader_header {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+      /* To shape a container as a polygon https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path */
+      /* clip-path crop the content of the container accorging to the edges of
+    the poygon */
+      height: 92vh; } }
+  @media only screen and (min-resolution: 120dpi) and (min-width: 37.5em), only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), only screen and (min-width: 125em) {
+    .c-introHeader_header {
+      /*This media query taregts the screen desity and deliver the image at the ideal resolution*/
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../imgs/vendors/hero.jpg"); } }
+  @media only screen and (min-width: 112.5em) {
+    .c-introHeader_header {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../imgs/vendors/hero.jpg"); } }
+  @media only screen and (max-width: 37.5em) {
+    .c-introHeader_header {
+      clip-path: polygon(0 0, 100% 0, 100% calc((0.8 + 0.1)*100%), 0 100%); } }
 
 .c-heroLogo_box {
   position: absolute;
@@ -760,8 +939,8 @@ body {
   color: white;
   backface-visibility: hidden;
   /* somethimes animations renders sligtly out of
-    position if backface-visibility attribute of the animated element is not set
-    to hidden */ }
+      position if backface-visibility attribute of the animated element is not set
+      to hidden */ }
 
 .c-mainHeading_heading-large {
   display: block;
@@ -775,6 +954,10 @@ body {
   /* the animation duration is then assigned through the attribute
   animation-duration */
   animation-timing-function: ease-out; }
+  @media only screen and (max-width: 37.5em) {
+    .c-mainHeading_heading-large {
+      letter-spacing: 1rem;
+      font-size: 5rem; } }
 
 .c-mainHeading_heading-small {
   display: block;
@@ -785,6 +968,9 @@ body {
   animation-duration: 1s;
   animation-timing-function: ease-out;
   margin-bottom: 6rem; }
+  @media only screen and (max-width: 37.5em) {
+    .c-mainHeading_heading-small {
+      letter-spacing: 0.5rem; } }
 
 .c-mainHeading_btn {
   animation-name: u-moveInBottom;
@@ -794,6 +980,12 @@ body {
   background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: calc(-100vh + (0.8 * 100vh)); }
+  @media only screen and (max-width: 56.25em) {
+    .c-aboutSection_section {
+      padding: 20rem 0 45rem; } }
+  @media only screen and (max-width: 56.25em) {
+    .c-aboutSection_section {
+      padding: 20rem 0 15rem; } }
 
 .c-aboutSection_heading {
   margin-bottom: 8rem; }
@@ -807,14 +999,28 @@ body {
 .c-compositionPhoto1_img-1 {
   top: -2rem;
   left: 0; }
+  @media only screen and (max-width: 56.25em) {
+    .c-compositionPhoto1_img-1 {
+      top: 0;
+      transform: scale(1.2); } }
 
 .c-compositionPhoto1_img-2 {
   top: 5rem;
   right: 0; }
+  @media only screen and (max-width: 56.25em) {
+    .c-compositionPhoto1_img-2 {
+      top: -1rem;
+      transform: scale(1.3);
+      z-index: 2; } }
 
 .c-compositionPhoto1_img-3 {
   top: 15rem;
   left: 20%; }
+  @media only screen and (max-width: 56.25em) {
+    .c-compositionPhoto1_img-3 {
+      top: 1rem;
+      left: 0;
+      transform: scale(1.3); } }
 
 .c-featuresSection_section {
   padding: 15rem 0;
@@ -823,11 +1029,17 @@ body {
   background-position: top 10% left 70%;
   transform: skewY(-7deg);
   margin-top: -9rem; }
+  @media only screen and (max-width: 56.25em) {
+    .c-featuresSection_section {
+      padding: 10rem 0; } }
   .c-featuresSection_section > * {
     /*This selector selects all the direct children of the section*/
     transform: skewY(7deg); }
   .c-featuresSection_section > .o-row {
     padding: 0 2%; }
+    @media only screen and (max-width: 56.25em) {
+      .c-featuresSection_section > .o-row {
+        padding: 0; } }
 
 .c-featuresCard_heading {
   margin-bottom: 1.4rem; }
@@ -836,8 +1048,14 @@ body {
   background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: -7.6rem; }
+  @media only screen and (max-width: 56.25em) {
+    .c-toursSection_section {
+      padding: 15rem 0; } }
   .c-toursSection_section .o-row {
     padding: 0 5%; }
+    @media only screen and (max-width: 56.25em) {
+      .c-toursSection_section .o-row {
+        padding: 0; } }
 
 .c-toursSection_heading {
   margin-bottom: 8rem; }
@@ -887,6 +1105,32 @@ body {
     background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)); }
   .c-toursCard_headingSpan-card3 {
     background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.8), rgba(86, 67, 250, 0.8)); }
+  @media only screen and (max-width: 56.25em) {
+    .c-toursCard {
+      /*CARD 1*/ }
+      .c-toursCard_box-card1, .c-toursCard_box-card2, .c-toursCard_box-card3 {
+        height: 85vh; }
+      .c-toursCard_face-card1, .c-toursCard_face-card2, .c-toursCard_face-card3 {
+        height: 80%; }
+      .c-toursCard_front-card1, .c-toursCard_front-card2, .c-toursCard_front-card3 {
+        z-index: 2;
+        height: 72%; }
+      .c-toursCard_back-card1, .c-toursCard_back-card2, .c-toursCard_back-card3 {
+        top: 61%;
+        height: 40%; } }
+  @media only screen and (hover: none) {
+    .c-toursCard {
+      /*CARD 1*/ }
+      .c-toursCard_box-card1, .c-toursCard_box-card2, .c-toursCard_box-card3 {
+        height: 85vh; }
+      .c-toursCard_face-card1, .c-toursCard_face-card2, .c-toursCard_face-card3 {
+        height: 80%; }
+      .c-toursCard_front-card1, .c-toursCard_front-card2, .c-toursCard_front-card3 {
+        z-index: 2;
+        height: 72%; }
+      .c-toursCard_back-card1, .c-toursCard_back-card2, .c-toursCard_back-card3 {
+        top: 61%;
+        height: 40%; } }
 
 /*------------------------------------*\
   #STORIES-SECTION
@@ -935,12 +1179,24 @@ body {
 
 .c-bookingSection_bookingFormBox-form1 {
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url("../imgs/vendors/nat-10.jpg"); }
+  @media only screen and (max-width: 56.25em) {
+    .c-bookingSection_bookingFormBox-form1 {
+      background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 70%, transparent 70%), url("../imgs/vendors/nat-10.jpg"); } }
+  @media only screen and (max-width: 37.5em) {
+    .c-bookingSection_bookingFormBox-form1 {
+      background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url("../imgs/vendors/nat-10.jpg"); } }
 
 .c-bookingForm_heading {
   margin-bottom: 4rem; }
 
 .c-bookingForm_group {
   width: 40%; }
+  @media only screen and (max-width: 56.25em) {
+    .c-bookingForm_group {
+      width: 75%; } }
+  @media only screen and (max-width: 37.5em) {
+    .c-bookingForm_group {
+      width: 100%; } }
 
 .c-bookingForm_group:not(:last-child) {
   margin-bottom: 2rem; }
@@ -948,6 +1204,12 @@ body {
 .c-bookingForm_groupRadio {
   width: 49%;
   display: inline-block; }
+  @media only screen and (max-width: 56.25em) {
+    .c-bookingForm_groupRadio {
+      width: auto;
+      display: block; }
+      .c-bookingForm_groupRadio:not(:last-child) {
+        margin-bottom: 2rem; } }
 
 .c-bookingForm_label-radio {
   font-size: 1.6rem;
@@ -989,13 +1251,3 @@ body {
 
 .u-centerText {
   text-align: center; }
-
-@media only screen and (max-width: 768px) {
-  html {
-    font-size: 14px; } }
-
-@media only screen and (max-width: 420px) {
-  html {
-    font-size: 11px; }
-  body {
-    padding: 0; } }

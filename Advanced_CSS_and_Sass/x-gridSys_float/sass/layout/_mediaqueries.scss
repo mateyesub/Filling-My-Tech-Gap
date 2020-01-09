@@ -17,24 +17,23 @@
 
 FirstDevRes: 1280px:800px Laptop with MDPI screen
 */
-$breakpoints: (
-  phone: 37.5em, /*600px*/
-  tabPort: 56.25em, /*900px*/
-  tabLand: 75em, /*1200px*/
-  bigDesk: 112.5em, /*1800px*/
-);
-/*interactor arguments choices:
-pointer: mouse pointer
-touch: touch screen
+
+/*Breackpoint argument choices:
+phone:   600px 
+tabPort: 900px
+tabLand: 1200px
+bigDesk: 1800px
 */
-@mixin mediaQ($breakpoint, $interactor:mouse) {
-  @if $breakpoint != bigDesk {
-    @media only screen and (max-width: map-get($breakpoints, $breakpoint)) {
+
+@mixin mediaQ($breakpoint){
+  @if $breakpoint == phone{
+    @media (max-width: 37.5rem /*600px(16px*37.5)*/){
       //In the definition of a media query em and rem ignore any motifications 
       //to the root font-size defined in the base css file. The user defined 
       //font zoom in the browser is the only modification
       //to the root font-size relevant to the calculation of rem and em for the
       // definition of the media query.
+      
       //It's important to use rem as unit, since it's relative to the browser
       //font-zoom, which is setup by the user. This technique increase the 
       //accessibility of the webpage.
@@ -43,14 +42,18 @@ touch: touch screen
       //@include element. This allows to pass a block of code through a @mixin;
     }
   }
-
-  @if $breakpoint == bigDesk {
-    @media only screen and (min-width: map-get($breakpoints, $breakpoint)) {
+  @if $breakpoint == tabPort{
+    @media (max-width: 56.25rem /*900px*/){
       @content;
     }
   }
-  @if $interactor == touch {
-    @media only screen and (hover:none) {
+  @if $breakpoint == tabLand{
+    @media (max-width: 75rem /*1200px*/){
+      @content;
+    }
+  }
+  @if $breakpoint == bigDesk{
+    @media (min-width: 112.5rem /*1800px*/){
       @content;
     }
   }

@@ -14,6 +14,17 @@ BASIC SETUP
 html {
   font-size: 62.5%; /*16px * 62.5% = 10px*/
   /*rem are not supported in IE6 */
+  
+  /*In Desktop First media quesries are written from biggest screen to smallest one*/
+  @include mediaQ(bigDesk){
+    font-size: 75%; /*16px * 75% = 12px*/
+  }
+  @include mediaQ(tabLand){
+    font-size: 56.25%; /*16px *  56.25% = 9rem*/
+  }
+  @include mediaQ(tabPort){
+    font-size: 50%; /*16px * 50% = 8px*/
+  }
 }
 
 body {
@@ -24,6 +35,15 @@ body {
   color: $color-gray-dark;
   padding: 30px;
   box-sizing: border-box;
+  
+  @include mediaQ(tabPort, 0){
+    padding: 0;
+  }
+}
+
+::selection{
+  background-color: $color-primary;
+  color: $color-white;
 }
 /* --- END OF: BASIC SETUP --- */
 /* --------------------------------*/

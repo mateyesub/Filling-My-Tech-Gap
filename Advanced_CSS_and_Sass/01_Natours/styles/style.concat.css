@@ -1,0 +1,2145 @@
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+  display: none;
+}
+
+@charset "UTF-8";
+
+@font-face {
+  font-family: "linea-basic-10";
+  src:url("vendors/fonts/linea-basic/linea-basic-10.eot");
+  src:url("vendors/fonts/linea-basic/linea-basic-10.eot?#iefix") format("embedded-opentype"),
+    url("vendors/fonts/linea-basic/linea-basic-10.woff") format("woff"),
+    url("vendors/fonts/linea-basic/linea-basic-10.ttf") format("truetype"),
+    url("vendors/fonts/linea-basic/linea-basic-10.svg#linea-basic-10") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "linea-basic-10" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "linea-basic-10" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-basic-accelerator:before {
+  content: "a";
+}
+.icon-basic-alarm:before {
+  content: "b";
+}
+.icon-basic-anchor:before {
+  content: "c";
+}
+.icon-basic-anticlockwise:before {
+  content: "d";
+}
+.icon-basic-archive:before {
+  content: "e";
+}
+.icon-basic-archive-full:before {
+  content: "f";
+}
+.icon-basic-ban:before {
+  content: "g";
+}
+.icon-basic-battery-charge:before {
+  content: "h";
+}
+.icon-basic-battery-empty:before {
+  content: "i";
+}
+.icon-basic-battery-full:before {
+  content: "j";
+}
+.icon-basic-battery-half:before {
+  content: "k";
+}
+.icon-basic-bolt:before {
+  content: "l";
+}
+.icon-basic-book:before {
+  content: "m";
+}
+.icon-basic-book-pen:before {
+  content: "n";
+}
+.icon-basic-book-pencil:before {
+  content: "o";
+}
+.icon-basic-bookmark:before {
+  content: "p";
+}
+.icon-basic-calculator:before {
+  content: "q";
+}
+.icon-basic-calendar:before {
+  content: "r";
+}
+.icon-basic-cards-diamonds:before {
+  content: "s";
+}
+.icon-basic-cards-hearts:before {
+  content: "t";
+}
+.icon-basic-case:before {
+  content: "u";
+}
+.icon-basic-chronometer:before {
+  content: "v";
+}
+.icon-basic-clessidre:before {
+  content: "w";
+}
+.icon-basic-clock:before {
+  content: "x";
+}
+.icon-basic-clockwise:before {
+  content: "y";
+}
+.icon-basic-cloud:before {
+  content: "z";
+}
+.icon-basic-clubs:before {
+  content: "A";
+}
+.icon-basic-compass:before {
+  content: "B";
+}
+.icon-basic-cup:before {
+  content: "C";
+}
+.icon-basic-diamonds:before {
+  content: "D";
+}
+.icon-basic-display:before {
+  content: "E";
+}
+.icon-basic-download:before {
+  content: "F";
+}
+.icon-basic-exclamation:before {
+  content: "G";
+}
+.icon-basic-eye:before {
+  content: "H";
+}
+.icon-basic-eye-closed:before {
+  content: "I";
+}
+.icon-basic-female:before {
+  content: "J";
+}
+.icon-basic-flag1:before {
+  content: "K";
+}
+.icon-basic-flag2:before {
+  content: "L";
+}
+.icon-basic-floppydisk:before {
+  content: "M";
+}
+.icon-basic-folder:before {
+  content: "N";
+}
+.icon-basic-folder-multiple:before {
+  content: "O";
+}
+.icon-basic-gear:before {
+  content: "P";
+}
+.icon-basic-geolocalize-01:before {
+  content: "Q";
+}
+.icon-basic-geolocalize-05:before {
+  content: "R";
+}
+.icon-basic-globe:before {
+  content: "S";
+}
+.icon-basic-gunsight:before {
+  content: "T";
+}
+.icon-basic-hammer:before {
+  content: "U";
+}
+.icon-basic-headset:before {
+  content: "V";
+}
+.icon-basic-heart:before {
+  content: "W";
+}
+.icon-basic-heart-broken:before {
+  content: "X";
+}
+.icon-basic-helm:before {
+  content: "Y";
+}
+.icon-basic-home:before {
+  content: "Z";
+}
+.icon-basic-info:before {
+  content: "0";
+}
+.icon-basic-ipod:before {
+  content: "1";
+}
+.icon-basic-joypad:before {
+  content: "2";
+}
+.icon-basic-key:before {
+  content: "3";
+}
+.icon-basic-keyboard:before {
+  content: "4";
+}
+.icon-basic-laptop:before {
+  content: "5";
+}
+.icon-basic-life-buoy:before {
+  content: "6";
+}
+.icon-basic-lightbulb:before {
+  content: "7";
+}
+.icon-basic-link:before {
+  content: "8";
+}
+.icon-basic-lock:before {
+  content: "9";
+}
+.icon-basic-lock-open:before {
+  content: "!";
+}
+.icon-basic-magic-mouse:before {
+  content: "\"";
+}
+.icon-basic-magnifier:before {
+  content: "#";
+}
+.icon-basic-magnifier-minus:before {
+  content: "$";
+}
+.icon-basic-magnifier-plus:before {
+  content: "%";
+}
+.icon-basic-mail:before {
+  content: "&";
+}
+.icon-basic-mail-multiple:before {
+  content: "'";
+}
+.icon-basic-mail-open:before {
+  content: "(";
+}
+.icon-basic-mail-open-text:before {
+  content: ")";
+}
+.icon-basic-male:before {
+  content: "*";
+}
+.icon-basic-map:before {
+  content: "+";
+}
+.icon-basic-message:before {
+  content: ",";
+}
+.icon-basic-message-multiple:before {
+  content: "-";
+}
+.icon-basic-message-txt:before {
+  content: ".";
+}
+.icon-basic-mixer2:before {
+  content: "/";
+}
+.icon-basic-mouse:before {
+  content: ":";
+}
+.icon-basic-notebook:before {
+  content: ";";
+}
+.icon-basic-notebook-pen:before {
+  content: "<";
+}
+.icon-basic-notebook-pencil:before {
+  content: "=";
+}
+.icon-basic-paperplane:before {
+  content: ">";
+}
+.icon-basic-pencil-ruler:before {
+  content: "?";
+}
+.icon-basic-pencil-ruler-pen:before {
+  content: "@";
+}
+.icon-basic-photo:before {
+  content: "[";
+}
+.icon-basic-picture:before {
+  content: "]";
+}
+.icon-basic-picture-multiple:before {
+  content: "^";
+}
+.icon-basic-pin1:before {
+  content: "_";
+}
+.icon-basic-pin2:before {
+  content: "`";
+}
+.icon-basic-postcard:before {
+  content: "{";
+}
+.icon-basic-postcard-multiple:before {
+  content: "|";
+}
+.icon-basic-printer:before {
+  content: "}";
+}
+.icon-basic-question:before {
+  content: "~";
+}
+.icon-basic-rss:before {
+  content: "\\";
+}
+.icon-basic-server:before {
+  content: "\e000";
+}
+.icon-basic-server2:before {
+  content: "\e001";
+}
+.icon-basic-server-cloud:before {
+  content: "\e002";
+}
+.icon-basic-server-download:before {
+  content: "\e003";
+}
+.icon-basic-server-upload:before {
+  content: "\e004";
+}
+.icon-basic-settings:before {
+  content: "\e005";
+}
+.icon-basic-share:before {
+  content: "\e006";
+}
+.icon-basic-sheet:before {
+  content: "\e007";
+}
+.icon-basic-sheet-multiple:before {
+  content: "\e008";
+}
+.icon-basic-sheet-pen:before {
+  content: "\e009";
+}
+.icon-basic-sheet-pencil:before {
+  content: "\e00a";
+}
+.icon-basic-sheet-txt:before {
+  content: "\e00b";
+}
+.icon-basic-signs:before {
+  content: "\e00c";
+}
+.icon-basic-smartphone:before {
+  content: "\e00d";
+}
+.icon-basic-spades:before {
+  content: "\e00e";
+}
+.icon-basic-spread:before {
+  content: "\e00f";
+}
+.icon-basic-spread-bookmark:before {
+  content: "\e010";
+}
+.icon-basic-spread-text:before {
+  content: "\e011";
+}
+.icon-basic-spread-text-bookmark:before {
+  content: "\e012";
+}
+.icon-basic-star:before {
+  content: "\e013";
+}
+.icon-basic-tablet:before {
+  content: "\e014";
+}
+.icon-basic-target:before {
+  content: "\e015";
+}
+.icon-basic-todo:before {
+  content: "\e016";
+}
+.icon-basic-todo-pen:before {
+  content: "\e017";
+}
+.icon-basic-todo-pencil:before {
+  content: "\e018";
+}
+.icon-basic-todo-txt:before {
+  content: "\e019";
+}
+.icon-basic-todolist-pen:before {
+  content: "\e01a";
+}
+.icon-basic-todolist-pencil:before {
+  content: "\e01b";
+}
+.icon-basic-trashcan:before {
+  content: "\e01c";
+}
+.icon-basic-trashcan-full:before {
+  content: "\e01d";
+}
+.icon-basic-trashcan-refresh:before {
+  content: "\e01e";
+}
+.icon-basic-trashcan-remove:before {
+  content: "\e01f";
+}
+.icon-basic-upload:before {
+  content: "\e020";
+}
+.icon-basic-usb:before {
+  content: "\e021";
+}
+.icon-basic-video:before {
+  content: "\e022";
+}
+.icon-basic-watch:before {
+  content: "\e023";
+}
+.icon-basic-webpage:before {
+  content: "\e024";
+}
+.icon-basic-webpage-img-txt:before {
+  content: "\e025";
+}
+.icon-basic-webpage-multiple:before {
+  content: "\e026";
+}
+.icon-basic-webpage-txt:before {
+  content: "\e027";
+}
+.icon-basic-world:before {
+  content: "\e028";
+}
+
+/*/
+/*/
+/*/
+/*------------------------------------*\
+ *------- MEDIA QUERY MANAGER --------*
+ *---------- desktop first -----------*
+\*------------------------------------*/
+/*/
+/*In Desktop First media quesries are to be used from biggest screen to smallest one*/
+/*/
+/*
+0px    < Phone            <= 600px 
+600px  < Tablet Portrait  <= 900px
+900px  < Tablet Landscape <= 1200px
+1200px < First Dev Range  <= 1800px
+1800px < Big Desktops
+
+FirstDevRes: 1280px:800px Laptop with MDPI screen
+*/
+/*Breackpoint argument choices:
+phone:   600px 
+tabPort: 900px
+tabLand: 1200px
+bigDesk: 1800px
+*/
+/*Plance @import and @charset @font-face rules here 
+* Any @import rules must precede all other rules and style rules in a 
+* style sheet besides @charset, which must be the first thing in the 
+* style sheet if it exists, otherwise the @import rule is invalid. 
+* Visit: http://www.w3.org/TR/css3-cascade/#at-import */
+/*--------------------------------
+Project Name: GridSys-Float
+-------------------------------- */
+/*For linting options see .jshintrc in the project root folder 
+stylesheet written accring to the NemeSpace-BEM (Block Element Modifier) principles
+in camelCase:
+namespace prefixes: o-: Object; c-: Component; u-: Utility; t-: Theme; s-: Scope;
+is-, has-:  Stete or Condition; _: Hack; js-: JavaScript Bind; qa-: QA or Test Bind
+Visit:
+https://css-tricks.com/bem-101/
+https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/
+https://css-tricks.com/abem-useful-adaptation-bem/ */
+/* --------------------------------
+BASIC SETUP
+-------------------------------- */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /* visit: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */ }
+
+html {
+  font-size: 62.5%;
+  /*16px * 125% = 10px*/
+  /*rem are not supported in IE6 */ }
+
+body {
+  font-size: 2rem;
+  box-sizing: border-box; }
+
+/* --- END OF: BASIC SETUP --- */
+/* --------------------------------
+* GRID SYS FLOAT
+-------------------------------- */
+.o-row {
+  max-width: 114rem;
+  /*114rem*/
+  margin: 0 auto; }
+  @media (max-width: 56.25rem) {
+    .o-row {
+      max-width: 50rem; } }
+
+.o-row:not(:last-child) {
+  margin-bottom: 8rem; }
+  @media (max-width: 56.25rem) {
+    .o-row:not(:last-child) {
+      margin-bottom: 8rem; } }
+
+.o-row::after {
+  content: "";
+  /*The content is an empty string to create no visible presudo element :after*/
+  display: table;
+  /*standard value for a clear utility*/
+  clear: both; }
+
+.o-row [class^=o-col-] {
+  float: left; }
+  @media (max-width: 56.25rem) {
+    .o-row [class^=o-col-] {
+      width: 100% !important;
+      margin-bottom: 6rem; } }
+
+.o-row .o-col-1-of-2 {
+  width: calc((100% - 6rem)/2);
+  /*to use the css function calc() together with a variable in sass a # symbol must preced the variable name.*/ }
+  .o-row .o-col-1-of-2:not(:last-child) {
+    margin-right: 6rem; }
+
+.o-row .o-col-1-of-3 {
+  width: calc((100% - (6rem * 2))/3);
+  /*to use the css function calc() together with a variables in sass a # symbol must preced the variable name.*/ }
+  .o-row .o-col-1-of-3:not(:last-child) {
+    margin-right: 6rem; }
+
+.o-row .o-col-2-of-3 {
+  width: calc((((100% - (6rem * 2))/ 3)* 2) + 6rem);
+  /*to use the css function calc() together with a variables in sass a # symbol must preced the variable name.*/ }
+  .o-row .o-col-2-of-3:not(:last-child) {
+    margin-right: 6rem; }
+
+.o-row .o-col-1-of-4 {
+  width: calc((100% - (6rem * 3))/4);
+  /*to use the css function calc() together with a variables in sass a # symbol must preced the variable name.*/ }
+  .o-row .o-col-1-of-4:not(:last-child) {
+    margin-right: 6rem; }
+
+.o-row .o-col-2-of-4 {
+  width: calc((((100% - (6rem * 3))/ 4)* 2) + 6rem);
+  /*to use the css function calc() together with a variables in sass a # symbol must preced the variable name.*/ }
+  .o-row .o-col-2-of-4:not(:last-child) {
+    margin-right: 6rem; }
+
+.o-row .o-col-3-of-4 {
+  width: calc((((100% - (6rem * 3))/ 4)* 3) + (6rem * 2));
+  /*to use the css function calc() together with a variables in sass a # symbol must preced the variable name.*/ }
+  .o-row .o-col-3-of-4:not(:last-child) {
+    margin-right: 6rem; }
+
+/* --- END OF: grid sys float --- */
+
+/* Plance @import and @charset @font-face rules here 
+Any @import rules must precede all other rules and style rules in a 
+style sheet besides @charset, which must be the first thing in the 
+style sheet if it exists, otherwise the @import rule is invalid. 
+Visit: http://www.w3.org/TR/css3-cascade/#at-import 
+Project Name: Natours 
+For linting options see .jshintrc in the project root folder 
+stylesheet written accring to the NemeSpace-BEM (Block Element Modifier) principles
+in camelCase:
+namespace prefixes: o-: Object; c-: Component; u-: Utility; t-: Theme; s-: Scope;
+is-, has-:  Stete or Condition; _: Hack; js-: JavaScript Bind; qa-: QA or Test Bind
+Visit:
+https://css-tricks.com/bem-101/
+https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/
+https://css-tricks.com/abem-useful-adaptation-bem/ */
+@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
+@import url(../styles/gridSysFloat.css);
+@import url(../styles/icon-font.css);
+/*/
+/*/
+/*/
+/*------------------------------------*\
+ *------- MEDIA QUERY MANAGER --------*
+ *---------- desktop first -----------*
+\*------------------------------------*/
+/*/
+/*In Desktop First media quesries are to be used from biggest screen to smallest one*/
+/*/
+/*
+0px    < Phone            <= 600px 
+600px  < Tablet Portrait  <= 900px
+900px  < Tablet Landscape <= 1200px
+1200px < First Dev Range  <= 1800px
+1800px < Big Desktops
+
+FirstDevRes: 1280px:800px Laptop with MDPI screen
+*/
+/*Breackpoint argument choices:
+phone:   600px 
+tabPort: 900px
+tabLand: 1200px
+bigDesk: 1800px
+*/
+/* --------------------------------
+BASIC SETUP
+-------------------------------- */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /* visit: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */ }
+
+html {
+  font-size: 62.5%;
+  /*16px * 62.5% = 10px*/
+  /*rem are not supported in IE6 */
+  /*In Desktop First media quesries are written from biggest screen to smallest one*/ }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%;
+      /*16px * 75% = 12px*/ } }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%;
+      /*16px *  56.25% = 9rem*/ } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%;
+      /*16px * 50% = 8px*/ } }
+
+body {
+  font-size: 2rem;
+  font-family: Lato, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  padding: 30px;
+  box-sizing: border-box; }
+  @media (max-width: 56.25em) {
+    body {
+      padding: 0; } }
+
+/* --- END OF: BASIC SETUP --- */
+/* --------------------------------*/
+/*/
+/*/
+/*/
+/*------------------------------------*\
+ *-- ABSTRACT ELEMENTS: TYPOGRAPHY ---*
+ *---------- reusable rules ----------*
+\*------------------------------------*/
+/*/
+/*------------------------------------*\
+    #HEADINGS
+\*------------------------------------*/
+.o-heading1 {
+  margin: 0;
+  text-transform: uppercase; }
+
+.o-heading2 {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700; }
+  @media (max-width: 56.25em) {
+    .o-heading2 {
+      font-size: 3rem; } }
+  @media (max-width: 37.5em) {
+    .o-heading2 {
+      font-size: 2.5rem; } }
+
+.o-heading2-gradient {
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  /*The webkit-background-clip clips the bachground around the text*/
+  color: transparent;
+  /*By aking the text transparent the cliped background will be visible
+    resulting in a gradient text*/
+  letter-spacing: 0.2rem;
+  transition: all 0.2s; }
+  .o-heading2-gradient:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.o-heading3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+/*-------- end of: headings --------*/
+/*/
+/*/
+/*------------------------------------*\
+    #PARAGRAPHS
+\*------------------------------------*/
+.o-para1 {
+  font-size: 1.6rem; }
+  .o-para1:not(:last-child) {
+    margin-bottom: 3rem; }
+
+/*-------- end of: paragraphs --------*/
+/*/
+/*/
+/*------------------------------------*\
+ *------- END OF: TYPOGRAPHY ---------*
+\*------------------------------------*/
+/*/
+/*/
+/*/
+/*------------------------------------*\
+ *---- ABSTRACT ELEMENTS: OBJECTS ----*
+ *---------- reusable rules ----------*
+\*------------------------------------*/
+/*/
+/*/
+/*------------------------------------*\
+  #BTN
+\*------------------------------------*/
+.o-btn-reset {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit; }
+
+.o-btn-md {
+  padding: calc(1.6rem - 0.8rem) 2.6rem; }
+
+.o-btn-lg {
+  padding: 1.6rem 3.6rem; }
+
+.o-btn-round, .o-btn-round:link, .o-btn-round:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 20rem;
+  transition: all 0.2s;
+  position: relative; }
+
+.o-btn-round::after {
+  content: "";
+  /*a content is mandatory even if an empty string, otherwise 
+      the ::after element will not be created*/
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  /*as dimentions of the ::after element it's possible to use
+      the relative % units since css will consider the ::after element as a child
+      element. It's similar to js expression width = this.width */
+  border-radius: 20rem;
+  position: absolute;
+  /*The absolute positioning allows to place the ::after element relative to 
+      the pseudo parent element*/
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /*the z-index defines the position in the z-axis. -1 positions the pseudo
+      child element behind the pseudo parent element*/
+  transition: all 0.4s; }
+
+.o-btn-round:hover::after {
+  transform: scaleX(1.5) scaleY(1.6);
+  opacity: 0; }
+
+.o-btn-round:hover {
+  transform: translateY(-0.4rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.o-btn-round:active {
+  transform: translateY(-0.2rem);
+  box-shadow: 0 0.6rem 1rem rgba(0, 0, 0, 0.2); }
+
+.o-btn-white {
+  background-color: #fff;
+  color: #777; }
+  .o-btn-white::after {
+    background-color: #fff; }
+
+.o-btn-green {
+  background-color: #55c57a;
+  color: #fff; }
+  .o-btn-green::after {
+    background-color: #55c57a; }
+
+.o-btn_text, .o-btn_text:link, .o-btn_text:visited {
+  font-size: 1.6rem;
+  color: #55c57a;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #55c57a;
+  padding: 0.3rem;
+  transition: all 0.2s; }
+
+.o-btn_text:hover {
+  border: none;
+  background-color: #55c57a;
+  color: #fff;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-0.2rem); }
+
+/*------------ end of: btn -----------*/
+/*/
+/*/
+/*------------------------------------*\
+  #NAVIGATION
+\*------------------------------------*/
+.o-navigation_toggle {
+  display: none; }
+  .o-navigation_toggle:checked ~ .o-navigation_background {
+    transform: scale(60); }
+  .o-navigation_toggle:checked ~ .o-navigation_nav {
+    visibility: visible;
+    opacity: 1; }
+  .o-navigation_toggle:checked + .o-navigation_btn .o-navigation_icon {
+    background-color: transparent; }
+  .o-navigation_toggle:checked + .o-navigation_btn .o-navigation_icon:before {
+    transform: rotate(45deg);
+    top: 0; }
+  .o-navigation_toggle:checked + .o-navigation_btn .o-navigation_icon:after {
+    transform: rotate(-45deg);
+    top: 0; }
+
+.o-navigation_btn {
+  height: 6.2rem;
+  width: 6.2rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 6.4rem;
+  right: 6.4rem;
+  background-color: #fff;
+  z-index: calc(100 + 1);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer; }
+  @media (max-width: 56.25em) {
+    .o-navigation_btn {
+      top: calc(6.4rem - 2rem);
+      right: calc(6.4rem - 2rem); } }
+  @media (max-width: 37.5em) {
+    .o-navigation_btn {
+      top: calc(6.4rem - 3.5rem);
+      right: calc(6.4rem - 3.5rem); } }
+  .o-navigation_btn:hover .o-navigation_icon:before {
+    transform: translateY(-0.2rem); }
+  .o-navigation_btn:hover .o-navigation_icon:after {
+    transform: translateY(0.2rem); }
+
+.o-navigation_background {
+  height: calc(6.2rem - 0.2rem);
+  width: calc(6.2rem - 0.2rem);
+  border-radius: 50%;
+  position: fixed;
+  top: calc(6.4rem + ((6.2rem - calc(6.2rem - 0.2rem))/2));
+  right: calc(6.4rem + ((6.2rem - calc(6.2rem - 0.2rem))/2));
+  background-image: radial-gradient(#7ed56f, #28b485);
+  z-index: calc(100 - 1);
+  transform: scale(1);
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); }
+  @media (max-width: 56.25em) {
+    .o-navigation_background {
+      top: calc(calc(6.4rem - 2rem) + ((6.2rem - calc(6.2rem - 0.2rem))/2));
+      right: calc(calc(6.4rem - 2rem) + ((6.2rem - calc(6.2rem - 0.2rem))/2)); } }
+  @media (max-width: 37.5em) {
+    .o-navigation_background {
+      top: calc(calc(6.4rem - 3.5rem) + ((6.2rem - calc(6.2rem - 0.2rem))/2));
+      right: calc(calc(6.4rem - 3.5rem) + ((6.2rem - calc(6.2rem - 0.2rem))/2)); } }
+
+.o-navigation_nav {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s;
+  transition: opacity 0.5s; }
+
+.o-navigation_icon {
+  position: relative;
+  margin-top: calc((6.2rem/2) - 1px); }
+
+.o-navigation_icon, .o-navigation_icon::after, .o-navigation_icon::before {
+  display: inline-block;
+  width: calc((6.2rem/2) - 0.5rem);
+  height: 2px;
+  background-color: #333;
+  z-index: calc(100 + 2);
+  transition: transform 0.2s ease-out; }
+
+.o-navigation_icon::after, .o-navigation_icon::before {
+  content: "";
+  position: absolute;
+  left: 0; }
+
+.o-navigation_icon::before {
+  top: -.8rem; }
+
+.o-navigation_icon::after {
+  top: 0.8rem; }
+
+.o-navigation_list {
+  list-style: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; }
+
+.o-navigation_link, .o-navigation_link:link, .o-navigation_link:visited {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+  background-size: 280%;
+  transition: 0.3s ease-out; }
+
+.o-navigation_link:active, .o-navigation_link:hover {
+  background-position: 100%;
+  color: #55c57a; }
+
+/*-------- end of: navigation --------*/
+/*/
+/*/
+/*------------------------------------*\
+  #?
+\*------------------------------------*/
+.o-compositionPhoto:hover .o-compositionPhoto_img:not(:hover) {
+  transform: scale(0.95);
+  transition: all 0.2s;
+  /*!!!!To select the images that are not hover!!!!!*/ }
+
+.o-compositionPhoto_img {
+  position: absolute;
+  width: 55%;
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2); }
+  @media (max-width: 56.25em) {
+    .o-compositionPhoto_img {
+      float: left;
+      position: relative;
+      width: 33.33333333%;
+      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4); } }
+  .o-compositionPhoto_img:hover {
+    outline: 1.5rem solid #55c57a;
+    outline-offset: 1.5rem;
+    transform: scale(1.05);
+    box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    transition: all 0.2s; }
+
+.o-featuresCard_box {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+  .o-featuresCard_box:hover {
+    transform: scale(1.05);
+    transition: all 0.2s; }
+
+.o-featuresCard_icon {
+  font-size: 6rem;
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  color: transparent; }
+
+.o-featuresCard_para {
+  font-size: 1.4rem; }
+
+.o-toursCard_box {
+  perspective: 150rem;
+  position: relative; }
+
+.o-toursCard_face {
+  transition: all 0.8s ease;
+  position: absolute;
+  /*position absolute remove an element from the page flow, therfore the
+    container element dimensions will collapse. This is a similar behaviour as
+    with the use of float. Unfortunatly there is no clearfix for this one and
+    the only way to solve this is to assign hard coded dimensions to both the
+    element positionend as absolute and the container*/
+  backface-visibility: hidden;
+  /*essential property to hide the backface of the element and allow the 
+    other element front face to be visible*/
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+  .o-toursCard_face-front {
+    /*empty rule*/ }
+  .o-toursCard_face-back {
+    transform: rotateY(-180deg);
+    /*the parameter given to a transform function indicated the final
+      value assigned to the element !it's not a delta value!*/
+    text-align: center;
+    padding: 11rem 0; }
+
+.o-toursCard_box:hover .o-toursCard_face-front {
+  transform: rotateY(180deg);
+  transform: translateZ(2); }
+
+.o-toursCard_box:hover .o-toursCard_face-back {
+  transform: rotateY(0deg); }
+
+.o-toursCard_img {
+  background-size: cover;
+  height: 22rem;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+
+.o-toursCard_heading {
+  font-size: 2.8rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: right;
+  color: #fff;
+  position: absolute;
+  top: 12rem;
+  right: 2rem; }
+  .o-toursCard_heading-span {
+    padding: 1rem 1.5rem;
+    box-decoration-break: clone; }
+
+.o-toursCard_details ul {
+  list-style: none;
+  width: 80%;
+  margin: 5rem auto 0; }
+  .o-toursCard_details ul li {
+    text-align: center;
+    font-size: 1.5rem; }
+    .o-toursCard_details ul li:not(:last-child) {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #eee; }
+    .o-toursCard_details ul li:not(:first-child) {
+      padding-top: 1rem; }
+
+.o-toursCard_priceContainer {
+  display: inline-block; }
+
+.o-toursCard_priceBox {
+  color: #fff;
+  margin-bottom: 8rem; }
+
+.o-toursCard_priceText {
+  font-size: 1.4rem;
+  text-transform: uppercase; }
+
+.o-toursCard_priceValue {
+  font-size: 6rem;
+  font-weight: 100; }
+
+@media (max-width: 56.25em) {
+  .o-toursCard_face {
+    transition: unset; }
+    .o-toursCard_face-front {
+      border-radius: 3px 3px 0 0;
+      clip-path: polygon(0 0, 100% 0, 100% 89%, 0 100%); }
+    .o-toursCard_face-back {
+      position: absolute;
+      transform: rotateY(0);
+      border-radius: 0 0 3px 3px;
+      padding: 7rem 0; }
+  .o-toursCard_box:hover .o-toursCard_face-front {
+    transform: rotateY(0);
+    transform: translateZ(0); }
+  .o-toursCard_box:hover .o-toursCard_face-back {
+    transform: rotateY(0deg); }
+  .o-toursCard_img {
+    margin-bottom: -2.5rem; }
+  .o-toursCard_priceBox {
+    margin-bottom: 1rem; } }
+
+/*------------------------------------*\
+  #STORY-SECTION
+\*------------------------------------*/
+.o-story_box {
+  width: 75%;
+  margin: 0 auto;
+  background-color: rgba(247, 247, 247, 0.7);
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  padding: 4rem 6rem;
+  transform: skewX(-5deg); }
+  @media (max-width: 56.25em) {
+    .o-story_box {
+      width: 100%;
+      padding: 3rem 5rem; } }
+  @media (max-width: 37.5em) {
+    .o-story_box {
+      transform: skewX(0); } }
+  .o-story_box > * {
+    transform: skewX(5deg); }
+    @media (max-width: 37.5em) {
+      .o-story_box > * {
+        transform: skewX(0); } }
+  .o-story_box::after {
+    content: "";
+    clear: both;
+    display: table;
+    visibility: hidden; }
+  .o-story_box:hover .o-story_caption {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%);
+    transition: 0.8s; }
+  .o-story_box:hover .o-story_img {
+    transform: translateX(-3.5rem) scale(1);
+    filter: blur(3px) brightness(80%);
+    transition: 0.8s; }
+
+.o-story_shape {
+  width: 15rem;
+  height: 15rem;
+  float: left;
+  margin-right: 2rem;
+  position: relative;
+  overflow: hidden; }
+  @supports (-webkit-clip-path: circle(50% at 50% 50%)) or (clip-path: circle(50% at 50% 50%)) or (-webkit-clip-path: circle(50% at 50% 50%)) {
+    .o-story_shape {
+      shape-outside: circle(50% at 50% 50%);
+      /*shape outside together with float allows the text or other objects to precisly follow
+      the shape of the element instead of the box around it*/
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%); } }
+
+.o-story_img {
+  height: 100%; }
+
+.o-story_text {
+  font-size: 1.6rem; }
+
+.o-story_caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(20%);
+  backface-visibility: hidden;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  text-align: center;
+  color: #fff;
+  opacity: 0; }
+
+/*------- end of: story section ------*/
+/*/
+/*/
+/*------------------------------------*\
+  #BOOKING-FORM
+\*------------------------------------*/
+.o-form_btn-radio {
+  height: 3rem;
+  width: 3rem;
+  border: 5px solid;
+  border-radius: 50%;
+  display: inline-block; }
+  .o-form_btn-radio::after {
+    content: "";
+    display: block;
+    height: 1.6rem;
+    width: 1.6rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #55c57a;
+    opacity: 0; }
+
+.o-form_btn-green {
+  border-color: #55c57a; }
+
+.o-form_label {
+  position: relative;
+  padding-left: 1rem; }
+
+.o-form_input {
+  visibility: hidden;
+  margin-left: 0.5rem; }
+
+.o-form_input:checked ~ .o-form_label .o-form_btn-radio::after {
+  opacity: 1; }
+
+.o-bookingForm_box {
+  background-size: cover;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  padding: 4rem; }
+
+.o-bookingForm_input {
+  font-size: 1.5rem;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  color: inherit;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 95%;
+  display: block; }
+  .o-bookingForm_input:not(:first-child) {
+    margin-top: 1.5rem; }
+  .o-bookingForm_input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+    border-bottom: 3px solid #55c57a; }
+  .o-bookingForm_input:focus:invalid {
+    /*this selector allows to appy stiles to a input field that is negatively
+      assessed by the html validator defined with the html input type definition*/
+    border-bottom: 3px solid #ff7730;
+    transition: 0.3s; }
+  .o-bookingForm_input:invalid {
+    /*this selector allows to appy stiles to a input field that is negatively
+      assessed by the html validator defined with the html input type definition*/
+    box-shadow: none;
+    border-bottom: 3px solid #ff7730; }
+  .o-bookingForm_input:valid {
+    border-bottom: 3px solid #55c57a;
+    transition: 0.3s; }
+
+.o-bookingForm_label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: 0.7rem; }
+
+.o-bookingForm_input:placeholder-shown + .o-bookingForm_label {
+  /*This selector allows to select the label only when the placeholder in the
+    input is hidden by the text input*/
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+  transition: 0.3s; }
+
+/*------ end of: booking form -----*/
+/*/
+/*/
+/*------------------------------------*\
+  #FOOTER
+\*------------------------------------*/
+.o-footer {
+  background-color: #333;
+  color: #fff;
+  padding: 8rem 10rem;
+  font-size: 1.4rem; }
+  @media (max-width: 56.25em) {
+    .o-footer {
+      padding: 4rem 0; } }
+
+.o-footer_logoBox {
+  margin-bottom: 4rem; }
+  @media (max-width: 56.25em) {
+    .o-footer_logoBox {
+      margin-bottom: 1.5rem; } }
+
+.o-footer_logoImg {
+  display: block;
+  margin: 0 auto;
+  width: 15rem; }
+
+.o-footer_nav {
+  border-top: 1px solid #777;
+  padding-top: 1.5rem;
+  display: inline-block; }
+
+.o-footer_list {
+  list-style: none; }
+
+.o-footer_item {
+  display: inline-block; }
+  .o-footer_item:not(:last-child) {
+    margin-right: 1.5rem; }
+
+.o-footer_link, .o-footer_link:link, .o-footer_link:visited {
+  color: #f7f7f7;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block; }
+
+.o-footer_link:active, .o-footer_link:hover {
+  color: #55c57a;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+  transform: rotate(5deg) scale(1.05);
+  transition: 0.2s; }
+
+.o-footer_copyright {
+  border-top: 1px solid #777;
+  padding-top: 1.5rem; }
+
+/*---------- end of: footer ----------*/
+/*/
+/*/
+/*------------------------------------*\
+  #POPUP
+\*------------------------------------*/
+.o-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(51, 51, 51, 0.9);
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden; }
+  @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    .o-popup {
+      /*supports verifies if the selected property is supported by the browser and 
+      applies the given rules only if the condition is true*/
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba(0, 0, 0, 0.3); } }
+  .o-popup:target {
+    /*
+        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        This selector allows to transform an element to a target. An anchor e.g.
+        can be used to interact with it.
+        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        */
+    opacity: 1;
+    visibility: visible; }
+  .o-popup:target .o-popup_content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); }
+
+.o-popup_close:link, .o-popup_close:visited {
+  color: #777;
+  position: absolute;
+  top: 2.5rem;
+  right: 2.5rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s; }
+
+.o-popup_close:hover {
+  color: #55c57a; }
+
+.o-popup_content {
+  z-index: calc(200 + 1);
+  background-color: white;
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 3px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5);
+  transition: all 0.5s; }
+  @media (max-width: 56.25em) {
+    .o-popup_content {
+      width: 80%; } }
+  @media (max-width: 37.5em) {
+    .o-popup_content {
+      width: 100%; } }
+
+.o-popup_heading2 {
+  margin-bottom: 1.5rem; }
+
+.o-popup_heading3 {
+  margin-bottom: 1.5rem; }
+
+.o-popup_leftCol {
+  width: calc(100% / 3);
+  display: table-cell;
+  /*By using table cell we can create two columns with the same height 
+      regardless of the individual content*/ }
+  @media (max-width: 56.25em) {
+    .o-popup_leftCol {
+      display: table;
+      width: 100%;
+      padding: 6rem 5rem 0 5rem; } }
+
+.o-popup_rightCol {
+  width: calc(100% / 2);
+  display: table-cell;
+  vertical-align: middle;
+  /*By using table cell we can create two columns with the same height
+      regardless of the individual content*/
+  padding: 3rem 5rem; }
+
+.o-popup_img {
+  display: block;
+  width: 100%; }
+  @media (max-width: 56.25em) {
+    .o-popup_img {
+      display: table-cell;
+      width: 50%;
+      height: 10vh;
+      object-fit: cover; } }
+
+.o-popup_text {
+  font-size: 1.4rem;
+  margin-bottom: 4rem;
+  column-count: 2;
+  column-gap: 3rem;
+  column-rule: 1px solid #eee;
+  hyphens: auto; }
+
+/*---------- end of: popup -----------*/
+/*/
+/*/
+/*------------------------------------*\
+ *--------- END OF: OBJECTS ----------*
+\*------------------------------------*/
+/*/
+/*/
+/*/
+/*------------------------------------*\
+ *---- UNIQUE ELEMENTS: COMPONENTS ---*
+ *--------- dedicated rules ----------*
+\*------------------------------------*/
+/*/
+/*/
+.c-introHeader_header {
+  height: 85vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../imgs/vendors/hero-small.jpg");
+  background-size: cover;
+  background-position: top 20% left 40%;
+  position: relative; }
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    .c-introHeader_header {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+      /* To shape a container as a polygon https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path */
+      /* clip-path crop the content of the container accorging to the edges of
+    the poygon */
+      height: 92vh; } }
+  @media (min-resolution: 120dpi) and (min-width: 37.5em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), (min-width: 125em) {
+    .c-introHeader_header {
+      /*This media query taregts the screen desity and deliver the image at the ideal resolution*/
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../imgs/vendors/hero.jpg"); } }
+  @media (min-width: 112.5em) {
+    .c-introHeader_header {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../imgs/vendors/hero.jpg"); } }
+  @media (max-width: 37.5em) {
+    .c-introHeader_header {
+      clip-path: polygon(0 0, 100% 0, 100% calc((0.8 + 0.1)*100%), 0 100%); } }
+
+.c-heroLogo_box {
+  position: absolute;
+  /* Absolute positioning has as reference the first 
+  container of the item of positioning: relative. This implies that if the 
+  direct container (parent) is not positioned relative it will take as reference 
+  the parent of the parent of the parent an element containing it further above 
+  in the dependency line ;)*/
+  top: 4rem;
+  left: 4rem; }
+
+.c-heroLogo_img {
+  height: 7rem;
+  /* By defining one of the two dimensions of an image 
+  (width or height) other will be scaled accordingly to maintain the proportions */ }
+
+.c-mainHeading_box {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  /* positioning of an element is relative to the upper left corner
+  of the element this means that by centring it we are actually centering the 
+  upper left corner and not relative to the geometrical center of the element */
+  transform: translate(-50%, -50%);
+  /* To position an element relative to it's
+  geometrical center the reference point must be moved to the geometrical center
+  of the elment through transtating it of -50% on both x any y axies */
+  text-align: center;
+  /* To align the botton */ }
+
+.c-mainHeading_heading {
+  color: white;
+  backface-visibility: hidden;
+  /* somethimes animations renders sligtly out of
+      position if backface-visibility attribute of the animated element is not set
+      to hidden */ }
+
+.c-mainHeading_heading-large {
+  display: block;
+  font-size: 9rem;
+  font-weight: 400;
+  letter-spacing: 1.8rem;
+  animation-name: u-moveInLeft;
+  /* Animation-name assigns an animation to a css rule
+  and though it to the selected element */
+  animation-duration: 1s;
+  /* the animation duration is then assigned through the attribute
+  animation-duration */
+  animation-timing-function: ease-out; }
+  @media (max-width: 37.5em) {
+    .c-mainHeading_heading-large {
+      letter-spacing: 1rem;
+      font-size: 5rem; } }
+
+.c-mainHeading_heading-small {
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 1.7rem;
+  animation-name: u-moveInRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  margin-bottom: 6rem; }
+  @media (max-width: 37.5em) {
+    .c-mainHeading_heading-small {
+      letter-spacing: 0.5rem; } }
+
+.c-mainHeading_btn {
+  animation-name: u-moveInBottom;
+  animation-duration: 1s; }
+
+.c-aboutSection_section {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: calc(-100vh + (0.8 * 100vh)); }
+  @media (max-width: 56.25em) {
+    .c-aboutSection_section {
+      padding: 20rem 0 45rem; } }
+  @media (max-width: 56.25em) {
+    .c-aboutSection_section {
+      padding: 20rem 0 15rem; } }
+
+.c-aboutSection_heading {
+  margin-bottom: 8rem; }
+
+.c-aboutSection_headingLeft {
+  margin-bottom: 1.4rem; }
+
+.c-compositionPhoto1_box {
+  position: relative; }
+
+.c-compositionPhoto1_img-1 {
+  top: -2rem;
+  left: 0; }
+  @media (max-width: 56.25em) {
+    .c-compositionPhoto1_img-1 {
+      top: 0;
+      transform: scale(1.2); } }
+
+.c-compositionPhoto1_img-2 {
+  top: 5rem;
+  right: 0; }
+  @media (max-width: 56.25em) {
+    .c-compositionPhoto1_img-2 {
+      top: -1rem;
+      transform: scale(1.3);
+      z-index: 2; } }
+
+.c-compositionPhoto1_img-3 {
+  top: 15rem;
+  left: 20%; }
+  @media (max-width: 56.25em) {
+    .c-compositionPhoto1_img-3 {
+      top: 1rem;
+      left: 0;
+      transform: scale(1.3); } }
+
+.c-featuresSection_section {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../imgs/vendors/nat-4.jpg");
+  background-size: cover;
+  background-position: top 10% left 70%;
+  transform: skewY(-7deg);
+  margin-top: -9rem; }
+  @media (max-width: 56.25em) {
+    .c-featuresSection_section {
+      padding: 10rem 0; } }
+  .c-featuresSection_section > * {
+    /*This selector selects all the direct children of the section*/
+    transform: skewY(7deg); }
+  .c-featuresSection_section > .o-row {
+    padding: 0 2%; }
+    @media (max-width: 56.25em) {
+      .c-featuresSection_section > .o-row {
+        padding: 0; } }
+
+.c-featuresCard_heading {
+  margin-bottom: 1.4rem; }
+
+.c-toursSection_section {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -7.6rem; }
+  @media (max-width: 56.25em) {
+    .c-toursSection_section {
+      padding: 15rem 0; } }
+  .c-toursSection_section .o-row {
+    padding: 0 5%; }
+    @media (max-width: 56.25em) {
+      .c-toursSection_section .o-row {
+        padding: 0; } }
+
+.c-toursSection_heading {
+  margin-bottom: 8rem; }
+
+.c-toursSection_btn {
+  text-align: center;
+  margin-top: 10rem; }
+
+.c-toursCard {
+  /*CARD 1*/ }
+  .c-toursCard_box-card1, .c-toursCard_box-card2, .c-toursCard_box-card3 {
+    height: 50rem;
+    width: 100%; }
+  .c-toursCard_face-card1, .c-toursCard_face-card2, .c-toursCard_face-card3 {
+    height: 50rem;
+    width: 100%; }
+  .c-toursCard_front-card1, .c-toursCard_front-card2, .c-toursCard_front-card3 {
+    background-color: #fff;
+    color: #000; }
+  .c-toursCard_back-card1 {
+    background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+  .c-toursCard_back-card2 {
+    background-image: linear-gradient(to right bottom, #55c57a, #28b485); }
+  .c-toursCard_back-card3 {
+    background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+  .c-toursCard_img-card1 {
+    background-blend-mode: screen;
+    background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url("../imgs/vendors/nat-5.jpg");
+    background-position: top 0 left 50%; }
+  .c-toursCard_img-card2 {
+    background-blend-mode: screen;
+    background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url("../imgs/vendors/nat-6.jpg");
+    background-position: top 0 left 50%; }
+  .c-toursCard_img-card3 {
+    background-blend-mode: screen;
+    background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url("../imgs/vendors/nat-7.jpg");
+    background-position: top 0 left 50%; }
+  .c-toursCard_heading-card1 {
+    width: 25rem; }
+  .c-toursCard_heading-card2 {
+    width: 25rem; }
+  .c-toursCard_heading-card3 {
+    width: 25rem; }
+  .c-toursCard_headingSpan-card1 {
+    background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.8), rgba(255, 119, 48, 0.8)); }
+  .c-toursCard_headingSpan-card2 {
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)); }
+  .c-toursCard_headingSpan-card3 {
+    background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.8), rgba(86, 67, 250, 0.8)); }
+  @media (max-width: 56.25em) {
+    .c-toursCard {
+      /*CARD 1*/ }
+      .c-toursCard_box-card1, .c-toursCard_box-card2, .c-toursCard_box-card3 {
+        height: 85vh; }
+      .c-toursCard_face-card1, .c-toursCard_face-card2, .c-toursCard_face-card3 {
+        height: 80%; }
+      .c-toursCard_front-card1, .c-toursCard_front-card2, .c-toursCard_front-card3 {
+        z-index: 2;
+        height: 72%; }
+      .c-toursCard_back-card1, .c-toursCard_back-card2, .c-toursCard_back-card3 {
+        top: 61%;
+        height: 40%; } }
+
+/*------------------------------------*\
+  #STORIES-SECTION
+\*------------------------------------*/
+.c-storiesSection_section {
+  padding: 15rem 0;
+  position: relative; }
+
+.c-storiesSection_heading {
+  text-align: center;
+  margin-bottom: 8rem; }
+
+.c-storiesSection_img-story1 {
+  transform: translateX(-3.5rem) scale(1.2); }
+
+.c-storiesSection_img-story2 {
+  transform: translateX(-3.5rem) scale(1.2); }
+
+.c-storiesSection_btn {
+  text-align: center;
+  margin-top: 10rem; }
+
+.c-storiesSection_videoBgBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.3;
+  overflow: hidden; }
+
+.c-storiesSection_videoBg {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  /*object-fit will allow to adjust an image or a video size just like with a
+    background image*/ }
+
+/*------------------------------------*\
+  #BOOKING-SECTION
+\*------------------------------------*/
+.c-bookingSection_section {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+
+.c-bookingSection_bookingFormBox-form1 {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url("../imgs/vendors/nat-10.jpg"); }
+  @media (max-width: 56.25em) {
+    .c-bookingSection_bookingFormBox-form1 {
+      background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 70%, transparent 70%), url("../imgs/vendors/nat-10.jpg"); } }
+  @media (max-width: 37.5em) {
+    .c-bookingSection_bookingFormBox-form1 {
+      background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url("../imgs/vendors/nat-10.jpg"); } }
+
+.c-bookingForm_heading {
+  margin-bottom: 4rem; }
+
+.c-bookingForm_group {
+  width: 40%; }
+  @media (max-width: 56.25em) {
+    .c-bookingForm_group {
+      width: 75%; } }
+  @media (max-width: 37.5em) {
+    .c-bookingForm_group {
+      width: 100%; } }
+
+.c-bookingForm_group:not(:last-child) {
+  margin-bottom: 2rem; }
+
+.c-bookingForm_groupRadio {
+  width: 49%;
+  display: inline-block; }
+  @media (max-width: 56.25em) {
+    .c-bookingForm_groupRadio {
+      width: auto;
+      display: block; }
+      .c-bookingForm_groupRadio:not(:last-child) {
+        margin-bottom: 2rem; } }
+
+.c-bookingForm_label-radio {
+  font-size: 1.6rem;
+  cursor: pointer; }
+
+.c-bookingForm_btnRadio {
+  position: absolute;
+  top: -1rem;
+  left: -2.8rem; }
+
+.c-bookingForm_submitButton {
+  margin-top: 1.5rem; }
+
+/*------ end of: booking section -----*/
+/*/
+/*/
+.u-btn-reset {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit; }
+
+.u-clearfix {
+  zoom: 1;
+  /* clearfix is a class to be assigned to a html element 
+  that uses the float property to clear it or reset to 
+  standard the float property of the elemnts after the it */ }
+
+.u-clearfix::after {
+  content: '';
+  clear: both;
+  /* visit: https://developer.mozilla.org/en-US/docs/Web/CSS/clear */
+  display: table;
+  height: 0;
+  visibility: hidden; }
+
+.u-centerText {
+  text-align: center; }

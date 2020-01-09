@@ -7,9 +7,9 @@
   <title>Natours</title>
   <link href="styles/vendors/normalize.css" type="text/css" rel="stylesheet">
 
-  <link rel="stylesheet" href="fonts/icon-font.css">
+  <link rel="stylesheet" href="styles/icon-font.css">
   <link rel="shortcut icon" type="image/png" href="imgs/vendors/favicon.png">
-  <link href="styles/main.css" type="text/css" rel="stylesheet">
+  <link href="styles/style.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
@@ -70,9 +70,10 @@
         </div>
         <div class="o-col-1-of-2">
           <div class="c-compositionPhoto1_box o-compositionPhoto">
-            <img src="imgs/vendors/nat-1.jpg" alt="Photo 1" class="c-compositionPhoto1_img-1 o-compositionPhoto_img">
-            <img src="imgs/vendors/nat-2.jpg" alt="Photo 2" class="c-compositionPhoto1_img-2 o-compositionPhoto_img">
-            <img src="imgs/vendors/nat-3.jpg" alt="Photo 3" class="c-compositionPhoto1_img-3 o-compositionPhoto_img">
+            <!-- With srcset and sizes it's possible to set diffetent image sources according to the img size in the browser -->
+            <img srcset="imgs/vendors/nat-1.jpg 300w, imgs/vendors/nat-1-large.jpg 1000w" sizes="(max-width:56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="Photo 1" class="c-compositionPhoto1_img-1 o-compositionPhoto_img" src="imgs/vendors/nat-1.jpg">
+            <img srcset="imgs/vendors/nat-2.jpg 300w, imgs/vendors/nat-2-large.jpg 1000w" sizes="(max-width:56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="Photo 2" class="c-compositionPhoto1_img-2 o-compositionPhoto_img" src="imgs/vendors/nat-2.jpg">
+            <img srcset="imgs/vendors/nat-3.jpg 300w, imgs/vendors/nat-3-large.jpg 1000w" sizes="(max-width:56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="Photo 3" class="c-compositionPhoto1_img-3 o-compositionPhoto_img" src="imgs/vendors/nat-3.jpg">
           </div>
         </div>
       </div>
@@ -321,7 +322,12 @@
 
   <footer class="o-footer">
     <div class="o-footer_logoBox">
-      <img src="imgs/vendors/logo-green-2x.png" alt="" class="o-footer_logoImg">
+      <picture class="c-footer_picture-1">
+        <!-- The source can contain media queries -->
+        <source srcset="imgs/vendors/logo-green-small-1x.png 1x, imgs/vendors/logo-green-small-2x.png 2x" media="(max-width: 37.5em)">
+          <!-- the img image works as a fallback. The srcset provide the best image format according to screen definition -->
+        <img srcset="imgs/vendors/logo-green-1x.png 1x, imgs/vendors/logo-green-2x.png 2x" alt="the natours log" class="o-footer_logoImg">
+      </picture>
     </div>
     <div class="o-row">
       <div class="o-col-1-of-2 o-footer_nav">

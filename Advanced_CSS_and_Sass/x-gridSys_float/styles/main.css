@@ -1,3 +1,28 @@
+/*/
+/*/
+/*/
+/*------------------------------------*\
+ *------- MEDIA QUERY MANAGER --------*
+ *---------- desktop first -----------*
+\*------------------------------------*/
+/*/
+/*In Desktop First media quesries are to be used from biggest screen to smallest one*/
+/*/
+/*
+0px    < Phone            <= 600px 
+600px  < Tablet Portrait  <= 900px
+900px  < Tablet Landscape <= 1200px
+1200px < First Dev Range  <= 1800px
+1800px < Big Desktops
+
+FirstDevRes: 1280px:800px Laptop with MDPI screen
+*/
+/*Breackpoint argument choices:
+phone:   600px 
+tabPort: 900px
+tabLand: 1200px
+bigDesk: 1800px
+*/
 /*Plance @import and @charset @font-face rules here 
 * Any @import rules must precede all other rules and style rules in a 
 * style sheet besides @charset, which must be the first thing in the 
@@ -41,47 +66,67 @@ body {
 -------------------------------- */
 .o-row {
   max-width: 114rem;
+  /*114rem*/
   margin: 0 auto; }
-  .o-row:not(:last-child) {
-    margin-bottom: 8rem; }
-  .o-row::after {
-    content: "";
-    /*The content is an empty string to create no visible presudo element :after*/
-    display: table;
-    /*standard value for a clear utility*/
-    clear: both; }
-  .o-row [class^=o-col-] {
-    background-color: darkorange;
-    float: left; }
-  .o-row .o-col-1-of-2 {
-    width: calc((100% - 6rem)/2);
-    /*to use the css function calc() together with a variable in sass a # symbol must preced the variable name.*/ }
-    .o-row .o-col-1-of-2:not(:last-child) {
-      margin-right: 6rem; }
-  .o-row .o-col-1-of-3 {
-    width: calc((100% - (6rem * 2))/3);
-    /*to use the css function calc() together with a variables in sass a # symbol must preced the variable name.*/ }
-    .o-row .o-col-1-of-3:not(:last-child) {
-      margin-right: 6rem; }
-  .o-row .o-col-2-of-3 {
-    width: calc((((100% - (6rem * 2))/ 3)* 2) + 6rem);
-    /*to use the css function calc() together with a variables in sass a # symbol must preced the variable name.*/ }
-    .o-row .o-col-2-of-3:not(:last-child) {
-      margin-right: 6rem; }
-  .o-row .o-col-1-of-4 {
-    width: calc((100% - (6rem * 3))/4);
-    /*to use the css function calc() together with a variables in sass a # symbol must preced the variable name.*/ }
-    .o-row .o-col-1-of-4:not(:last-child) {
-      margin-right: 6rem; }
-  .o-row .o-col-2-of-4 {
-    width: calc((((100% - (6rem * 3))/ 4)* 2) + 6rem);
-    /*to use the css function calc() together with a variables in sass a # symbol must preced the variable name.*/ }
-    .o-row .o-col-2-of-4:not(:last-child) {
-      margin-right: 6rem; }
-  .o-row .o-col-3-of-4 {
-    width: calc((((100% - (6rem * 3))/ 4)* 3) + (6rem * 2));
-    /*to use the css function calc() together with a variables in sass a # symbol must preced the variable name.*/ }
-    .o-row .o-col-3-of-4:not(:last-child) {
-      margin-right: 6rem; }
+  @media (max-width: 56.25rem) {
+    .o-row {
+      max-width: 50rem; } }
+
+.o-row:not(:last-child) {
+  margin-bottom: 8rem; }
+  @media (max-width: 56.25rem) {
+    .o-row:not(:last-child) {
+      margin-bottom: 8rem; } }
+
+.o-row::after {
+  content: "";
+  /*The content is an empty string to create no visible presudo element :after*/
+  display: table;
+  /*standard value for a clear utility*/
+  clear: both; }
+
+.o-row [class^=o-col-] {
+  background-color: darkorange;
+  float: left; }
+  @media (max-width: 56.25rem) {
+    .o-row [class^=o-col-] {
+      width: 100% !important;
+      margin-bottom: 6rem; } }
+
+.o-row .o-col-1-of-2 {
+  width: calc((100% - 6rem)/2);
+  /*to use the css function calc() together with a variable in sass a # symbol must preced the variable name.*/ }
+  .o-row .o-col-1-of-2:not(:last-child) {
+    margin-right: 6rem; }
+
+.o-row .o-col-1-of-3 {
+  width: calc((100% - (6rem * 2))/3);
+  /*to use the css function calc() together with a variables in sass a # symbol must preced the variable name.*/ }
+  .o-row .o-col-1-of-3:not(:last-child) {
+    margin-right: 6rem; }
+
+.o-row .o-col-2-of-3 {
+  width: calc((((100% - (6rem * 2))/ 3)* 2) + 6rem);
+  /*to use the css function calc() together with a variables in sass a # symbol must preced the variable name.*/ }
+  .o-row .o-col-2-of-3:not(:last-child) {
+    margin-right: 6rem; }
+
+.o-row .o-col-1-of-4 {
+  width: calc((100% - (6rem * 3))/4);
+  /*to use the css function calc() together with a variables in sass a # symbol must preced the variable name.*/ }
+  .o-row .o-col-1-of-4:not(:last-child) {
+    margin-right: 6rem; }
+
+.o-row .o-col-2-of-4 {
+  width: calc((((100% - (6rem * 3))/ 4)* 2) + 6rem);
+  /*to use the css function calc() together with a variables in sass a # symbol must preced the variable name.*/ }
+  .o-row .o-col-2-of-4:not(:last-child) {
+    margin-right: 6rem; }
+
+.o-row .o-col-3-of-4 {
+  width: calc((((100% - (6rem * 3))/ 4)* 3) + (6rem * 2));
+  /*to use the css function calc() together with a variables in sass a # symbol must preced the variable name.*/ }
+  .o-row .o-col-3-of-4:not(:last-child) {
+    margin-right: 6rem; }
 
 /* --- END OF: grid sys float --- */

@@ -12,13 +12,23 @@
 .o-heading1 {
   margin: 0;
   text-transform: uppercase;
+  
+
 }
 
 .o-heading2 {
-  font-size: 3.5rem;
-  text-transform: uppercase;
-  font-weight: 700;
-
+  &{
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    @include mediaQ(tabPort){
+      font-size: 3rem;
+    }
+    @include mediaQ(phone){
+      font-size: 2.5rem;
+    }
+  }
+  
   &-gradient {
     display: inline-block;
     background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);

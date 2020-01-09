@@ -132,115 +132,129 @@
 
   &_toggle {
     display: none;
-    
-    &:checked ~ .o-navigation_background{
+
+    &:checked ~ .o-navigation_background {
       transform: scale(60);
-      
     }
-    
-    &:checked ~ .o-navigation_nav{
+
+    &:checked ~ .o-navigation_nav {
       visibility: visible;
       opacity: 1;
     }
-    
-    &:checked + .o-navigation_btn .o-navigation_icon{
-      &{
+
+    &:checked + .o-navigation_btn .o-navigation_icon {
+      & {
         background-color: transparent;
       }
-      &:before{
+
+      &:before {
         transform: rotate(45deg);
         top: 0;
       }
-      &:after{
+
+      &:after {
         transform: rotate(-45deg);
         top: 0;
-        
       }
     }
   }
-  
+
   &_btn {
-    height: 6.2rem;
-    width: 6.2rem;
+    height: $o-navigation_btnRadious;
+    width: $o-navigation_btnRadious;
     border-radius: 50%;
     position: fixed;
-    top: 6.4rem;
-    right: 6.4rem;
+    top: $o-navigation_btnPosition-v;
+    right: $o-navigation_btnPosition-h;
     background-color: $color-white;
     z-index: calc(#{$o-navigation_nav-zIndex} + 1);
     box-shadow: 0 1rem 3rem rgba(black, .1);
     text-align: center;
     cursor: pointer;
-    
-    &:hover .o-navigation_icon{
-      &:before{
+    @include mediaQ(tabPort) {
+      top: $o-navigation_btnPosition-v-sm;
+      right: $o-navigation_btnPosition-h-sm;
+    }
+    @include mediaQ(phone) {
+      top: $o-navigation_btnPosition-v-xs;
+      right: $o-navigation_btnPosition-h-xs;
+    }
+
+    &:hover .o-navigation_icon {
+      &:before {
         transform: translateY(-.2rem);
-        
       }
-      &:after{
+
+      &:after {
         transform: translateY(.2rem);
       }
     }
   }
-  
+
   &_background {
-    height: 6rem;
-    width: 6rem;
+    height: $o-navigation_bkgRadious;
+    width: $o-navigation_bkgRadious;
     border-radius: 50%;
     position: fixed;
-    top: 6.5rem;
-    right: 6.5rem;
+    top: calc(#{$o-navigation_btnPosition-v} + ((#{$o-navigation_btnRadious} - #{$o-navigation_bkgRadious})/2));
+    right: calc(#{$o-navigation_btnPosition-h} + ((#{$o-navigation_btnRadious} - #{$o-navigation_bkgRadious})/2));
     background-image: radial-gradient($color-primary-light, $color-primary-dark);
     z-index: calc(#{$o-navigation_nav-zIndex} - 1);
     transform: scale(1);
-    transition: transform .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    @include mediaQ(tabPort) {
+      top: calc(#{$o-navigation_btnPosition-v-sm} + ((#{$o-navigation_btnRadious} - #{$o-navigation_bkgRadious})/2));
+      right: calc(#{$o-navigation_btnPosition-h-sm} + ((#{$o-navigation_btnRadious} - #{$o-navigation_bkgRadious})/2));
+    }
+    @include mediaQ(phone) {
+      top: calc(#{$o-navigation_btnPosition-v-xs} + ((#{$o-navigation_btnRadious} - #{$o-navigation_bkgRadious})/2));
+      right: calc(#{$o-navigation_btnPosition-h-xs} + ((#{$o-navigation_btnRadious} - #{$o-navigation_bkgRadious})/2));
+    }
   }
 
   &_nav {
-    
     height: 100vh;
     width: 100vw;
-    position:fixed;
+    position: fixed;
     top: 0;
-    right:0;
+    right: 0;
     z-index: $o-navigation_nav-zIndex;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s;
-    transition: opacity .5s;
-
+    transition: opacity 0.5s;
   }
-  
-  &_icon{
-    &{
+
+  &_icon {
+    & {
       position: relative;
-      margin-top: 3rem;
-      
+      margin-top: calc((#{$o-navigation_btnRadious}/2) - 1px);
     }
+
     &,
-    &::before,
-    &::after{
+    &::after,
+    &::before {
       display: inline-block;
-      width: 2.5rem;
+      width: calc((#{$o-navigation_btnRadious}/2) - 0.5rem);
       height: 2px;
       background-color: $color-gray-dark-3;
       z-index: calc(#{$o-navigation_nav-zIndex} + 2);
-      transition: transform .2s ease-out;
+      transition: transform 0.2s ease-out;
     }
-    
-    &::before,
-    &::after{
+
+    &::after,
+    &::before {
       content: "";
       position: absolute;
       left: 0;
     }
-    
-    &::before{
+
+    &::before {
       top: -.8rem;
-      
     }
-    &::after{
-      top: .8rem;
+
+    &::after {
+      top: 0.8rem;
     }
   }
 
@@ -250,8 +264,7 @@
     text-align: center;
   }
 
-  &_item {
-  }
+  &_item {}
 
   &_link {
     &,
@@ -266,7 +279,7 @@
       text-decoration: none;
       background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
       background-size: 280%;
-      transition: .3s ease-out;
+      transition: 0.3s ease-out;
     }
 
     &:active,
@@ -275,8 +288,6 @@
       color: $color-primary;
     }
   }
-  
-  
 }
 /*-------- end of: navigation --------*/
 /*/
@@ -285,6 +296,7 @@
   #?
 \*------------------------------------*/
 .o-compositionPhoto {
+  
   &:hover &_img:not(:hover) {
     transform: scale(0.95);
     transition: all 0.2s;
@@ -294,7 +306,13 @@
   &_img {
     position: absolute;
     width: 55%;
-    box-shadow: 0 1.5rem 4rem rgba($color-black-almost, .4);
+    box-shadow: 0 1.5rem 3rem rgba($color-black-almost, .2);
+    @include mediaQ(tabPort) {
+      float: left;
+      position: relative;
+      width: 33.33333333%;
+      box-shadow: 0 1.5rem 4rem rgba($color-black-almost, .4);
+    }
 
     &:hover {
       outline: 1.5rem solid $color-primary;
@@ -440,6 +458,40 @@
     font-weight: 100;
   }
   
+  @include mediaQ(tabPort, touch) {
+
+    &_face {
+      //position: relative; 
+      transition: unset; 
+      
+      &-front{
+        border-radius: $borderRadius-px-default $borderRadius-px-default 0 0;
+        clip-path: polygon(0 0, 100% 0, 100% 89%, 0 100%); 
+      }
+
+      &-back {
+        position: absolute; 
+        transform: rotateY(0); 
+        border-radius: 0 0 $borderRadius-px-default $borderRadius-px-default;
+        padding: 7rem 0; 
+      }
+    }
+
+    &_box:hover &_face-front {
+      transform: rotateY(0);
+      transform: translateZ(0);
+    }
+
+    &_box:hover &_face-back {
+      transform: rotateY(0deg);
+    }
+    &_img {
+      margin-bottom: -2.5rem;
+    }
+    &_priceBox {
+      margin-bottom: 1rem;
+    }
+  }
 }
 /*------------------------------------*\
   #STORY-SECTION
@@ -453,9 +505,21 @@
     border-radius: $borderRadius-px-default;
     padding: 4rem 6rem;
     transform: skewX(-5deg);
+    
+    @include mediaQ(tabPort){
+      width: 100%;
+      padding: 3rem 5rem;
+    }
+    
+    @include mediaQ(phone){
+      transform: skewX(0);
+    }
 
     & > * {
       transform: skewX(5deg);
+      @include mediaQ(phone){
+        transform: skewX(0);
+      }
     }
 
     &::after {
@@ -482,12 +546,16 @@
     width: 15rem;
     height: 15rem;
     float: left;
-    shape-outside: circle(50% at 50% 50%);
-    /*shape outside together with float allows the text or other objects to precisly follow
-    the shape of the element instead of the box around it*/
-    clip-path: circle(50% at 50% 50%);
     margin-right: 2rem;
     position: relative;
+    overflow: hidden;
+    @supports ((-webkit-clip-path: circle(50% at 50% 50%)) or (clip-path: circle(50% at 50% 50%))) or (-webkit-clip-path: circle(50% at 50% 50%)){
+      shape-outside: circle(50% at 50% 50%);
+      /*shape outside together with float allows the text or other objects to precisly follow
+      the shape of the element instead of the box around it*/
+      -webkit-clip-path: circle(50% at 50% 50%);
+              clip-path: circle(50% at 50% 50%);
+    }
   }
 
   &_img {
@@ -639,10 +707,16 @@
     color: $color-white;
     padding: $margin-rem-big $margin-rem-huge;
     font-size: 1.4rem;
+    @include mediaQ(tabPort) {
+      padding: $margin-rem-medium 0;
+    }
   }
 
   &_logoBox {
     margin-bottom: $margin-rem-medium;
+    @include mediaQ(tabPort) {
+      margin-bottom: $margin-rem-small;
+    }
   }
 
   &_logoImg {
@@ -699,101 +773,127 @@
 /*------------------------------------*\
   #POPUP
 \*------------------------------------*/
-  .o-popup{
-    & {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba($color-gray-dark-3, 0.9);
-      z-index: $o-popup-zIndex;
-      opacity: 0;
-      visibility: hidden;
-      &:target{
-        /*
+.o-popup {
+  & {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color-gray-dark-3, 0.9);
+    z-index: $o-popup-zIndex;
+    opacity: 0;
+    visibility: hidden;
+    
+    @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)){
+      /*supports verifies if the selected property is supported by the browser and 
+      applies the given rules only if the condition is true*/ 
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba($color-black-almost, .3);
+    }
+    
+    &:target {
+      /*
         !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         This selector allows to transform an element to a target. An anchor e.g.
         can be used to interact with it.
         !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         */
-        opacity: 1;
-        visibility: visible;
-        
-      }
-      &:target &_content{
-        opacity: 1;
-        transform: translate(-50% , -50%) scale(1);
-      }
+      opacity: 1;
+      visibility: visible;
     }
-    &_close{
-      &:link,
-      &:visited{
-        color: $color-gray-dark;
-        position: absolute;
-        top: 2.5rem;
-        right: 2.5rem;
-        text-decoration: none;
-        display: inline-block;
-        transition: all .2s;
-      }
-      
-      &:hover{
-        color: $color-primary;
-      }
+
+    &:target &_content {
+      opacity: 1;
+      transform: translate(-50% , -50%) scale(1);
     }
-    
-    &_content{
-      z-index: calc(#{$o-popup-zIndex} + 1);
-      background-color: white;
+  }
+
+  &_close {
+    &:link,
+    &:visited {
+      color: $color-gray-dark;
+      position: absolute;
+      top: 2.5rem;
+      right: 2.5rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &_content {
+    z-index: calc(#{$o-popup-zIndex} + 1);
+    background-color: white;
+    width: 90%;
+    @include absoluteCenter-VH;
+    border-radius: $borderRadius-px-default;
+    overflow: hidden;
+    opacity: 0;
+    transform: translate(-50% , -50%) scale(.5);
+    transition: all 0.5s;
+    @include mediaQ(tabPort){
       width: 80%;
-      @include absoluteCenter-VH;
-      border-radius: $borderRadius-px-default;
-      overflow: hidden;
-      opacity: 0;
-      transform: translate(-50% , -50%) scale(.5);
-      transition: all .5s;
     }
-    
-    &_heading2{
-        margin-bottom: $margin-rem-small;
-    }
-    &_heading3{
-      margin-bottom: $margin-rem-small;
-    }
-    
-    &_leftCol{
-      width: calc(100% / 3);
-      display: table-cell;
-      /*By using table cell we can create two columns with the same height 
-      regardless of the individual content*/
-    }
-    
-    &_rightCol{
-      width: calc(100% / 2);
-      display: table-cell;
-      vertical-align: middle;
-      /*By using table cell we can create two columns with the same height
-      regardless of the individual content*/
-      padding: 3rem 5rem;
-    }
-    
-    &_img{
-      display: block;
+    @include mediaQ(phone){
       width: 100%;
     }
-    
-    &_text{
-      font-size: 1.4rem;
-      margin-bottom: 4rem;
-      
-      column-count: 2;
-      column-gap: 3rem;
-      column-rule: 1px solid $color-gray-light-2;
-      hyphens: auto;
-    }
-    
   }
+
+  &_heading2 {
+    margin-bottom: $margin-rem-small;
+  }
+
+  &_heading3 {
+    margin-bottom: $margin-rem-small;
+  }
+
+  &_leftCol {
+    width: calc(100% / 3);
+    display: table-cell;
+    /*By using table cell we can create two columns with the same height 
+      regardless of the individual content*/
+    @include mediaQ(tabPort){
+      display: table;
+      width: 100%;
+      padding: 6rem 5rem 0 5rem;
+    }  
+  }
+
+  &_rightCol {
+    width: calc(100% / 2);
+    display: table-cell;
+    vertical-align: middle;
+    /*By using table cell we can create two columns with the same height
+      regardless of the individual content*/
+    padding: 3rem 5rem;
+  }
+
+  &_img {
+    display: block;
+    width: 100%;
+    @include mediaQ(tabPort){
+      display: table-cell;
+      width: 50%;
+      height: 10vh;
+      object-fit: cover;
+    }  
+  }
+
+  &_text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+    column-count: 2;
+    column-gap: 3rem;
+    column-rule: 1px solid $color-gray-light-2;
+    hyphens: auto;
+  }
+}
 /*---------- end of: popup -----------*/
 /*/
 /*/

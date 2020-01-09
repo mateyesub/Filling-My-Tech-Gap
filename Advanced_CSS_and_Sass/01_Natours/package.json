@@ -4,7 +4,15 @@
   "description": "A beautiful web site",
   "main": "scripts/main.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss styles/main.css -w"
+    "watch:sass": "node-sass sass/main.scss styles/style.css -w",
+    "devServer": "live-server --browser=firefoxDev",
+    "start": "npm-run-all --parallel watch:sass devServer",
+    
+    "compile:sass": "node-sass sass/main.scss styles/style.comp.css",
+    "concat:css": "concat -o styles/style.concat.css styles/vendors/normalize.css styles/icon-font.css styles/gridSysFloat.css styles/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' styles/style.concat.css -o styles/style.prefix.css",
+    "compress:css": "node-sass styles/style.prefix.css styles/style.css --output-style compressed",
+    "buildProduction:css": "npm-run-all compile:sass concat:css prefix:css compress:css"
   },
   "author": "Matteo Carotta",
   "license": "MIT",
@@ -12,6 +20,10 @@
     "jquery": "^3.4.1"
   },
   "devDependencies": {
-    "node-sass": "^4.13.0"
+    "autoprefixer": "^9.7.3",
+    "concat": "^1.0.3",
+    "node-sass": "^4.13.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^7.1.0"
   }
 }

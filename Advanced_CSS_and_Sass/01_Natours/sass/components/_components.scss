@@ -1,15 +1,41 @@
-/*UNIQUE: COMPONENTS
--------------------------------- */
+/*/
+/*/
+/*/
+/*------------------------------------*\
+ *---- UNIQUE ELEMENTS: COMPONENTS ---*
+ *--------- dedicated rules ----------*
+\*------------------------------------*/
+/*/
+/*/
 .c-introHeader_header {
-  height: $introHeader_header-height;
-  background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url("../imgs/vendors/hero.jpg");
+  height: 85vh;
+  background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url("../imgs/vendors/hero-small.jpg");
   background-size: cover;
   background-position: top 20% left 40%;
   position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% $introHeader_vertex-rightBottom*100%, 0 100%);
-  /* To shape a container as a polygon https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path */
-  /* clip-path crop the content of the container accorging to the edges of
-  the poygon */
+
+  
+  @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)){
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% $introHeader_vertex-rightBottom*100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% $introHeader_vertex-rightBottom*100%, 0 100%);
+    /* To shape a container as a polygon https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path */
+    /* clip-path crop the content of the container accorging to the edges of
+    the poygon */
+    height: $introHeader_header-height;
+  }
+  
+  @media only screen and (min-resolution: 120dpi) and (min-width: 37.5em),  only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), only screen and (min-width: 125em){
+    /*This media query taregts the screen desity and deliver the image at the ideal resolution*/
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url("../imgs/vendors/hero.jpg");
+  }
+  
+  @include mediaQ(bigDesk){
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url("../imgs/vendors/hero.jpg");
+  }
+  
+  @include mediaQ(phone) {
+    clip-path: polygon(0 0, 100% 0, 100% calc((#{$introHeader_vertex-rightBottom} + 0.1)*100%), 0 100%);
+  }
 }
 
 .c-heroLogo {
@@ -48,14 +74,14 @@
   }
 
   &_heading {
-    color: white;
-    backface-visibility: hidden;
-    /* somethimes animations renders sligtly out of
-    position if backface-visibility attribute of the animated element is not set
-    to hidden */
-  }
+    & {
+      color: white;
+      backface-visibility: hidden;
+      /* somethimes animations renders sligtly out of
+      position if backface-visibility attribute of the animated element is not set
+      to hidden */
+    }
 
-  &_heading {
     &-large {
       display: block;
       font-size: 9rem;
@@ -68,6 +94,10 @@
       /* the animation duration is then assigned through the attribute
   animation-duration */
       animation-timing-function: ease-out;
+      @include mediaQ(phone) {
+        letter-spacing: 1rem;
+        font-size: 5rem;
+      }
     }
 
     &-small {
@@ -79,6 +109,9 @@
       animation-duration: 1s;
       animation-timing-function: ease-out;
       margin-bottom: 6rem;
+      @include mediaQ(phone) {
+        letter-spacing: 0.5rem;
+      }
     }
   }
 
@@ -93,6 +126,12 @@
     background-color: $color-grey-light-1;
     padding: 25rem 0;
     margin-top: calc(-100vh + (#{$introHeader_vertex-rightBottom} * 100vh)); //    margin-top:  calc( -100vh + (#{$introHeader_vertex-rightBottom} * #{$introHeader_header-height}));
+    @include mediaQ(tabPort) {
+      padding: 20rem 0 45rem;
+    }
+    @include mediaQ(tabPort) {
+      padding: 20rem 0 15rem;
+    }
   }
 
   &_heading {
@@ -114,18 +153,32 @@
       top: -2rem;
       left: 0;
       //border: 3px solid yellow;
+      @include mediaQ(tabPort) {
+        top: 0;
+        transform: scale(1.2);
+      }
     }
 
     &-2 {
       top: 5rem;
       right: 0;
       //border: 3px solid blue;
+      @include mediaQ(tabPort) {
+        top: -1rem;
+        transform: scale(1.3);
+        z-index: 2;
+      }
     }
 
     &-3 {
       top: 15rem;
       left: 20%;
       //border: 3px solid red;
+      @include mediaQ(tabPort) {
+        top: 1rem;
+        left: 0;
+        transform: scale(1.3);
+      }
     }
   }
 }
@@ -138,6 +191,9 @@
     background-position: top 10% left 70%;
     transform: skewY(-7deg);
     margin-top: -9rem;
+    @include mediaQ(tabPort) {
+      padding: 10rem 0;
+    }
 
     & > * {
       /*This selector selects all the direct children of the section*/
@@ -146,6 +202,9 @@
 
     & > .o-row {
       padding: 0 2%;
+      @include mediaQ(tabPort) {
+        padding: 0;
+      }
     }
   }
 }
@@ -161,9 +220,15 @@
     background-color: $color-grey-light-1;
     padding: 25rem 0;
     margin-top: -7.6rem;
+    @include mediaQ(tabPort) {
+      padding: 15rem 0;
+    }
 
     & .o-row {
       padding: 0 5%;
+      @include mediaQ(tabPort) {
+        padding: 0;
+      }
     }
   }
 
@@ -192,7 +257,7 @@
     &-card1,
     &-card2,
     &-card3 {
-      height: $toursCard_box-1--height;
+      height: $toursCard_face-1--height;
       width: $toursCard_box-1--width;
     }
   }
@@ -203,6 +268,7 @@
     &-card3 {
       background-color: $color-white;
       color: $color-black-almost;
+
     }
   }
 
@@ -267,6 +333,43 @@
       background-image: linear-gradient(to right bottom, rgba($color-tertiary-light, .8), rgba($color-tertiary-dark, .8));
     }
   }
+  @include mediaQ(tabPort, touch) {
+    /*CARD 1*/
+    &_box {
+      &-card1,
+      &-card2,
+      &-card3 {
+        height: $toursCard_box-mobile--height; //CHANGED
+      }
+    }
+
+    &_face {
+      &-card1,
+      &-card2,
+      &-card3 {
+        height: $toursCard_face-mobile--height; //CHANGED
+      }
+    }
+
+    &_front {
+      &-card1,
+      &-card2,
+      &-card3 {
+        z-index: 2; //CHANGED
+        height: 72%; //CHANGED
+      }
+    }
+
+    &_back {
+      &-card1,
+      &-card2,
+      &-card3 {
+        top: 61%; //CHANGED
+        height: 40%; //CHANGED
+      }
+    }
+    
+}
 }
 /*------------------------------------*\
   #STORIES-SECTION
@@ -329,6 +432,12 @@
   &_bookingFormBox {
     &-form1 {
       background-image: linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 50%, transparent 50%), url("../imgs/vendors/nat-10.jpg");
+      @include mediaQ(tabPort){
+        background-image: linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 70%, transparent 70%), url("../imgs/vendors/nat-10.jpg");
+      }
+      @include mediaQ(phone){
+        background-image: linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 100%), url("../imgs/vendors/nat-10.jpg");
+      }
     }
   }
 }
@@ -340,32 +449,44 @@
 
   &_group {
     width: 40%;
+    @include mediaQ(tabPort){
+      width: 75%;
+    }
+    @include mediaQ(phone){
+      width: 100%;
+    }
   }
-  
-  &_group:not(:last-child){
+
+  &_group:not(:last-child) {
     margin-bottom: 2rem;
   }
-  
-  &_groupRadio{
+
+  &_groupRadio {
     width: 49%;
     display: inline-block;
+    @include mediaQ(tabPort){
+      width: auto;
+      display: block;
+      &:not(:last-child){
+        margin-bottom: 2rem;
+      }
+    }
   }
-  
-  &_label-radio{
+
+  &_label-radio {
     font-size: $default-font-size;
     cursor: pointer;
   }
-  
-  &_btnRadio{
+
+  &_btnRadio {
     position: absolute;
     top: -1rem;
     left: -2.8rem;
   }
-  
-  &_submitButton{
+
+  &_submitButton {
     margin-top: $margin-rem-small;
   }
-
 }
 /*------ end of: booking section -----*/
 /*/

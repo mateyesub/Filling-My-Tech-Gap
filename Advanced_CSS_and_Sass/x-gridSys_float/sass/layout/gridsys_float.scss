@@ -1,19 +1,25 @@
 /* --------------------------------
 * GRID SYS FLOAT
 -------------------------------- */
-.o-row{
-  max-width: $grid-width;
-  margin: 0 auto;
-  
-  &:not(:last-child){
-    margin-bottom: $gutter-vertical;
+.o-row {
+  & {
+    max-width: $desktopFirst_gridWidth; /*114rem*/
+    margin: 0 auto;
+    @include mediaQ(tabPort){
+      max-width: 50rem;  
+    }
   }
-  
-  @include u-clearfix; 
+
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical-medium;
+    @include mediaQ(tabPort) {
+      margin-bottom: $gutter-vertical-medium;
+    }
+  }
+  @include u-clearfix;
   //Mixins are included into the current context using the @include at-rule
   //https://sass-lang.com/documentation/at-rules/mixin
-  
-  [class^=o-col-]{
+  [class^=o-col-] {
     //the selector [attributeName^=attributeValue] allows to select all the 
     //elements containing a specific attribute, which value beginns 
     //as specified.
@@ -22,63 +28,58 @@
     //or surrounding letters.
     background-color: darkorange;
     float: left;
-  }
-  
-  .o-col-1-of-2{
-    width: calc((100% - #{$gutter-horizontal})/2);  
-    /*to use the css function calc() together with a variable in sass a # symbol must preced the variable name.*/
-    
-    
-    &:not(:last-child){
-      margin-right: $gutter-horizontal;
+    @include mediaQ(tabPort) {
+      width: 100% !important;
+      margin-bottom: $gutter-vertical-small;
     }
   }
-  
-  .o-col-1-of-3{
-    width: calc((100% - (#{$gutter-horizontal} * 2))/3);  
-    /*to use the css function calc() together with a variables in sass a # symbol must preced the variable name.*/
-    
-    &:not(:last-child){
+
+  .o-col-1-of-2 {
+    width: calc((100% - #{$gutter-horizontal})/2);
+    /*to use the css function calc() together with a variable in sass a # symbol must preced the variable name.*/
+    &:not(:last-child) {
       margin-right: $gutter-horizontal;
     }
   }
 
-  .o-col-2-of-3{
-    width: calc((((100% - (#{$gutter-horizontal} * 2))/ 3)* 2) + #{$gutter-horizontal});  
+  .o-col-1-of-3 {
+    width: calc((100% - (#{$gutter-horizontal} * 2))/3);
     /*to use the css function calc() together with a variables in sass a # symbol must preced the variable name.*/
-    
-    &:not(:last-child){
+    &:not(:last-child) {
       margin-right: $gutter-horizontal;
     }
   }
-  
-  .o-col-1-of-4{
-    width: calc((100% - (#{$gutter-horizontal} * 3))/4);  
+
+  .o-col-2-of-3 {
+    width: calc((((100% - (#{$gutter-horizontal} * 2))/ 3)* 2) + #{$gutter-horizontal});
     /*to use the css function calc() together with a variables in sass a # symbol must preced the variable name.*/
-    
-    &:not(:last-child){
+    &:not(:last-child) {
       margin-right: $gutter-horizontal;
     }
   }
-  
-  .o-col-2-of-4{
-    width: calc((((100% - (#{$gutter-horizontal} * 3))/ 4)* 2) + #{$gutter-horizontal});  
+
+  .o-col-1-of-4 {
+    width: calc((100% - (#{$gutter-horizontal} * 3))/4);
     /*to use the css function calc() together with a variables in sass a # symbol must preced the variable name.*/
-    
-    &:not(:last-child){
+    &:not(:last-child) {
       margin-right: $gutter-horizontal;
     }
   }
-  
-  .o-col-3-of-4{
-    width: calc((((100% - (#{$gutter-horizontal} * 3))/ 4)* 3) + (#{$gutter-horizontal} * 2));  
+
+  .o-col-2-of-4 {
+    width: calc((((100% - (#{$gutter-horizontal} * 3))/ 4)* 2) + #{$gutter-horizontal});
     /*to use the css function calc() together with a variables in sass a # symbol must preced the variable name.*/
-    
-    &:not(:last-child){
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+  }
+
+  .o-col-3-of-4 {
+    width: calc((((100% - (#{$gutter-horizontal} * 3))/ 4)* 3) + (#{$gutter-horizontal} * 2));
+    /*to use the css function calc() together with a variables in sass a # symbol must preced the variable name.*/
+    &:not(:last-child) {
       margin-right: $gutter-horizontal;
     }
   }
 }
-
-
 /* --- END OF: grid sys float --- */

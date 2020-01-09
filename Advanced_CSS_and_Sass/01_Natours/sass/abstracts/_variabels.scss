@@ -25,13 +25,24 @@ $default-font-size: 1.6rem;
 //OBJECTS
 $o-navigation_nav-zIndex: 100;
 $o-popup-zIndex: 200;
-
+$o-navigation_btnPosition-v: 6.4rem;
+$o-navigation_btnPosition-h: 6.4rem;
+$o-navigation_btnPosition-v-sm: calc(#{$o-navigation_btnPosition-v} - 2rem);
+$o-navigation_btnPosition-h-sm: calc(#{$o-navigation_btnPosition-v} - 2rem);
+$o-navigation_btnPosition-v-xs: calc(#{$o-navigation_btnPosition-v} - 3.5rem);
+$o-navigation_btnPosition-h-xs: calc(#{$o-navigation_btnPosition-v} - 3.5rem);
+$o-navigation_btnRadious: 6.2rem; //Main value for the button definition, many calc()s follow.
+$o-navigation_bkgRadious: calc(#{$o-navigation_btnRadious} - 0.2rem);
 // COMPONENTS
 $introHeader_header-height: 92vh;
 $introHeader_vertex-rightBottom: 0.8;
 
 $toursCard_box-1--height: 50rem;
 $toursCard_box-1--width: 100%;
+$toursCard_face-1--height: 50rem;
+$toursCard_box-mobile--height: 85vh;
+$toursCard_face-mobile--height: 80%;
+
 
 //parameters
 $margin-rem-small: 1.5rem;
