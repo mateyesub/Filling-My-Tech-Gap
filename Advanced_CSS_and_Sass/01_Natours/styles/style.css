@@ -254,6 +254,9 @@ body {
   display: none; }
   .o-navigation_toggle:checked ~ .o-navigation_background {
     transform: scale(60); }
+    @media only screen and (min-width: 112.5em) {
+      .o-navigation_toggle:checked ~ .o-navigation_background {
+        transform: scale(120); } }
   .o-navigation_toggle:checked ~ .o-navigation_nav {
     visibility: visible;
     opacity: 1; }

@@ -134,7 +134,11 @@
     display: none;
 
     &:checked ~ .o-navigation_background {
+      
       transform: scale(60);
+      @include mediaQ(bigDesk){
+        transform: scale(120);
+      }
     }
 
     &:checked ~ .o-navigation_nav {
