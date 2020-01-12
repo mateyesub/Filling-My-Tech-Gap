@@ -1,0 +1,305 @@
+/* Project Name: Build a Technical Documentation Page */
+/* For linting options see .jshintrc in the project root folder */
+html,
+body { /////////////
+    margin: 0;
+    padding: 0;
+}
+
+body { //////////
+    color: #4d4e53;
+    background-color: #4d4e53;
+    font-family: "Open Sans", Arial, sans-serif;
+    line-height: 1.5;
+}
+
+.container { 
+    display: grid;
+    grid-template-columns: 20% 50% auto;
+    grid-template-rows: auto auto auto;
+}
+
+nav {
+    background-color: #ed8e30;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    height: 100vh;
+}
+
+main {
+    background-color: #ffffff;
+    padding: 20px 10%;
+}
+
+th {
+    text-align: right;
+    vertical-align: top;
+}
+
+footer {
+    background-color: #ffffff;
+    text-align: center;
+}
+
+header {
+    color: #005385;
+}
+
+.nav-header {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 10%;
+}
+
+/* STYLING LINKS */
+nav ul {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+nav li {
+    list-style-type: none;
+    width: 100%;
+    border-right: none;
+}
+
+nav:hover li {
+    border-right: none;
+}
+
+a {
+    text-decoration: none;
+    color: #005385;
+}
+
+.nav-item {
+    display: block;
+    width: 80.1%;
+    padding: 10%;
+}
+
+.nav-link {
+    color: white;
+    font-weight: 600;
+}
+
+a:link {
+}
+
+a:visited {
+    color: #ed8e30;
+}
+
+.nav-link:visited {
+    color: white;
+}
+
+a:focus {
+}
+
+a:hover {
+    color: #61a2ca;
+}
+
+.nav-item:hover {
+    background-color: white;
+}
+
+.nav-item:hover .nav-link {
+    color: #005385;
+}
+
+a:hover[href^="https"]::after {
+    content: "🔗 ";
+}
+
+a:active {
+}
+
+/* END OF STYLING LINKS */
+.a1 {
+    font-size: 1.5rem;
+}
+
+.a2 {
+    font-size: 1.5rem;
+}
+
+.a3 {
+    font-size: 1.17rem;
+}
+
+.em-box {
+    padding-bottom: 0.2rem;
+}
+
+.em-box div,
+.em-box p {
+    padding: 0 1rem;
+}
+
+.em-box table {
+    margin: 1em;
+}
+
+.tip {
+    background-color: rgb(219, 250, 244);
+}
+
+.tip div {
+    background-color: rgb(26, 188, 156);
+}
+
+.reference {
+    background-color: rgb(218, 218, 218);
+}
+
+.reference div {
+    background-color: rgb(190, 190, 190);
+    color: white;
+}
+
+.note {
+    background-color: rgb(219, 230, 250);
+}
+
+.note div {
+    background-color: #5692ff;
+    color: white;
+}
+
+.see {
+    background-color: #e7ebfa;
+}
+
+.see div {
+    background-color: #7a87e6;
+    color: white;
+}
+
+.figure {
+    margin-bottom: 24px;
+}
+
+.align-center {
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+
+.caption {
+    font-style: italic;
+}
+
+.keyCommand-line {
+    outline: solid 1px;
+    padding: 0px 3px;
+}
+
+.keyCommand-bg-light-gray {
+    background-color: #f0f0f0;
+    padding: 0px 3px;
+}
+
+/* mobile */
+@media (max-width: 767px) {
+    .container {
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto;
+    }
+
+    nav,
+    main {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    nav {
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    main {
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    footer {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+}
+
+/* tablets */
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: 30% auto auto;
+        grid-template-rows: auto auto auto;
+    }
+
+    nav,
+    main {
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    nav {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    main {
+        grid-column-start: 2;
+        grid-column-end: 4;
+    }
+
+    footer {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+}
+
+/* desktops */
+@media (min-width: 992px) {
+    .container {
+        grid-template-columns: 20% 65% auto;
+        grid-template-rows: auto auto auto;
+    }
+
+    nav,
+    main {
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    nav {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    main {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+
+    footer {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+}
+
+/* xl desktops */
+@media (min-width: 1280px) {
+    .container {
+        grid-template-columns: 15% 50% auto;
+        grid-template-rows: auto auto auto;
+    }
+}

@@ -1,0 +1,197 @@
+/*Project Name: 1-4_Build_a_Technical_Documentation_Page*/
+/*For linting options see .jshintrc in the project root folder 
+stylesheet written accring to the NemeSpace-BEM (Block Element Modifier) principles
+in camelCase:
+namespace prefixes: o-: Object; c-: Component; u-: Utility; t-: Theme; s-: Scope;
+is-, has-:  Stete or Condition; _: Hack; js-: JavaScript Bind; qa-: QA or Test Bind
+Visit:
+https://css-tricks.com/bem-101/
+https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/
+https://css-tricks.com/abem-useful-adaptation-bem/ */
+/* Plance @import and @charset @font-face rules here 
+Any @import rule must be precede first, all other rules and style rules in a 
+style sheet besides @charset, which must be the first thing in the 
+style sheet if it exists, otherwise the @import rule is invalid. 
+Visit: http://www.w3.org/TR/css3-cascade/#at-import */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,800&display=swap");
+.u-btn-reset {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit; }
+
+.u-clearfix {
+  zoom: 1;
+  /* clearfix is a class to be assigned to a html element 
+  that uses the float property to clear it or reset to 
+  standard the float property of the elemnts after the it */ }
+
+.u-clearfix::after {
+  content: '';
+  clear: both;
+  /* visit: https://developer.mozilla.org/en-US/docs/Web/CSS/clear */
+  display: table;
+  height: 0;
+  visibility: hidden; }
+
+.u-centerText {
+  text-align: center; }
+
+/*/
+/*/
+/*/
+/*------------------------------------*\
+ *-------- BASIC RULES: BASE ---------*
+ *----------- unique rules -----------*
+\*------------------------------------*/
+/*/
+/*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /* visit: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */ }
+
+html {
+  font-size: 62.5%;
+  /*16px * 62.5% = 10px*/
+  /*rem are not supported in IE6 */
+  /*In Desktop First media quesries are written from biggest screen to smallest one*/ }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%;
+      /*16px * 75% = 12px*/ } }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%;
+      /*16px *  56.25% = 9rem*/ } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%;
+      /*16px * 50% = 8px*/ } }
+
+body {
+  font-size: 2rem;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: white;
+  background-color: #4d4e53;
+  padding: 30px;
+  box-sizing: border-box; }
+  @media (max-width: 56.25em) {
+    body {
+      padding: 0; } }
+
+::selection {
+  background-color: orange;
+  color: white; }
+
+/*/
+/*/
+/*------------------------------------*\
+ *--------- END OF: BASE ----------*
+\*------------------------------------*/
+/*/
+/*/
+/*/
+/*------------------------------------*\
+ *-- ABSTRACT ELEMENTS: TYPOGRAPHY ---*
+ *---------- reusable rules ----------*
+\*------------------------------------*/
+/*/
+/*------------------------------------*\
+    #HEADINGS
+\*------------------------------------*/
+.o-heading1 {
+  margin: 0;
+  text-transform: uppercase; }
+
+.o-heading2 {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700; }
+  @media (max-width: 56.25em) {
+    .o-heading2 {
+      font-size: 3rem; } }
+  @media (max-width: 37.5em) {
+    .o-heading2 {
+      font-size: 2.5rem; } }
+
+.o-heading2-gradient {
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  /*The webkit-background-clip clips the bachground around the text*/
+  color: transparent;
+  /*By aking the text transparent the cliped background will be visible
+    resulting in a gradient text*/
+  letter-spacing: 0.2rem;
+  transition: all 0.2s; }
+  .o-heading2-gradient:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.o-heading3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+/*-------- end of: headings --------*/
+/*/
+/*/
+/*------------------------------------*\
+    #PARAGRAPHS
+\*------------------------------------*/
+.o-para1 {
+  font-size: 1.6rem; }
+  .o-para1:not(:last-child) {
+    margin-bottom: 3rem; }
+
+/*-------- end of: paragraphs --------*/
+/*/
+/*/
+/*------------------------------------*\
+ *------- END OF: TYPOGRAPHY ---------*
+\*------------------------------------*/
+/*/
+/*/
+/*/
+/*------------------------------------*\
+ *---- ABSTRACT ELEMENTS: OBJECTS ----*
+ *---------- reusable rules ----------*
+\*------------------------------------*/
+/*/
+/*/
+/*------------------------------------*\
+  #EXAMPLE
+\*------------------------------------*/
+/*---------- end of: example -----------*/
+/*/
+/*/
+/*------------------------------------*\
+ *--------- END OF: OBJECTS ----------*
+\*------------------------------------*/
+/*/
+/*/
+/*/
+/*------------------------------------*\
+ *--- UNIQUE ELEMENTS: COMPONENTS ----*
+ *----------- unique rules -----------*
+\*------------------------------------*/
+/*/
+/*/
+/*------------------------------------*\
+  #EXAMPLE
+\*------------------------------------*/
+/*---------- end of: example -----------*/
+/*/
+/*/
+/*------------------------------------*\
+ *-------- END OF: COMPONENTS --------*
+\*------------------------------------*/

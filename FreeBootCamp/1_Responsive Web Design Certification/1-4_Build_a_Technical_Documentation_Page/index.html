@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build a Technical Documentation Page</title>
+  <link href="styles/style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <nav id="navbar">
+      <header class="nav-header">3D Navigaiton in Blender</header>
+      <ul>
+        <li class="nav-item"><a href="#navigation" class="nav-link a1">Navigation</a></li>
+        <li class="nav-item"><a href="#navigation_gizmo" class="nav-link a2">Navigation Gizmo</a></li>
+        <li class="nav-item"><a href="#orbit" class="nav-link a2">Orbit</a></li>
+        <li class="nav-item"><a href="#roll" class="nav-link a2">Roll</a></li>
+        <li class="nav-item"><a href="#panning" class="nav-link a2">Panning</a></li>
+        <li class="nav-item"><a href="#zooming" class="nav-link a2">Zooming</a></li>
+        <li class="nav-item"><a href="#zooming_region" class="nav-link a3">Zooming Region</a></li>
+        <li class="nav-item"><a href="#dolly_zoom" class="nav-link a3">Dolly Zoom</a></li>
+      </ul>
+    </nav>
+
+    <main id="main-doc">
+      <section class="main-section" id="navigation">
+        <header>
+          <h1>Navigation</h1>
+        </header>
+        <p>Navigating in the 3D space is done with the use of both mouse movement
+          and keyboard shortcuts.</p>
+        <p>To be able to work in the three-dimensional space that Blender uses,
+          you must be able to change your viewpoint as well as the viewing
+          direction of the scene. While we will describe the 3D View editor,
+          most of the other editors have similar functions. For example, it is
+          possible to pan and zoom in the Image editor.</p>
+        <div class="em-box tip">
+          <div class="">
+            <h4>Tip</h4>
+          </div>
+          <p>Mouse Buttons and Numpad</p>
+          <p>If you have a mouse with less than three buttons or a keyboard without 
+            a numpad, see the <a href="https://docs.blender.org/manual/en/latest/getting_started/configuration/hardware.html">Keyboard and Mouse</a> 
+            page of the manual to learn how to use them with Blender.</p>
+          </p>
+        </div>
+      </section>
+      <section class="main-section" id="navigation_gizmo">
+        <header>
+          <h2>Navigation Gizmo</h2>
+        </header>
+        <p>The navigation gizmo can be found in the top right of the editor.
+          The four buttons (listed from left to right) do the following:</p>
+        <ul>
+          <li><a href="https://docs.blender.org/manual/en/latest/editors/3dview/navigate/projections.html">Toggles the Projection</a></li>
+          <li><a href="https://docs.blender.org/manual/en/latest/editors/3dview/navigate/camera_view.html">Toggles the Camera View</a></li>
+          <li><a href="https://docs.blender.org/manual/en/latest/editors/3dview/navigate/Panning">Pans the 3D Viewport</a></li>
+          <li><a href="https://docs.blender.org/manual/en/latest/editors/3dview/navigate/Zooming">Zooms the 3D Viewport</a></li>
+        </ul>
+        <p>The <a href="https://docs.blender.org/manual/en/latest/editors/3dview/navigate/navigation.html#orbit">Orbit</a> gizmo
+          on the far right can be used to rotate around 3D Viewport. Hovering over the gizmo and dragging with
+          <code class="keyCommand-line">LMB</code> will orbit the view.
+          Clicking any of the axis labels will <a href="https://docs.blender.org/manual/en/latest/editors/3dview/navigate/align.html">Align</a>
+          to that view. Clicking the same axis again switches
+          to the opposite side of that same axis,</p>
+        <div class="figure align-center">
+          <img src="https://docs.blender.org/manual/en/latest/_images/editors_3dview_navigation_gizmo.png" alt="editors_3dview_navigation_gizmo">
+          <p class="caption">Navigation Gizmo.</p>
+        </div>
+      </section>
+      <section class="main-section" id="orbit">
+        <header>
+          <h2>Orbit</h2>
+        </header>
+        <div class="em-box reference">
+          <div>
+            <h4>Reference</h4>
+          </div>
+          <table>
+            <tr>
+              <th>Mode:</th>
+              <td>All modes</td>
+            </tr>
+            <tr>
+              <th>Menu:</th>
+              <td><code class="keyCommand-bg-light-gray">View ‣ Navigation ‣ Orbit</code></td>
+            </tr>
+            <tr>
+              <th>Hotkey:</th>
+              <td><code class="keyCommand-bg-light-gray">MMB</code>,
+                <code class="keyCommand-bg-light-gray">Numpad2</code>,
+                <code class="keyCommand-bg-light-gray">Numpad4</code>,
+                <code class="keyCommand-bg-light-gray">Numpad6</code>,
+                <code class="keyCommand-bg-light-gray">Numpad8</code>,
+                <code class="keyCommand-bg-light-gray">Ctrl-Alt-Wheel</code>,
+                <code class="keyCommand-bg-light-gray">Shift-Alt-Wheel</code></td>
+            </tr>
+          </table>
+        </div>
+        <p>Rotate the view around the point of interest. Click and drag <code class="keyCommand-line">MMB</code> on
+          the viewport’s area. If you start in the middle of the area and move
+          up and down or left and right, the view is rotated around the middle of the area.
+        </p>
+        <p>To change the viewing angle in discrete steps, use <code class="keyCommand-line">Numpad8</code> and
+          <code class="keyCommand-line">Numpad2</code>
+          or use <code class="keyCommand-line">Numpad4</code> and
+          <code class="keyCommand-line">Numpad6</code> to rotate the scene around
+          the global Z axis from your current point of view.
+          Finally <code class="keyCommand-line">Numpad9</code> switches to the opposite
+          side of the view.
+        </p>
+        <p>
+          Alternatively, if the Emulate 3 button mouse option is select in the
+          Preferences you can press and hold <code class="keyCommand-line">Alt</code>
+          while dragging <code class="keyCommand-line">RMB</code> in the viewport’s area.
+        </p>
+        <div class="em-box note">
+          <div class="">
+            <h4>Note</h4>
+          </div>
+          <p>Hotkeys</p>
+          <p>Remember that most hotkeys affect the active area (the one that has
+            focus), so check that the mouse cursor is in the area you want to work
+            in before you use the hotkeys.</p>
+        </div>
+        <div class="em-box see">
+          <div class="">
+            <h4>See also</h4>
+          </div>
+          <ul>
+            <li><a href="https://docs.blender.org/manual/en/latest/editors/preferences/navigation.html#prefs-input-orbit-style">Orbit Style Preference</a></li>
+            <li><a href="https://docs.blender.org/manual/en/latest/editors/preferences/navigation.html#prefs-interface-auto-perspective">Auto-Perspective Preference</a></li>
+          </ul>
+        </div>
+      </section>
+      <section class="main-section" id="roll">
+        <header>
+          <h2>Roll</h2>
+        </header>
+        <div class="em-box reference">
+          <div>
+            <h4>Reference</h4>
+          </div>
+          <table>
+            <tr>
+              <th>Mode:</th>
+              <td>All modes</td>
+            </tr>
+            <tr>
+              <th>Menu:</th>
+              <td><code class="keyCommand-bg-light-gray">View ‣ Navigation ‣ Roll</code></td>
+            </tr>
+            <tr>
+              <th>Hotkey:</th>
+              <td><code class="keyCommand-bg-light-gray">Shift-Numpad4</code>,
+                <code class="keyCommand-bg-light-gray">Shift-Numpad6</code>
+            </tr>
+          </table>
+        </div>
+
+        <p>Rotate the viewport camera around its local Z axis in 15° discrete steps.
+        </p>
+
+      </section>
+
+      <section class="main-section" id="panning">
+        <header>
+          <h2>Panning</h2>
+        </header>
+        <div class="em-box reference">
+          <div>
+            <h4>Reference</h4>
+          </div>
+          <table>
+            <tr>
+              <th>Mode:</th>
+              <td>All modes</td>
+            </tr>
+            <tr>
+              <th>Menu:</th>
+              <td><code class="keyCommand-bg-light-gray">View ‣ Navigation ‣ Pan</code></td>
+            </tr>
+            <tr>
+              <th>Hotkey:</th>
+              <td><code class="keyCommand-bg-light-gray">Shift-MMB</code>,
+                <code class="keyCommand-bg-light-gray">Ctrl-Numpad2</code>
+                <code class="keyCommand-bg-light-gray">Ctrl-Numpad4</code>
+                <code class="keyCommand-bg-light-gray">Ctrl-Numpad6</code>
+                <code class="keyCommand-bg-light-gray">Ctrl-Numpad8</code>
+            </tr>
+          </table>
+        </div>
+        <p>Moves the view up, down, left and right. To pan the view, hold down
+          <code class="keyCommand-line">Shift</code> and drag <code class="keyCommand-line">MMB</code>
+          in the 3D View. For discrete steps, use the hotkeys
+          <code class="keyCommand-line">Ctrl-Numpad8</code>, <code class="keyCommand-line">Ctrl-Numpad2</code>,
+          <code class="keyCommand-line">Ctrl-Numpad4</code> and <code class="keyCommand-line">Ctrl-Numpad6</code> as with
+          orbiting (note: you can replace <code class="keyCommand-line">Ctrl</code>
+          by <code class="keyCommand-line">Shift</code>).
+        </p>
+        <p>For those without a middle mouse button, you can hold
+          <code class="keyCommand-line">Shift-Alt</code> while dragging with
+          <code class="keyCommand-line">LMB</code>.
+        </p>
+      </section>
+
+      <section class="main-section" id="zooming">
+        <header>
+          <h2>Zooming</h2>
+        </header>
+        <div class="em-box reference">
+          <div>
+            <h4>Reference</h4>
+          </div>
+          <table>
+            <tr>
+              <th>Mode:</th>
+              <td>All modes</td>
+            </tr>
+            <tr>
+              <th>Menu:</th>
+              <td><code class="keyCommand-bg-light-gray">View ‣ Navigation ‣ Zoom</code></td>
+            </tr>
+            <tr>
+              <th>Hotkey:</th>
+              <td><code class="keyCommand-bg-light-gray">Ctrl-MMB</code>,
+                <code class="keyCommand-bg-light-gray">Wheel</code>
+                <code class="keyCommand-bg-light-gray">NumpadPlus</code>
+                <code class="keyCommand-bg-light-gray">NumpadMinus</code>
+            </tr>
+          </table>
+        </div>
+        <p>Moves the camera forwards and backwards. You can zoom in and out by
+          holding down <code class="keyCommand-line">Ctrl</code>
+          and dragging <code class="keyCommand-line">MMB</code>.
+          The hotkeys are <code class="keyCommand-line">NumpadPlus</code>
+          and <code class="keyCommand-line">NumpadMinus</code>.
+          The <code class="keyCommand-line">View ‣ Navigation</code>
+          submenu holds these functions too as well. Refer
+          to the 3D View’s View menu image above for more information. If you
+          have a wheel mouse, you can zoom by rotating the
+          <code class="keyCommand-line">Wheel</code>.
+        </p>
+        <div class="em-box tip">
+          <div class="">
+            <h4>Hint</h4>
+          </div>
+          <p>If You Get Lost</p>
+          <p>If you get lost in 3D space, which is not uncommon, two hotkeys
+            will help you: <code class="keyCommand-line">Home</code> changes
+            the view so that you can see all objects <code class="keyCommand-line">View ‣ Frame All</code>,
+            while <code class="keyCommand-line">NumpadPeriod</code> zooms the
+            view to the currently selected objects when in perspective mode
+            <code class="keyCommand-line">View ‣ Frame Selected</code>.</p>
+          </p>
+        </div>
+      </section>
+
+      <section class="main-section" id="zooming_region">
+        <header>
+          <h3>Zooming Region</h3>
+        </header>
+        <div class="em-box reference">
+          <div>
+            <h4>Reference</h4>
+          </div>
+          <table>
+            <tr>
+              <th>Mode:</th>
+              <td>All modes</td>
+            </tr>
+            <tr>
+              <th>Menu:</th>
+              <td><code class="keyCommand-bg-light-gray">View ‣ Navigation ‣ Zoom Region...</code></td>
+            </tr>
+            <tr>
+              <th>Hotkey:</th>
+              <td><code class="keyCommand-bg-light-gray">Shift-B</code>
+            </tr>
+          </table>
+        </div>
+        <p>The Zoom Region tool allows you to specify a rectangular region and
+          zoom in so that the region fills the 3D View.
+        </p>
+        <p>
+          You can access this through via the shortcut <code class="keyCommand-line">Shift-B</code>,
+          then <code class="keyCommand-line">LMB</code> click and drag a rectangle to zoom into.
+        </p>
+        <p>
+          Alternatively you can zoom out using the <code class="keyCommand-line">MMB</code>.
+        </p>
+      </section>
+
+      <section class="main-section" id="dolly_zoom">
+        <header>
+          <h3>Dolly Zoom</h3>
+        </header>
+        <div class="em-box reference">
+          <div>
+            <h4>Reference</h4>
+          </div>
+          <table>
+            <tr>
+              <th>Mode:</th>
+              <td>All modes</td>
+            </tr>
+            <tr>
+              <th>Hotkey:</th>
+              <td><code class="keyCommand-bg-light-gray">Shift-Ctrl-MMB</code>
+            </tr>
+          </table>
+        </div>
+        <p>In most cases its sufficient to zoom the view to get a closer look at
+          something, however, you may notice that at a certain point you cannot zoom any closer.
+        </p>
+        <p>
+          This is because Blender stores a view-point that is used for orbiting 
+          and zooming. It works well in many cases, but sometimes you want to move 
+          the view-point to a different place. This is what Dolly supports, 
+          allowing you to transport the view from one place to another.
+        </p>
+        <p>
+          You can dolly back and forth by holding down <code class="keyCommand-bg-light-gray">Shift-Ctrl</code> 
+          and dragging with <code class="keyCommand-bg-light-gray">MMB</code>.
+        </p>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>© Copyright : This page is licensed under a CC-BY-SA 4.0 Int. License</p>
+      <p>
+        Attribution to <a href="https://docs.blender.org/manual/en/latest/editors/3dview/navigate/navigation.html#navigation">docs.blender.org</a>.<br>Only chages to the page design has been made.<br /> The licensor didn't endorse the use of the
+        original content for the creation of this page.
+      </p>
+    </footer>
+  </div>
+
+  <script src="scripts/script.js"></script>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" type="text/javascript"></script>
+</body>
+
+</html>

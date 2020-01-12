@@ -1,0 +1,66 @@
+/*/
+/*/
+/*/
+/*------------------------------------*\
+ *-------- BASIC RULES: BASE ---------*
+ *----------- unique rules -----------*
+\*------------------------------------*/
+/*/
+/*/
+
+
+
+html {
+  font-size: 62.5%; /*16px * 62.5% = 10px*/
+  /*rem are not supported in IE6 */
+  
+  /*In Desktop First media quesries are written from biggest screen to smallest one*/
+  @include media(">=bigDesk"){
+    font-size: 75%; /*16px * 75% = 12px*/
+  }
+  @include media("<=tabLand"){
+    font-size: 56.25%; /*16px *  56.25% = 9rem*/
+  }
+  @include media("<=tabPort"){
+    font-size: 50%; /*16px * 50% = 8px*/
+  }
+  
+  box-sizing: border-box; //CHANGED
+  /*visit: https://css-tricks.com/box-sizing/*/ //CHANGED
+  /* visit: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */ //CHANGED
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /*visit: https://css-tricks.com/box-sizing/*/
+  /* visit: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
+}
+
+body {
+  font-size: 2rem;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: white;
+  background-color: $color-gray-blender;
+  padding: 30px;
+  
+  @include media("<=tabPort"){
+    padding: 0;
+  }
+}
+
+::selection{
+  background-color: orange;
+  color: white;
+}
+
+/*/
+/*/
+/*------------------------------------*\
+ *--------- END OF: BASE ----------*
+\*------------------------------------*/

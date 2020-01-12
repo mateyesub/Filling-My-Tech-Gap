@@ -1,0 +1,28 @@
+/*Project Name: 1-4_Build_a_Technical_Documentation_Page*/
+
+/*For linting options see .jshintrc in the project root folder 
+stylesheet written accring to the NemeSpace-BEM (Block Element Modifier) principles
+in camelCase:
+namespace prefixes: o-: Object; c-: Component; u-: Utility; t-: Theme; s-: Scope;
+is-, has-:  Stete or Condition; _: Hack; js-: JavaScript Bind; qa-: QA or Test Bind
+Visit:
+https://css-tricks.com/bem-101/
+https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/
+https://css-tricks.com/abem-useful-adaptation-bem/ */
+
+/* Plance @import and @charset @font-face rules here 
+Any @import rule must be precede first, all other rules and style rules in a 
+style sheet besides @charset, which must be the first thing in the 
+style sheet if it exists, otherwise the @import rule is invalid. 
+Visit: http://www.w3.org/TR/css3-cascade/#at-import */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,800&display=swap');
+@import "abstracts/variabels";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "base/config";
+@import "node_modules/include-media-or/dist/include-media-or";
+@import "base/utilities";
+@import "base/base";
+@import "abstracts/typography";
+@import "abstracts/objects";
+@import "components/components";
