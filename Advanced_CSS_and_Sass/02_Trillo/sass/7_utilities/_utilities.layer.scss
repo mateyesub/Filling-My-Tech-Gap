@@ -1,0 +1,29 @@
+//   Project Name: 02_Trillo
+//   Author: Matteo Carotta
+/*
+*/
+/*------------------------------------*\
+ *-------- #7 UTILITIES LAYER --------*
+ *------- non-reusable rules ---------*
+\*------class-based selectors---------*/
+/*
+*/
+/*This layer contains rules that has the power to override 
+ *any other rule previously assigned to an DOM element. 
+ *The use of this rules should be avoided as it contains utility, 
+ *helper classes, hacks and overrides, which move the styling to
+ *the html markup;
+ *A lot of the declarations in this layer will carry !important. 
+ *This is the highest specificity layer – it includes the most 
+ *explicit types of rule, with the most narrow focus.
+ *
+ *namespace prefixes in this layer are: 
+ *u-: utilities and helper classes;
+ *_: hacks and overrides classes.
+*/
+@import "utilities.utilities";
+/*
+*/
+/*------------------------------------*\
+*----- END OF: #7 UTILITIES LAYER -----*
+\*------------------------------------*/

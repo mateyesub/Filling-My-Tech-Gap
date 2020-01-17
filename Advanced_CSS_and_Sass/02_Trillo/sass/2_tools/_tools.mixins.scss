@@ -1,0 +1,46 @@
+//   Project Name: 02_Trillo
+//   Author: Matteo Carotta
+//*------------------------------------\
+//*------- _tools.mixins.scss ---------
+//*                                    /
+//Second layer in the ITCSS containing tools,
+//in the case of this docuemnt namely mixins. 
+//Any mixin that's strongly bound to a layer
+//lower than this, shoud be included in the code of that
+//layer.
+
+@mixin u-absoluteCenter-VH {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin u-clearfix {
+  /* clearfix is an utility mixin to be included or to extend a css rule
+that uses the float property to clear it or reset to 
+standard the float property of the elemnts after the it */
+  /*visit: https://css-tricks.com/clearfix-a-lesson-in-web-development-evolution/ */
+  /*visit: https://blog.teamtreehouse.com/a-better-clearfix-with-sass */
+  /*visit: https://developer.mozilla.org/en-US/docs/Web/CSS/clear */
+  /*vistt: https://blog.teamtreehouse.com/a-better-clearfix-with-sass */
+
+  & {
+    zoom: 1;
+  }
+  
+  &::after,
+  &::before{
+      content: '';
+      display: table;
+      height: 0;
+      visibility: hidden;
+  }
+  
+  &::after{
+      clear: both;
+  }
+}
+
+//*                                    \
+//*---- end of: _tools.mixins.scss ----
+//*------------------------------------/
