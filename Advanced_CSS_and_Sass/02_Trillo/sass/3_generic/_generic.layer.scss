@@ -1,0 +1,22 @@
+/*
+*/
+/*------------------------------------*\
+ *--------- #3 GENERIC LAYER ---------*
+ *---------- unique rules ------------*
+\*-----non-class-based selectors------*/
+/*
+*/
+/*The Generic layer is the first one that actually produces any CSS. 
+ *It houses very high-level css. It contains things like normalize 
+ *or rest rules or global box-sizing rules. 
+ *The Generic layer affects a lot of the DOM.
+*/
+ @import "generic.variabels";
+ @import url("../node_modules/normalize.css/normalize.css");
+ @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,800&display=swap");
+ @import "generic.base";
+/*
+*/
+/*------------------------------------*\
+*------ END OF: #3 GENERIC LAYER ------*
+\*------------------------------------*/

@@ -1,0 +1,24 @@
+//*------------------------------------\
+//*------ _settings.config.scss -------
+//*                                    /
+
+//-------------------------------------
+//#include-media-or
+//-------------------------------------
+@import "node_modules/include-media-or/dist/include-media-or";
+
+$breakpoints: (
+  phone: 37.5em,
+  /*600px*/
+  tabPort: 56.25em,
+  /*900px*/
+  tabLand: 75em,
+  /*1200px*/
+  bigDesk: 112.5em,
+  /*1800px*/
+);
+//----- end of: include-media-or ------
+
+//*                                    \
+//*--- end of: _settings.config.scss --
+//*------------------------------------/
