@@ -1,20 +1,37 @@
 //-------------------------------------
- //------- BASIC RULES: CONFIG --------
- //----------- unique rules -----------
+//------- BASIC RULES: CONFIG --------
+//----------- unique rules -----------
 //-------------------------------------
-
 //-------------------------------------
-  //#include-media-or
+//#include-media-or
 //-------------------------------------
 $breakpoints: (
-  phone: 37.5em, /*600px*/
-  tabPort: 56.25em, /*900px*/
-  tabLand: 75em, /*1200px*/
-  bigDesk: 112.5em, /*1800px*/
+  phone: 37.5em,
+  /*600px*/
+  tabPort: 56.25em,
+  /*900px*/
+  tabLand: 75em,
+  /*1200px*/
+  bigDesk: 112.5em,
+  /*1800px*/
 );
-
 //----- end of: include-media-or ------
 
+//-------------------------------------
+//#susy 
+//-------------------------------------
+//visit: https://css-tricks.com/build-web-layouts-easily-susy/
+$susy: (
+  /* Tells Susy to use 12 columns */
+  columns: 12,
+  /* Tells Susy that the container has a max-width of 1120px */
+  container: 1120px,
+  /* Tells Susy to use border-box */
+  global-box-sizing: border-box
+); 
+
+/* Makes border-box properties */
+//----- end of: susy ------
 
 //-------------------------------------
 //---------- END OF: CONFIG -----------

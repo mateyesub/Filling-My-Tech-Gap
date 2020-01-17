@@ -14,6 +14,7 @@ style sheet besides @charset, which must be the first thing in the
 style sheet if it exists, otherwise the @import rule is invalid. 
 Visit: http://www.w3.org/TR/css3-cascade/#at-import */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,800&display=swap");
+/* Makes border-box properties */
 .u-btn-reset {
   background: none;
   color: inherit;
@@ -49,19 +50,14 @@ Visit: http://www.w3.org/TR/css3-cascade/#at-import */
 \*------------------------------------*/
 /*/
 /*/
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-  /* visit: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */ }
-
 html {
   font-size: 62.5%;
   /*16px * 62.5% = 10px*/
   /*rem are not supported in IE6 */
-  /*In Desktop First media quesries are written from biggest screen to smallest one*/ }
+  /*In Desktop First media quesries are written from biggest screen to smallest one*/
+  box-sizing: border-box;
+  /*visit: https://css-tricks.com/box-sizing/*/
+  /* visit: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */ }
   @media (min-width: 112.5em) {
     html {
       font-size: 75%;
@@ -75,6 +71,15 @@ html {
       font-size: 50%;
       /*16px * 50% = 8px*/ } }
 
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /*visit: https://css-tricks.com/box-sizing/*/
+  /* visit: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */ }
+
 body {
   font-size: 2rem;
   font-family: "Open Sans", Arial, sans-serif;
@@ -82,8 +87,7 @@ body {
   line-height: 1.5;
   color: white;
   background-color: #4d4e53;
-  padding: 30px;
-  box-sizing: border-box; }
+  padding: 30px; }
   @media (max-width: 56.25em) {
     body {
       padding: 0; } }
@@ -169,9 +173,13 @@ body {
 /*/
 /*/
 /*------------------------------------*\
-  #EXAMPLE
+  #navbar
 \*------------------------------------*/
-/*---------- end of: example -----------*/
+.container {
+  width: 90rem;
+  margin: 0 auto; }
+
+/*---------- end of: navbar -----------*/
 /*/
 /*/
 /*------------------------------------*\

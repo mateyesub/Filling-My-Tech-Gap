@@ -1,0 +1,48 @@
+//   Project Name: 02_Trillo
+//   Author: Matteo Carotta
+/**/
+/*------------------------------------*\
+ *------ _objects.layout.scss -------*
+\*                                    */
+/**/
+
+/*------------------------------------*\
+  *layout
+*/
+.o-layout{
+  &_container{
+    max-width: 120rem;
+    margin: 8rem auto;
+    background-color: var(--color-gray-light-2);
+    box-shadow: 0 2rem 6rem var(--gradient-shadow-primary);
+    min-height: 50rem;
+  }
+  
+  &_header{
+    height: 7rem;
+    background-color: white;
+    border-bottom: var(--color-gray-light-2);
+  }
+  
+  &_contentBox{
+    display: flex;
+  }
+  
+  &_sidebar{
+    background-color: var(--color-gray-dark-1);
+    flex: 0 0 18%; /*Flex-grow Flex-shrink Flex-base*/
+    /*the element dimension on the ax*/
+  }
+  
+  &_hotelView{
+    background-color: white;
+    flex: 1;
+  }
+}
+
+/*---------- end of: layout ---------*/
+
+/**/
+/*                                    *\
+ *--- end of: _objects.objects.scss ---*
+\*------------------------------------*/
