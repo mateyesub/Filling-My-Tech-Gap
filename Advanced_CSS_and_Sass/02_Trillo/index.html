@@ -13,11 +13,41 @@
     <div class="o-layout_header">
       <img src="imgs/vendors/logo.png" alt="" class="o-logo">
       <form action="" class="o-formSearch">
-        <input type="text" class="o-formSearch__input" placeholder="Search hotels">
+        <input type="text" class="o-formSearch_input" placeholder="Search hotels">
         <button class="o-formSearch_btn">
-          
+          <svg class="o-formSearch_icon c-formSearch_icon">
+            <!-- To include svg icons it is best to use aggregate svg files
+          containing all the svg icons in one document -->
+            <!-- To select an individual icon from an aggregate svg (sprite) 
+          the use tag is required inside an svg element:-->
+            <!-- <svg><use xlink:href="path of the aggregate svg#icon name"></use></svg> -->
+            <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-magnifying-glass"></use>
+          </svg>
         </button>
       </form>
+      <nav class="o-navUser">
+        <div class="o-navUser_iconBox">
+          <svg class="o-navUser_iconIcon">
+            <!-- the <use> element selct nodes from within the SVG document, 
+              and duplicates them somewhere else in the web page-->
+            <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-bookmark"></use>
+          </svg>
+          <span class="o-navUser_notification">7</span>
+        </div>
+        <div class="o-navUser_iconBox">
+          <svg class="o-navUser_iconIcon">
+            <!-- the <use> element selct nodes from within the SVG document, 
+              and duplicates them somewhere else in the web page-->
+            <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-chat"></use>
+          </svg>
+          <span class="o-navUser_notification">13</span>
+        </div>
+        <div class="o-navUser_userBox">
+          <img src="imgs/vendors/user.jpg" class="o-navUser_userPhoto" alt="the user avatar picture">
+          <span class="o-navUser_userName">Jonas</span>
+        </div>
+
+      </nav>
     </div>
     <div class="o-layout_contentBox">
       <nav class="o-layout_sidebar">

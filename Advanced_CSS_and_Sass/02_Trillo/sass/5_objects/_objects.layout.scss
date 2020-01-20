@@ -17,11 +17,15 @@
     box-shadow: 0 2rem 6rem var(--gradient-shadow-primary);
     min-height: 50rem;
   }
-  
+
   &_header{
+    font-size: 1.4rem;
     height: 7rem;
     background-color: white;
     border-bottom: var(--color-gray-light-2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
   &_contentBox{
@@ -44,5 +48,5 @@
 
 /**/
 /*                                    *\
- *--- end of: _objects.objects.scss ---*
+ *--- end of: _objects.layout.scss ---*
 \*------------------------------------*/
