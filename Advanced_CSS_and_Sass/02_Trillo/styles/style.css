@@ -265,6 +265,13 @@ This is where a large part of the work will happen after
 initial project set-up. Adding new objects and features usually 
 makes up the vast majority of development.
 */
+:root {
+  --o-icon-small: 1.25rem; }
+
+.o-icon-small {
+  width: var(--o-icon-small);
+  height: var(--o-icon-small); }
+
 /**/
 /*------------------------------------*\
  *------ _objects.layout.scss -------*
@@ -302,7 +309,6 @@ makes up the vast majority of development.
   justify-content: space-between; }
 
 .o-layout_hotelView {
-  background-color: orangered;
   height: 50rem;
   flex: 1; }
 
@@ -483,6 +489,27 @@ makes up the vast majority of development.
   padding: 2.5rem; }
 
 /*----------- end of: legal ----------*/
+/*------------------------------------*\
+*gallery
+*/
+.o-gallery {
+  display: flex; }
+
+.o-gallery_photo {
+  width: 100%;
+  display: block; }
+
+/*-------- -end of: gallery -------*/
+/*----------- end of: overview ----------*/
+.o-overview_icon {
+  fill: currentColor;
+  /*TIP currentColor assigns to the elment the color of the parent node
+     currentColor passes also the variations in color form pseudo selectors */
+  margin-right: 1rem; }
+
+/*------------------------------------*\
+*overview
+*/
 /**/
 /*                                    *\
  *--- end of: _objects.objects.scss ---*

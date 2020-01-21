@@ -230,6 +230,38 @@
 /*----------- end of: legal ----------*/
 
 
+
+/*------------------------------------*\
+*gallery
+*/
+
+.o-gallery{
+  &{
+    display: flex;
+  }
+  &_photo{
+    width: 100%;
+    display: block;
+  }
+}
+
+/*-------- -end of: gallery -------*/
+
+/*----------- end of: overview ----------*/
+
+.o-overview{
+  &_icon{
+    fill: currentColor;
+    /*TIP currentColor assigns to the elment the color of the parent node
+     currentColor passes also the variations in color form pseudo selectors */
+    margin-right: 1rem;
+  }
+}
+
+/*------------------------------------*\
+*overview
+*/
+
 /**/
 /*                                    *\
  *--- end of: _objects.objects.scss ---*
