@@ -10,7 +10,8 @@
 
 <body>
   <div class="o-layout_container">
-    <div class="o-layout_header">
+
+    <header class="o-layout_header">
       <img src="imgs/vendors/logo.png" alt="" class="o-logo">
       <form action="" class="o-formSearch">
         <input type="text" class="o-formSearch_input" placeholder="Search hotels">
@@ -48,11 +49,50 @@
         </div>
 
       </nav>
-    </div>
+    </header>
+
     <div class="o-layout_contentBox">
       <nav class="o-layout_sidebar">
-        navigation
+        <ul class="o-sidebar_nav">
+          <li class="o-sidebar_item o-sidebar_item-current">
+            <a href="#" class="o-sidebar_link">
+              <svg class="o-sidebar_icon">
+                <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-home"></use>
+              </svg>
+              <span>Hotel</span>
+            </a>
+          </li>
+          <li class="o-sidebar_item">
+            <a href="#" class="o-sidebar_link">
+              <svg class="o-sidebar_icon">
+                <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-aircraft"></use>
+              </svg>
+              <span>Flight</span>
+            </a>
+          </li>
+          <li class="o-sidebar_item">
+            <a href="#" class="o-sidebar_link">
+              <svg class="o-sidebar_icon">
+                <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-key"></use>
+              </svg>
+              <span>Car rental</span>
+            </a>
+          </li>
+          <li class="o-sidebar_item">
+            <a href="#" class="o-sidebar_link">
+              <svg class="o-sidebar_icon">
+                <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-map"></use>
+              </svg>
+              <span>Tours</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="o-legal">
+          &copy; 2017 by trillo. All rights reserved. <!-- FIXME replace with the natours disclamer -->
+        </div>
       </nav>
+
       <main class="o-layout_hotelView">
         HotelView
       </main>

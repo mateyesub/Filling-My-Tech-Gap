@@ -296,10 +296,14 @@ makes up the vast majority of development.
   background-color: var(--color-gray-dark-1);
   flex: 0 0 18%;
   /*Flex-grow Flex-shrink Flex-base*/
-  /*the element dimension on the ax*/ }
+  /*the element dimension on the ax*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
 
 .o-layout_hotelView {
-  background-color: white;
+  background-color: orangered;
+  height: 50rem;
   flex: 1; }
 
 /*---------- end of: layout ---------*/
@@ -411,7 +415,74 @@ makes up the vast majority of development.
   border-radius: 50%;
   margin-right: 1rem; }
 
-/*---------- end of: formSearch ---------*/
+/*--------- end of: formSearch -------*/
+/*------------------------------------*\
+*sidebar
+*/
+.o-sidebar_nav {
+  font-size: 1.4rem;
+  list-style: none;
+  margin-top: 3.5rem; }
+
+.o-sidebar_item {
+  position: relative; }
+
+.o-sidebar_item:not(:last-child) {
+  margin-bottom: .5rem; }
+
+.o-sidebar_item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 3px;
+  background-color: var(--color-primary);
+  transform: scaleY(0);
+  transition: width 0.3s cubic-bezier(1, 0, 0, 1) 0.1s, transform 0.1s;
+  /* width [transition time] [transition acelleration] [transition delay] */ }
+
+.o-sidebar_item:hover::before, .o-sidebar_item-current::before {
+  width: 100%;
+  transform: scaleY(1); }
+
+.o-sidebar_item:active::before {
+  background-color: var(--color-primary-light); }
+
+.o-sidebar_link {
+  outline: 0;
+  /*TIP https://css-tricks.com/removing-the-dotted-outline/ */
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  /*TIP z-index works only with element with explicit position property */ }
+
+.o-sidebar_link:link, .o-sidebar_link:visited {
+  color: var(--color-gray-light-1);
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1.5rem 3rem; }
+
+.o-sidebar_icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  fill: currentColor;
+  /*TIP currentColor assigns to the elment the color of the parent node
+     currentColor passes also the variations in color form pseudo selectors */
+  margin-right: 1rem; }
+
+/*-------- -end of: sidebar -------*/
+/*------------------------------------*\
+*legal
+*/
+.o-legal {
+  font-size: 1.2rem;
+  color: var(--color-gray-light-4);
+  text-align: center;
+  padding: 2.5rem; }
+
+/*----------- end of: legal ----------*/
 /**/
 /*                                    *\
  *--- end of: _objects.objects.scss ---*

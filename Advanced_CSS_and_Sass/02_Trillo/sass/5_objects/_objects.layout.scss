@@ -36,10 +36,14 @@
     background-color: var(--color-gray-dark-1);
     flex: 0 0 18%; /*Flex-grow Flex-shrink Flex-base*/
     /*the element dimension on the ax*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   
   &_hotelView{
-    background-color: white;
+    background-color:orangered;//TEMP
+    height: 50rem;
     flex: 1;
   }
 }
