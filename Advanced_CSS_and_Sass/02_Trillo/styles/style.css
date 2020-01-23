@@ -265,13 +265,52 @@ This is where a large part of the work will happen after
 initial project set-up. Adding new objects and features usually 
 makes up the vast majority of development.
 */
-:root {
-  --o-icon-small: 1.25rem; }
+body {
+  --o-icon-small: 1.75rem;
+  --o-icon-medium: 2.25rem; }
 
+/**/
+/*------------------------------------*\
+ *------ _objects.abstracts.scss -------*
+\*                                    */
+/**/
+/*------------------------------------*\
+*icons
+*/
 .o-icon-small {
   width: var(--o-icon-small);
   height: var(--o-icon-small); }
 
+.o-icon-medium {
+  width: var(--o-icon-medium);
+  height: var(--o-icon-medium); }
+
+/*---------- end of: icons ---------*/
+/*------------------------------------*\
+*btn
+*/
+.o-btn:hover, .o-btn:active, .o-btn:focus {
+  outline: 0;
+  /*TIP https://css-tricks.com/removing-the-dotted-outline/ */ }
+
+/*---------- end of: btn ---------*/
+/*------------------------------------*\
+*animations
+*/
+@keyframes pulsate {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25); }
+  100% {
+    transform: scale(1); } }
+
+/*---------- end of: animations ---------*/
+/**/
+/*                                    *\
+ *-- end of: _objects.abstracts.scss --*
+\*------------------------------------*/
 /**/
 /*------------------------------------*\
  *------ _objects.layout.scss -------*
@@ -291,7 +330,7 @@ makes up the vast majority of development.
   font-size: 1.4rem;
   height: 7rem;
   background-color: white;
-  border-bottom: var(--color-gray-light-2);
+  border-bottom: 1px solid var(--color-gray-light-2);
   display: flex;
   justify-content: space-between;
   align-items: center; }
@@ -397,8 +436,6 @@ makes up the vast majority of development.
   position: relative; }
 
 .o-navUser_iconIcon {
-  height: 2.25rem;
-  width: 2.25rem;
   fill: var(--color-gray-dark-2); }
 
 .o-navUser_notification {
@@ -471,8 +508,6 @@ makes up the vast majority of development.
   padding: 1.5rem 3rem; }
 
 .o-sidebar_icon {
-  width: 1.75rem;
-  height: 1.75rem;
   fill: currentColor;
   /*TIP currentColor assigns to the elment the color of the parent node
      currentColor passes also the variations in color form pseudo selectors */
@@ -500,16 +535,80 @@ makes up the vast majority of development.
   display: block; }
 
 /*-------- -end of: gallery -------*/
-/*----------- end of: overview ----------*/
-.o-overview_icon {
-  fill: currentColor;
-  /*TIP currentColor assigns to the elment the color of the parent node
-     currentColor passes also the variations in color form pseudo selectors */
-  margin-right: 1rem; }
-
 /*------------------------------------*\
 *overview
 */
+.o-overview_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-gray-light-3); }
+
+.o-overview_starIcon, .o-overview_locationIcon {
+  fill: var(--color-primary);
+  margin-right: 1rem; }
+
+.o-overviewlocationIcon {
+  margin-right: 1.5rem; }
+
+.o-overview_heading {
+  font-size: 2.2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1.5rem 3rem;
+  margin: 0; }
+
+.o-overview_starsBox {
+  margin-right: auto;
+  /*TIP margin: auto makes use of all the space available 
+  and equally shares it with other elements on the same line with property margin on auto.
+  If only the margin and not the box is to be manipulated, margin: auto is better than using flex-grow, which 
+  grows the boxes of the elements on the same line until space saturation*/
+  display: flex; }
+
+.o-overview_locationBox {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center; }
+
+.o-overview_inlineBtn {
+  border: none;
+  color: var(--color-primary);
+  font-size: inherit;
+  padding-bottom: .2rem;
+  cursor: pointer;
+  transition: all .2s;
+  border-bottom: 1px solid currentColor;
+  /*TIP currentColor not only passes
+    the color of the text of the parent element to the current property
+    but it is eve more useful when and over or focus rule changes the 
+    text color property as curent color will chage the value accodently*/
+  background-color: none; }
+  .o-overview_inlineBtn:hover, .o-overview_inlineBtn:focus {
+    color: var(--color-gray-dark-1);
+    animation: 1s pulsate infinite; }
+
+.o-overview_rating {
+  background-color: var(--color-primary);
+  color: white;
+  margin-left: 3rem;
+  padding: 0 2.25rem;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.o-overview_rating-avarage {
+  font-size: 2.25rem;
+  font-weight: 300; }
+
+.o-overview_rating-count {
+  font-size: .8rem;
+  text-transform: uppercase; }
+
+/*----------- end of: overview ----------*/
 /**/
 /*                                    *\
  *--- end of: _objects.objects.scss ---*

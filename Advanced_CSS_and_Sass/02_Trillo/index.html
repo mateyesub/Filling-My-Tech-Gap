@@ -16,7 +16,7 @@
       <form action="" class="o-formSearch">
         <input type="text" class="o-formSearch_input" placeholder="Search hotels">
         <button class="o-formSearch_btn">
-          <svg class="o-formSearch_icon c-formSearch_icon">
+          <svg class="o-icon-medium o-formSearch_icon c-formSearch_icon">
             <!-- To include svg icons it is best to use aggregate svg files
           containing all the svg icons in one document -->
             <!-- To select an individual icon from an aggregate svg (sprite) 
@@ -28,7 +28,7 @@
       </form>
       <nav class="o-navUser">
         <div class="o-navUser_iconBox">
-          <svg class="o-navUser_iconIcon">
+          <svg class="o-icon-medium o-navUser_iconIcon">
             <!-- the <use> element selct nodes from within the SVG document, 
               and duplicates them somewhere else in the web page-->
             <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-bookmark"></use>
@@ -36,7 +36,7 @@
           <span class="o-navUser_notification">7</span>
         </div>
         <div class="o-navUser_iconBox">
-          <svg class="o-navUser_iconIcon">
+          <svg class="o-icon-medium o-navUser_iconIcon">
             <!-- the <use> element selct nodes from within the SVG document, 
               and duplicates them somewhere else in the web page-->
             <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-chat"></use>
@@ -56,7 +56,7 @@
         <ul class="o-sidebar_nav">
           <li class="o-sidebar_item o-sidebar_item-current">
             <a href="#" class="o-sidebar_link">
-              <svg class="o-sidebar_icon">
+              <svg class="o-icon-small o-sidebar_icon">
                 <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-home"></use>
               </svg>
               <span>Hotel</span>
@@ -64,7 +64,7 @@
           </li>
           <li class="o-sidebar_item">
             <a href="#" class="o-sidebar_link">
-              <svg class="o-sidebar_icon">
+              <svg class="o-icon-small o-sidebar_icon">
                 <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-aircraft"></use>
               </svg>
               <span>Flight</span>
@@ -72,7 +72,7 @@
           </li>
           <li class="o-sidebar_item">
             <a href="#" class="o-sidebar_link">
-              <svg class="o-sidebar_icon">
+              <svg class="o-icon-small o-sidebar_icon">
                 <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-key"></use>
               </svg>
               <span>Car rental</span>
@@ -80,7 +80,7 @@
           </li>
           <li class="o-sidebar_item">
             <a href="#" class="o-sidebar_link">
-              <svg class="o-sidebar_icon">
+              <svg class="o-icon-small o-sidebar_icon">
                 <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-map"></use>
               </svg>
               <span>Tours</span>
@@ -106,29 +106,40 @@
             <img src="imgs/vendors/hotel-3.jpg" alt="Photo of the 3nd Hotel" class="o-gallery_photo">
           </figura>
         </div>
-        <div class="o-overview">
+        <div class="o-overview_box">
           <h1 class="o-overview_heading">
             Hotel Las Palmas
           </h1>
-          <div class="o-overview_stars">
-            <svg class="o-overview_icon">
+          <div class="o-overview_starsBox">
+            <svg class="o-icon-small o-overview_starIcon">
               <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-star"></use>
             </svg>
-            <svg class="o-overview_icon">
+            <svg class="o-icon-small o-overview_starIcon">
               <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-star"></use>
             </svg>
-            <svg class="o-overview_icon">
+            <svg class="o-icon-small o-overview_starIcon">
               <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-star"></use>
             </svg>
-            <svg class="o-overview_icon">
+            <svg class="o-icon-small o-overview_starIcon">
               <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-star"></use>
             </svg>
-            <svg class="o-overview_icon">
+            <svg class="o-icon-small o-overview_starIcon">
               <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-star"></use>
             </svg>
           </div>
-          <div class="o-overview_location">
-            <svg class="o-icon-small o-overview_icon"></svg>
+          <div class="o-overview_locationBox">
+            <svg class="o-icon-small o-overview_locationIcon">
+              <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-location-pin"></use>
+            </svg>
+            <button class="o-btn o-overview_inlineBtn">Albufeira, Portugal</button>
+          </div>
+          <div class="o-overview_rating">
+            <div class="o-overview_rating-avarage">
+              8.6
+            </div>
+            <div class="o-overview_rating-count">
+              429 votes
+            </div>
           </div>
         </div>
       </main>
