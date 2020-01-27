@@ -28,10 +28,37 @@
 *btn
 */
 .o-btn{
+    cursor: pointer;
     &:hover,
     &:active,
     &:focus{
         outline: 0;/*TIP https://css-tricks.com/removing-the-dotted-outline/ */
+    }
+}
+
+.o-btn_inline{
+    border: none;
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    padding-bottom: .2rem;
+    border-bottom: 1px solid currentColor;
+    background-color: inherit;
+    /*TIP currentColor not only passes
+    the color of the text of the parent element to the current property
+    but it is eve more useful when and over or focus rule changes the 
+    text color property as curent color will chage the value accodently*/
+
+    &:hover,
+    &:focus {
+      color: var(--color-gray-dark-1);
+      & span{
+          margin-left: .7em;
+          transition: all .2s;
+      }
+    }
+
+    & span {
+        margin-left: .2em;
     }
 }
 
