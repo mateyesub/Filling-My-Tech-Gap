@@ -48,12 +48,13 @@
       background-color: var(--color-gray-light-3);
     }
 
-    &::placeholder{
+    &::placeholder {
       font-weight: 100;
       color: var(--color-gray-dark-4);
     }
   }
-  &_input:focus + &_btn{
+
+  &_input:focus+&_btn {
     background-color: var(--color-gray-light-3);
   }
 
@@ -61,11 +62,11 @@
     border: none;
     background-color: var(--color-gray-light-2);
 
-    &:focus{
+    &:focus {
       outline: none;
     }
 
-    &:active{
+    &:active {
       transform: translateY(2px);
     }
   }
@@ -90,14 +91,16 @@
     display: flex;
     align-items: center;
   }
-  & > *{
+
+  &>* {
     padding: 0 2rem;
     cursor: pointer;
     height: 100%;
     display: flex;
     align-items: center;
   }
-  & > *:hover {
+
+  &>*:hover {
     background-color: var(--color-gray-light-2);
   }
 
@@ -144,22 +147,23 @@
 *sidebar
 */
 
-.o-sidebar{
-  &_nav{
+.o-sidebar {
+  &_nav {
     font-size: 1.4rem;
     list-style: none;
     margin-top: 3.5rem;
   }
 
-  &_item{
-    &{
+  &_item {
+    & {
       position: relative;
     }
 
-    &:not(:last-child){
+    &:not(:last-child) {
       margin-bottom: .5rem;
     }
-    &::before{
+
+    &::before {
       content: "";
       position: absolute;
       top: 0;
@@ -168,31 +172,35 @@
       width: 3px;
       background-color: var(--color-primary);
       transform: scaleY(0);
-      transition: width 0.3s cubic-bezier(1,0,0,1) .1s,
-                  transform 0.1s;
+      transition: width 0.3s cubic-bezier(1, 0, 0, 1) .1s,
+        transform 0.1s;
       /* width [transition time] [transition acelleration] [transition delay] */
     }
+
     &:hover::before,
-    &-current::before
-    {
+    &-current::before {
       width: 100%;
       transform: scaleY(1);
     }
-    &:active::before{
+
+    &:active::before {
       background-color: var(--color-primary-light);
     }
   }
 
-  &_link{ 
-    &{
-      outline: 0; /*TIP https://css-tricks.com/removing-the-dotted-outline/ */
+  &_link {
+    & {
+      outline: 0;
+      /*TIP https://css-tricks.com/removing-the-dotted-outline/ */
       display: flex;
       align-items: center;
       position: relative;
-      z-index: 1; /*TIP z-index works only with element with explicit position property */
+      z-index: 1;
+      /*TIP z-index works only with element with explicit position property */
     }
+
     &:link,
-    &:visited{
+    &:visited {
       color: var(--color-gray-light-1);
       text-decoration: none;
       text-transform: uppercase;
@@ -200,7 +208,8 @@
     }
 
   }
-  &_icon{
+
+  &_icon {
     fill: currentColor;
     /*TIP currentColor assigns to the elment the color of the parent node
      currentColor passes also the variations in color form pseudo selectors */
@@ -216,7 +225,7 @@
 *legal
 */
 
-.o-legal{
+.o-legal {
   font-size: 1.2rem;
   color: var(--color-gray-light-4);
   text-align: center;
@@ -231,11 +240,12 @@
 *gallery
 */
 
-.o-gallery{
-  &{
+.o-gallery {
+  & {
     display: flex;
   }
-  &_photo{
+
+  &_photo {
     width: 100%;
     display: block;
   }
@@ -247,22 +257,25 @@
 /*------------------------------------*\
 *overview
 */
-.o-overview{
-  &_box{
-    display:flex;
+.o-overview {
+  &_box {
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid var(--color-gray-light-3);
+    border-bottom: var(--divisor-border-gray);
   }
+
   &_starIcon,
-  &_locationIcon{
+  &_locationIcon {
     fill: var(--color-primary);
     margin-right: 1rem;
   }
-  &locationIcon{
+
+  &locationIcon {
     margin-right: 1.5rem;
   }
-  &_heading{
+
+  &_heading {
     font-size: 2.2rem;
     font-weight: 300;
     text-transform: uppercase;
@@ -270,39 +283,46 @@
     padding: 1.5rem 3rem;
     margin: 0;
   }
-  &_starsBox{
-    margin-right: auto; /*TIP margin: auto makes use of all the space available 
+
+  &_starsBox {
+    margin-right: auto;
+    /*TIP margin: auto makes use of all the space available 
   and equally shares it with other elements on the same line with property margin on auto.
   If only the margin and not the box is to be manipulated, margin: auto is better than using flex-grow, which 
   grows the boxes of the elements on the same line until space saturation*/
     display: flex;
-}
-  &_locationBox{
+  }
+
+  &_locationBox {
     font-size: 1.2rem;
     display: flex;
     align-items: center;
   }
-  &_inlineBtn{
+
+  &_inlineBtn {
     border: none;
     color: var(--color-primary);
     font-size: inherit;
     padding-bottom: .2rem;
     cursor: pointer;
     transition: all .2s;
-    border-bottom: 1px solid currentColor;/*TIP currentColor not only passes
+    border-bottom: 1px solid currentColor;
+    /*TIP currentColor not only passes
     the color of the text of the parent element to the current property
     but it is eve more useful when and over or focus rule changes the 
     text color property as curent color will chage the value accodently*/
     background-color: none;
+
     &:hover,
-    &:focus{
+    &:focus {
       color: var(--color-gray-dark-1);
       animation: 1s pulsate infinite;
     }
-    
+
   }
-  &_rating{
-    &{
+
+  &_rating {
+    & {
       background-color: var(--color-primary);
       color: white;
       margin-left: 3rem;
@@ -314,11 +334,13 @@
       align-items: center;
       justify-content: center;
     }
-    &-avarage{
+
+    &-avarage {
       font-size: 2.25rem;
       font-weight: 300;
     }
-    &-count{
+
+    &-count {
       font-size: .8rem;
       text-transform: uppercase;
     }
@@ -327,6 +349,98 @@
 }
 
 /*----------- end of: overview ----------*/
+
+
+
+/*------------------------------------*\
+*detail
+*/
+
+.o-detail {
+  &_description {
+    font-size: 1.4rem;
+    background-color: white;
+    box-shadow: 0 2rem 5rem var(--black-transparent-light);
+    flex: 0 0 60%;
+    padding: 3rem;
+    margin-right: 4.5rem;
+  }
+
+  &_userReview {
+    background-color: yellowgreen; //TEMP
+    flex: 1;
+  }
+
+  &_paragraph {
+    &:not(:last-of-type) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &_list {
+    list-style: none;
+    margin: 3rem 0;
+    padding: 3rem;
+    border-top: var(--divisor-border-gray);
+    border-bottom: var(--divisor-border-gray);
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &_listItem {
+    flex: 0 0 50%;
+    margin-bottom: .7rem;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      height: 1rem;
+      width: 1rem;
+      margin-right: .7rem;
+      /*background-image: url("../imgs/vendors/Entypo/SVG/chevron-thin-right.svg");//TIP inlude svg for older browsers, which doesn't allow to specify the filling color.
+      background-size: cover;*/
+
+      //TIP masks as approach to import svg images in newer browsers allowing to
+      //set the desired color as background color to clip-mask with the svg image
+      background-color: var(--color-primary);
+      mask-image: url(../imgs/vendors/Entypo/SVG/chevron-thin-right.svg);
+      mask-size: cover;
+    }
+
+  }
+
+  &_recommand {
+    font-size: 1.3rem;
+    color: var(--color-gray-dark-2);
+    display: flex;
+    align-items: center;
+
+  }
+
+  &_recommandCount {
+    margin-right: auto; //TIP in a flex container it will take up all the available
+    //space
+  }
+
+  &_recommandFriends {
+    
+  }
+
+  &_recommandPhoto {
+    box-sizing: content-box;    
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: .3rem solid white;
+    &:not(:last-child){
+      margin-right: -1.5rem;
+    }
+  }
+}
+
+/*-------- -end of: detail -------*/
+
 
 /**/
 /*                                    *\
