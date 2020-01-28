@@ -128,15 +128,12 @@
     align-items: center;
   }
 
-  &_userBox {}
-
   &_userPhoto {
     height: 3.75rem;
     border-radius: 50%;
     margin-right: 1rem;
   }
 
-  &_userName {}
 }
 
 /*--------- end of: formSearch -------*/
@@ -416,9 +413,6 @@
     //space
   }
 
-  &_recommandFriends {
-    
-  }
 
   &_recommandPhoto {
     box-sizing: content-box;    
@@ -438,6 +432,8 @@
       animation: 1s pulsate infinite;
     }
   }
+
+
 }
 
 /*-------- -end of: detail -------*/
@@ -503,6 +499,63 @@
 }
 
 /*----------- end of: overview ----------*/
+
+
+/*------------------------------------*\
+*cta
+*/
+
+.o-cta{
+  &_container{
+    padding: 3.5rem 0;
+    text-align: center;
+  }
+  &_heading{
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+  &_btn{
+    overflow: hidden;
+    background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+    color:var(--color-gray-light-2);
+    position: relative;
+    
+    &_text1,
+    &_text2,
+    &_textGhost{
+      display: inline-block;
+      height: 100%;
+      width: 15rem;
+    }
+    &_text1,
+    &_text2{
+      position: absolute;
+      left: 3rem;
+      transition: all .2s;
+    }
+
+    &_text1{
+      top: 2rem;
+    }
+    &_text2{
+      top: -100%;
+    }
+    &:hover{
+      .o-cta_btn_text1{
+        top: 100%;
+        transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      }
+      .o-cta_btn_text2{
+        top: 2rem;
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+    }
+  }
+}
+
+/*-------- -end of: cta -------*/
 
 /**/
 /*                                    *\

@@ -293,29 +293,39 @@ body {
 *btn
 */
 .o-btn {
+  background-color: dimgray;
   cursor: pointer; }
   .o-btn:hover, .o-btn:active, .o-btn:focus {
     outline: 0;
     /*TIP https://css-tricks.com/removing-the-dotted-outline/ */ }
-
-.o-btn_inline {
-  border: none;
-  color: var(--color-primary);
-  font-size: 1.4rem;
-  padding-bottom: .2rem;
-  border-bottom: 1px solid currentColor;
-  background-color: inherit;
-  /*TIP currentColor not only passes
-    the color of the text of the parent element to the current property
-    but it is eve more useful when and over or focus rule changes the 
-    text color property as curent color will chage the value accodently*/ }
-  .o-btn_inline:hover, .o-btn_inline:focus {
-    color: var(--color-gray-dark-1); }
-    .o-btn_inline:hover span, .o-btn_inline:focus span {
-      margin-left: .7em;
-      transition: all .2s; }
-  .o-btn_inline span {
-    margin-left: .2em; }
+  .o-btn-lg {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    border: none;
+    padding: 2rem 3rem;
+    transition: transform .1s; }
+    .o-btn-lg:active {
+      transform: scale(1.1); }
+  .o-btn_inline {
+    border: none;
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    padding-bottom: .2rem;
+    border-bottom: 1px solid currentColor;
+    background-color: inherit;
+    /*TIP currentColor not only passes
+        the color of the text of the parent element to the current property
+        but it is eve more useful when and over or focus rule changes the 
+        text color property as curent color will chage the value accodently*/ }
+    .o-btn_inline:hover, .o-btn_inline:focus {
+      color: var(--color-gray-dark-1); }
+      .o-btn_inline:hover span, .o-btn_inline:focus span {
+        margin-left: .7em;
+        transition: all .2s; }
+    .o-btn_inline span {
+      margin-left: .2em; }
+  .o-btn_round {
+    border-radius: 100px; }
 
 /*---------- end of: btn ---------*/
 /*------------------------------------*\
@@ -753,6 +763,44 @@ body {
   color: var(--color-primary); }
 
 /*----------- end of: overview ----------*/
+/*------------------------------------*\
+*cta
+*/
+.o-cta_container {
+  padding: 3.5rem 0;
+  text-align: center; }
+
+.o-cta_heading {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem; }
+
+.o-cta_btn {
+  overflow: hidden;
+  background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+  color: var(--color-gray-light-2);
+  position: relative; }
+  .o-cta_btn_text1, .o-cta_btn_text2, .o-cta_btn_textGhost {
+    display: inline-block;
+    height: 100%;
+    width: 15rem; }
+  .o-cta_btn_text1, .o-cta_btn_text2 {
+    position: absolute;
+    left: 3rem;
+    transition: all .2s; }
+  .o-cta_btn_text1 {
+    top: 2rem; }
+  .o-cta_btn_text2 {
+    top: -100%; }
+  .o-cta_btn:hover .o-cta_btn_text1 {
+    top: 100%;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  .o-cta_btn:hover .o-cta_btn_text2 {
+    top: 2rem;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+/*-------- -end of: cta -------*/
 /**/
 /*                                    *\
  *--- end of: _objects.objects.scss ---*
