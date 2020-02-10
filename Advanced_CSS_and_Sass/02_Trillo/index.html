@@ -21,8 +21,8 @@
           containing all the svg icons in one document -->
             <!-- To select an individual icon from an aggregate svg (sprite) 
           the use tag is required inside an svg element:-->
-            <!-- <svg><use xlink:href="path of the aggregate svg#icon name"></use></svg> -->
-            <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-magnifying-glass"></use>
+            <!-- <svg><use href="path of the aggregate svg#icon name"></use></svg> -->
+            <use href="imgs/vendors/Entypo/symbol-defs.svg#icon-magnifying-glass"></use>
           </svg>
         </button>
       </form>
@@ -31,17 +31,74 @@
           <svg class="o-icon-medium o-navUser_iconIcon">
             <!-- the <use> element selct nodes from within the SVG document, 
               and duplicates them somewhere else in the web page-->
-            <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-bookmark"></use>
+            <use href="imgs/vendors/Entypo/symbol-defs.svg#icon-bookmark"></use>
           </svg>
           <span class="o-navUser_notification">7</span>
+          <!-- TODO Add the drop down menu -->
         </div>
-        <div class="o-navUser_iconBox">
+        <div class="o-navUser_iconBox c-navUser_iconBox-chat">
           <svg class="o-icon-medium o-navUser_iconIcon">
             <!-- the <use> element selct nodes from within the SVG document, 
               and duplicates them somewhere else in the web page-->
-            <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-chat"></use>
+            <use href="imgs/vendors/Entypo/symbol-defs.svg#icon-chat"></use>
           </svg>
           <span class="o-navUser_notification">13</span>
+          <div class="o-navUser_notifDetails c-navUser_notifDetails-chat">
+            <div class="o-navUser_notifDetails_contentBox">
+              <ul class="o-navUser_notifList">
+                <li class="o-navUser_notifItem">
+                  <a href="#" class="o-navUser_notifLink">
+                    <div class="o-navUser_norifAvatar">
+                      <!-- TODO change photo -->
+                      <img class="o-navUser_notifPhoto" src="imgs/vendors/user-1.jpg" alt="frind photo">
+                      <span class="o-navUser_notifCounter">5</span>
+                    </div>
+                    Hey man, answer me! Come on...
+                  </a>
+                </li>
+                <li class="o-navUser_notifItem">
+                  <a href="#" class="o-navUser_notifLink">
+                    <div class="o-navUser_norifAvatar">
+                      <!-- TODO change photo -->
+                      <img class="o-navUser_notifPhoto" src="imgs/vendors/user-1.jpg" alt="frind photo">
+                      <span class="o-navUser_notifCounter">1</span>
+                    </div>
+                    Hi, don't forget to contact the...
+                  </a>
+                </li>
+                <li class="o-navUser_notifItem">
+                  <a href="#" class="o-navUser_notifLink">
+                    <div class="o-navUser_norifAvatar">
+                      <!-- TODO change photo -->
+                      <img class="o-navUser_notifPhoto" src="imgs/vendors/user-1.jpg" alt="frind photo">
+                      <span class="o-navUser_notifCounter">3</span>
+                    </div>
+                    How are you doing? Do you...
+                  </a>
+                </li>
+                <li class="o-navUser_notifItem">
+                  <a href="#" class="o-navUser_notifLink">
+                    <div class="o-navUser_norifAvatar">
+                      <!-- TODO change photo -->
+                      <img class="o-navUser_notifPhoto" src="imgs/vendors/user-1.jpg" alt="frind photo">
+                      <span class="o-navUser_notifCounter">3</span>
+                    </div>
+                    Thank you very much for your...
+                  </a>
+                </li>
+                <li class="o-navUser_notifItem">
+                  <a href="#" class="o-navUser_notifLink">
+                    <div class="o-navUser_norifAvatar">
+                      <!-- TODO change photo -->
+                      <img class="o-navUser_notifPhoto" src="imgs/vendors/user-1.jpg" alt="frind photo">
+                      <span class="o-navUser_notifCounter">1</span>
+                    </div>
+                    I'm very sorry to let you know...
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
         <div class="o-navUser_userBox">
           <img src="imgs/vendors/user.jpg" class="o-navUser_userPhoto" alt="the user avatar picture">
@@ -57,7 +114,7 @@
           <li class="o-sidebar_item o-sidebar_item-current">
             <a href="#" class="o-sidebar_link">
               <svg class="o-icon-small o-sidebar_icon">
-                <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-home"></use>
+                <use href="imgs/vendors/Entypo/symbol-defs.svg#icon-home"></use>
               </svg>
               <span>Hotel</span>
             </a>
@@ -65,7 +122,7 @@
           <li class="o-sidebar_item">
             <a href="#" class="o-sidebar_link">
               <svg class="o-icon-small o-sidebar_icon">
-                <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-aircraft"></use>
+                <use href="imgs/vendors/Entypo/symbol-defs.svg#icon-aircraft"></use>
               </svg>
               <span>Flight</span>
             </a>
@@ -73,7 +130,7 @@
           <li class="o-sidebar_item">
             <a href="#" class="o-sidebar_link">
               <svg class="o-icon-small o-sidebar_icon">
-                <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-key"></use>
+                <use href="imgs/vendors/Entypo/symbol-defs.svg#icon-key"></use>
               </svg>
               <span>Car rental</span>
             </a>
@@ -81,7 +138,7 @@
           <li class="o-sidebar_item">
             <a href="#" class="o-sidebar_link">
               <svg class="o-icon-small o-sidebar_icon">
-                <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-map"></use>
+                <use href="imgs/vendors/Entypo/symbol-defs.svg#icon-map"></use>
               </svg>
               <span>Tours</span>
             </a>
@@ -107,38 +164,43 @@
           </figura>
         </div>
         <div class="o-overview_box">
-          <h1 class="o-overview_heading">
-            Hotel Las Palmas
-          </h1>
-          <div class="o-overview_starsBox">
-            <svg class="o-icon-small o-overview_starIcon">
-              <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-star"></use>
-            </svg>
-            <svg class="o-icon-small o-overview_starIcon">
-              <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-star"></use>
-            </svg>
-            <svg class="o-icon-small o-overview_starIcon">
-              <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-star"></use>
-            </svg>
-            <svg class="o-icon-small o-overview_starIcon">
-              <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-star"></use>
-            </svg>
-            <svg class="o-icon-small o-overview_starIcon">
-              <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-star"></use>
-            </svg>
-          </div>
-          <div class="o-overview_locationBox">
-            <svg class="o-icon-small o-overview_locationIcon">
-              <use xlink:href="imgs/vendors/Entypo/symbol-defs.svg#icon-location-pin"></use>
-            </svg>
-            <button class="o-btn o-btn_inline o-overview_btn">Albufeira, Portugal</button>
-          </div>
-          <div class="o-overview_rating">
-            <div class="o-overview_rating-avarage">
-              8.6
+          <div class="o-overview_headingWrapper">
+            <h1 class="o-overview_heading">
+              Hotel Las Palmas
+            </h1>
+            <div class="o-overview_starsBox">
+              <svg class="o-icon-small o-overview_starIcon">
+                <use href="imgs/vendors/Entypo/symbol-defs.svg#icon-star"></use>
+              </svg>
+              <svg class="o-icon-small o-overview_starIcon">
+                <use href="imgs/vendors/Entypo/symbol-defs.svg#icon-star"></use>
+              </svg>
+              <svg class="o-icon-small o-overview_starIcon">
+                <use href="imgs/vendors/Entypo/symbol-defs.svg#icon-star"></use>
+              </svg>
+              <svg class="o-icon-small o-overview_starIcon">
+                <use href="imgs/vendors/Entypo/symbol-defs.svg#icon-star"></use>
+              </svg>
+              <svg class="o-icon-small o-overview_starIcon">
+                <use href="imgs/vendors/Entypo/symbol-defs.svg#icon-star"></use>
+              </svg>
             </div>
-            <div class="o-overview_rating-count">
-              429 votes
+            
+          </div>
+          <div class="o-overview_ratingWrapper">
+            <div class="o-overview_locationBox">
+              <svg class="o-icon-small o-overview_locationIcon">
+                <use href="imgs/vendors/Entypo/symbol-defs.svg#icon-location-pin"></use>
+              </svg>
+              <button class="o-btn o-btn_inline o-overview_btn">Albufeira, Portugal</button>
+            </div>
+            <div class="o-overview_rating">
+              <div class="o-overview_rating-avarage">
+                8.6
+              </div>
+              <div class="o-overview_rating-count">
+                429 votes
+              </div>
             </div>
           </div>
         </div>
@@ -163,15 +225,15 @@
               <li class="o-detail_listItem">We speak all languages</li>
               <li class="o-detail_listItem">Perfect for families</li>
             </ul>
-            <div class="o-detail_recommand">
-              <p class="o-detail_recommandCount">
-                Lucy and 3 other friends recommand this hotel.
+            <div class="o-detail_recommend">
+              <p class="o-detail_recommendCount">
+                Lucy and 3 other friends recommend this hotel.
               </p>
-              <div class="o-recommandFriends">
-                <img src="imgs/vendors/user-1.jpg" alt="Friend face 1" class="o-detail_recommandPhoto">
-                <img src="imgs/vendors/user-2.jpg" alt="Friend face 2" class="o-detail_recommandPhoto">
-                <img src="imgs/vendors/user-3.jpg" alt="Friend face 3" class="o-detail_recommandPhoto">
-                <img src="imgs/vendors/user-4.jpg" alt="Friend face 4" class="o-detail_recommandPhoto">
+              <div class="o-detail_recommendFriends">
+                <img src="imgs/vendors/user-1.jpg" alt="Friend face 1" class="o-detail_recommendPhoto">
+                <img src="imgs/vendors/user-2.jpg" alt="Friend face 2" class="o-detail_recommendPhoto">
+                <img src="imgs/vendors/user-3.jpg" alt="Friend face 3" class="o-detail_recommendPhoto">
+                <img src="imgs/vendors/user-4.jpg" alt="Friend face 4" class="o-detail_recommendPhoto">
               </div>
             </div>
           </div>

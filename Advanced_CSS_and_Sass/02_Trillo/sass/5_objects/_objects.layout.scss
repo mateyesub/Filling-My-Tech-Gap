@@ -16,20 +16,31 @@
     background-color: var(--color-gray-light-2);
     box-shadow: 0 2rem 6rem var(--shadow-primary);
     min-height: 50rem;
+
+    @include media("<=tabPort"){
+      margin: 0;
+    }
   }
 
   &_header{
     font-size: 1.4rem;
-    height: 7rem;
     background-color: white;
     border-bottom: var(--divisor-border-gray);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    @include media("<=phone"){
+      flex-wrap: wrap;
+    }
   }
   
   &_contentBox{
     display: flex;
+    @include media("<=tabPort"){
+      flex-direction: column;
+    }
   }
   
   &_sidebar{
@@ -50,6 +61,14 @@
     padding: 4.5rem;
     background-color: var(--color-gray-light-1);
     border-bottom: var(--divisor-border-gray);
+    @include media("<=tabPort-sm"){
+      padding: 1rem;
+    }
+    @include media("<=phone"){
+      display: block;
+      padding: 0;
+      padding-bottom: 3rem;
+    }
   }
 }
 

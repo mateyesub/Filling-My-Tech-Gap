@@ -9,7 +9,22 @@
 /*------------------------------------*\
   #example
 */
+            //TODODisplay a message menu when hovering over the chat icon in
+            //.user-nav(maybe like facebook)
+            //WIP
+.c-navUser{
+  &_iconBox{
+    &-chat{
+      position: relative;
+    }
 
+  }
+  &_notifDetails{
+    &-chat{
+      
+    }
+  }
+}
 /*---------- end of: example ---------*/
 
 /**/

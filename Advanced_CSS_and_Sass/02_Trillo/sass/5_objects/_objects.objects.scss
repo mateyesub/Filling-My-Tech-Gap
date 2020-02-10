@@ -28,6 +28,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include media("<=phone") {
+      order: 1;
+      flex: 0 0 100%;
+      margin-top: 1rem;
+    }
   }
 
   &_input {
@@ -92,7 +98,8 @@
     align-items: center;
   }
 
-  &>* {
+  &_iconBox,
+  &_userBox {
     padding: 0 2rem;
     cursor: pointer;
     height: 100%;
@@ -100,12 +107,19 @@
     align-items: center;
   }
 
-  &>*:hover {
+
+  &_iconBox:hover,
+  &_userBox:hover {
     background-color: var(--color-gray-light-2);
   }
 
   &_iconBox {
     position: relative;
+    max-width: 7rem;
+
+    &:hover .o-navUser_notifDetails {
+      visibility: visible;
+    }
   }
 
   &_iconIcon {
@@ -126,6 +140,85 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  &_notifDetails {
+    & {
+      position: absolute;
+      top: 3.5rem;
+      padding-top: 1.3rem;
+      visibility: hidden;
+      cursor: auto;
+      min-width: 16rem;
+      max-width: 18rem;
+
+      &:hover {
+        visibility: visible;
+      }
+    }
+
+    &_contentBox {
+      background-color: var(--color-gray-light-2);
+      border-radius: 5px;
+      padding: 1rem 0;
+      box-shadow: 0 2rem 5rem var(--black-transparent-primary);
+    }
+
+  }
+
+  &_notifList {
+    list-style: none;
+  }
+
+  &_notifItem{
+    display: block;
+    &:not(:last-child){
+      margin-bottom: .7rem;
+    }
+    &:hover{
+      background-color: white;
+    }
+  }
+
+  &_notifLink {
+    margin: 0 1.5rem;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: var(--color-gray-dark-4);
+  }
+
+
+  &_norifAvatar {
+    position: relative;
+    max-width: 7rem;
+
+    &:hover .o-navUser_notifDetails {
+      visibility: visible;
+    }
+  }
+
+  &_notifCounter {
+    font-size: .8rem;
+    height: 1.75rem;
+    width: 1.75rem;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: white;
+    position: absolute;
+    top: 1.6rem;
+    left: 1.5rem;
+    /* flexbox works also with text elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &_notifPhoto {
+    height: 2.75rem;
+    border-radius: 50%;
+    margin-right: 1rem;
   }
 
   &_userPhoto {
@@ -149,15 +242,31 @@
     font-size: 1.4rem;
     list-style: none;
     margin-top: 3.5rem;
+
+    @include media("<=tabPort") {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &_item {
     & {
       position: relative;
+
+      @include media("<=tabPort") {
+        height: 100%;
+        flex: 1;
+        margin: 0;
+      }
     }
 
     &:not(:last-child) {
       margin-bottom: .5rem;
+
+      @include media("<=tabPort") {
+        margin: 0;
+      }
     }
 
     &::before {
@@ -194,14 +303,26 @@
       position: relative;
       z-index: 1;
       /*TIP z-index works only with element with explicit position property */
+      padding: 1.5rem 3rem;
+      text-transform: uppercase;
+
+      @include media("<=tabPort") {
+        justify-content: center;
+        padding: 1.5rem 0.5rem;
+      }
+
+      @include media("<=phone-sm") {
+        flex-direction: column;
+        font-size: 1.2rem;
+      }
     }
 
     &:link,
     &:visited {
       color: var(--color-gray-light-1);
       text-decoration: none;
-      text-transform: uppercase;
-      padding: 1.5rem 3rem;
+
+
     }
 
   }
@@ -211,6 +332,12 @@
     /*TIP currentColor assigns to the elment the color of the parent node
      currentColor passes also the variations in color form pseudo selectors */
     margin-right: 1rem;
+
+    @include media("<=phone-sm") {
+      margin-right: 0;
+      height: 2.5rem;
+      width: 2.5rem;
+    }
   }
 }
 
@@ -227,6 +354,10 @@
   color: var(--color-gray-light-4);
   text-align: center;
   padding: 2.5rem;
+
+  @include media("<=tabPort") {
+    display: none;
+  }
 }
 
 /*----------- end of: legal ----------*/
@@ -260,6 +391,10 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: var(--divisor-border-gray);
+
+    @include media("<=phone-lg") {
+      flex-wrap: wrap;
+    }
   }
 
   &_starIcon,
@@ -268,8 +403,28 @@
     margin-right: 1rem;
   }
 
+  &_starIcon {
+    @include media("<=phone") {
+      margin-right: .5rem;
+    }
+
+    @include media("<=phone-sm") {
+      margin-right: .1rem;
+    }
+  }
+
   &locationIcon {
     margin-right: 1.5rem;
+  }
+
+  &_headingWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media("<=phone") {
+      flex: 0 0 100%;
+    }
   }
 
   &_heading {
@@ -279,6 +434,11 @@
     letter-spacing: 1px;
     padding: 1.5rem 3rem;
     margin: 0;
+
+    @include media("<=phone-lg") {
+      padding-bottom: .5rem;
+      padding-top: .5rem;
+    }
   }
 
   &_starsBox {
@@ -288,6 +448,22 @@
   If only the margin and not the box is to be manipulated, margin: auto is better than using flex-grow, which 
   grows the boxes of the elements on the same line until space saturation*/
     display: flex;
+
+    @include media("<=phone") {
+      margin-right: 0;
+    }
+  }
+
+  &_ratingWrapper {
+    display: flex;
+    align-items: center;
+
+    @include media("<=phone-lg") {
+      padding-left: 3rem;
+      flex: 0 0 100%;
+      justify-content: space-between;
+    }
+
   }
 
   &_locationBox {
@@ -298,6 +474,7 @@
 
   &_btn {
     transition: all .2s;
+
     /*TIP currentColor not only passes
     the color of the text of the parent element to the current property
     but it is eve more useful when and over or focus rule changes the 
@@ -352,6 +529,14 @@
     flex: 0 0 60%;
     padding: 3rem;
     margin-right: 4.5rem;
+
+    @include media("<=tabPort-sm") {
+      margin-right: 1rem;
+    }
+
+    @include media("<=phone") {
+      margin-bottom: 3.5rem;
+    }
   }
 
   &_userReview {
@@ -376,6 +561,11 @@
 
     display: flex;
     flex-wrap: wrap;
+
+    @include media("<=phone-lg") {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   &_listItem {
@@ -388,19 +578,28 @@
       height: 1rem;
       width: 1rem;
       margin-right: .7rem;
-      /*background-image: url("../imgs/vendors/Entypo/SVG/chevron-thin-right.svg");//TIP inlude svg for older browsers, which doesn't allow to specify the filling color.
-      background-size: cover;*/
+      //TIP The following cose will be overwritten if the rules in the support
+      //statement below will evaluate true. Therfore, first the general rule is 
+      //written that the one for support browsers.
+      background-image: url("../imgs/vendors/Entypo/SVG/chevron-thin-right.svg"); //TIP inlude svg for older browsers, which doesn't allow to specify the filling color.
+      background-size: cover;
 
       //TIP masks as approach to import svg images in newer browsers allowing to
       //set the desired color as background color to clip-mask with the svg image
-      background-color: var(--color-primary);
-      mask-image: url(../imgs/vendors/Entypo/SVG/chevron-thin-right.svg);
-      mask-size: cover;
+      @supports(-webkit-mask-image: url()) or (mask-image: url()) {
+        background-color: var(--color-primary);
+        -webkit-mask-image: url(../imgs/vendors/Entypo/SVG/chevron-thin-right.svg);
+        mask-image: url(../imgs/vendors/Entypo/SVG/chevron-thin-right.svg);
+        -webkit-mask-size: cover;
+        mask-size: cover;
+        background-image: none; //TIP this line of code overites the the general
+        //rule. Allowing for adoption of the specific rules in the supports() block
+      }
     }
 
   }
 
-  &_recommand {
+  &_recommend {
     font-size: 1.3rem;
     color: var(--color-gray-dark-2);
     display: flex;
@@ -408,25 +607,31 @@
 
   }
 
-  &_recommandCount {
+  &_recommendFriends {
+    display: flex;
+  }
+
+  &_recommendCount {
     margin-right: auto; //TIP in a flex container it will take up all the available
     //space
   }
 
 
-  &_recommandPhoto {
-    box-sizing: content-box;    
+  &_recommendPhoto {
+    box-sizing: content-box;
     height: var(--o-photo-small);
     width: var(--o-photo-small);
     border-radius: 50%;
     border: .3rem solid white;
-    &:not(:last-child){
+
+    &:not(:last-child) {
       margin-right: -1.5rem;
     }
   }
 
-  &_btn{
+  &_btn {
     transition: all .2s;
+
     &:hover,
     &:focus {
       animation: 1s pulsate infinite;
@@ -442,8 +647,8 @@
 *detail
 */
 
-.o-review{
-  &_container{
+.o-review {
+  &_container {
     background-color: white;
     box-shadow: 0 2rem 5rem var(--black-transparent-light);
     padding: 3rem;
@@ -451,7 +656,8 @@
     font-size: 1.4rem;
     position: relative;
     overflow: hidden;
-    &::before{
+
+    &::before {
       content: "\201C";
       position: absolute;
       top: -2.5rem;
@@ -463,36 +669,43 @@
       font-family: Arial, Helvetica, sans-serif;
     }
   }
-  &_text{
+
+  &_text {
     margin-bottom: 2rem;
     z-index: 10;
     position: relative; //TIP settingup the position property is mandatory for
     //the z-index to be effective
   }
-  &_caption{
+
+  &_caption {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  &_photo{
+
+  &_photo {
     height: var(--o-photo-small);
     width: var(--o-photo-small);
     border-radius: 50%;
     box-sizing: content-box;
     margin-right: 1.5rem;
   }
-  &_userInfo{
+
+  &_userInfo {
     font-size: 1.2rem;
     margin-right: auto;
   }
-  &_userName{
+
+  &_userName {
     text-transform: uppercase;
     font-weight: 600;
   }
-  &_userDate{
+
+  &_userDate {
     font-size: 1.1rem;
   }
-  &_rating{
+
+  &_rating {
     font-size: 2rem;
     color: var(--color-primary);
   }
@@ -505,49 +718,55 @@
 *cta
 */
 
-.o-cta{
-  &_container{
+.o-cta {
+  &_container {
     padding: 3.5rem 0;
     text-align: center;
   }
-  &_heading{
+
+  &_heading {
     font-size: 1.5rem;
     font-weight: 300;
     text-transform: uppercase;
     margin-bottom: 2.5rem;
   }
-  &_btn{
+
+  &_btn {
     overflow: hidden;
     background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
-    color:var(--color-gray-light-2);
+    color: var(--color-gray-light-2);
     position: relative;
-    
+
     &_text1,
     &_text2,
-    &_textGhost{
+    &_textGhost {
       display: inline-block;
       height: 100%;
       width: 15rem;
     }
+
     &_text1,
-    &_text2{
+    &_text2 {
       position: absolute;
       left: 3rem;
       transition: all .2s;
     }
 
-    &_text1{
+    &_text1 {
       top: 2rem;
     }
-    &_text2{
+
+    &_text2 {
       top: -100%;
     }
-    &:hover{
-      .o-cta_btn_text1{
+
+    &:hover {
+      .o-cta_btn_text1 {
         top: 100%;
         transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
       }
-      .o-cta_btn_text2{
+
+      .o-cta_btn_text2 {
         top: 2rem;
         transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
       }

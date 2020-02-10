@@ -10,8 +10,14 @@
 @import "node_modules/include-media-or/dist/include-media-or";
 
 $breakpoints: (
-  phone: 37.5em,
+  phone-sm: 25em,
+  /*400px*/
+  phone: 31.25em,
+  /*500px*/
+  phone-lg: 37.5em,
   /*600px*/
+  tabPort-sm: 43.75em,
+  /*700px*/
   tabPort: 56.25em,
   /*900px*/
   tabLand: 75em,
